@@ -125,6 +125,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Migrations\201903301844488_InitialMigration.cs" />
+    <Compile Include="Migrations\201903301844488_InitialMigration.Designer.cs">
+      <DependentUpon>201903301844488_InitialMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903301846496_DroppedSalaryFromEmployeeTable.cs" />
+    <Compile Include="Migrations\201903301846496_DroppedSalaryFromEmployeeTable.Designer.cs">
+      <DependentUpon>201903301846496_DroppedSalaryFromEmployeeTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ADMIMTTED_BY.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
@@ -240,6 +249,14 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201903301844488_InitialMigration.resx">
+      <DependentUpon>201903301844488_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903301846496_DroppedSalaryFromEmployeeTable.resx">
+      <DependentUpon>201903301846496_DroppedSalaryFromEmployeeTable.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
