@@ -127,6 +127,7 @@
   <ItemGroup>
     <Compile Include="Controllers\EmployeeAccountController.cs" />
     <Compile Include="Controllers\SPHAccountController.cs" />
+    <Compile Include="DAL\ApplicationSession.cs" />
     <Compile Include="Migrations\201903301844488_InitialMigration.cs" />
     <Compile Include="Migrations\201903301844488_InitialMigration.Designer.cs">
       <DependentUpon>201903301844488_InitialMigration.cs</DependentUpon>
@@ -239,6 +240,9 @@
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\EmployeeAccount\Login.cshtml" />
     <Content Include="Views\SPHAccount\Login.cshtml" />
+    <Content Include="Views\Home\EmployeeHub.cshtml" />
+    <Content Include="Views\Home\SPH_Profile.cshtml" />
+    <Content Include="Views\Home\ManagerHub.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

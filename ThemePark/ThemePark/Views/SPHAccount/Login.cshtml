@@ -5,7 +5,7 @@
 
 <h2>SPH Login</h2>
 
-@using (Html.BeginForm("Login", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+@using (Html.BeginForm("Login", "SPHAccount", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
 {
     <h4>Login into an existing account.</h4>
     @Html.ValidationSummary("", new { @class = "text-danger" })
@@ -30,9 +30,9 @@
                         <input type="submit" value="Log in" class="btn btn-default" />
                     </div>
                 </div>
-                <p>
+                @*<p>
                     @Html.ActionLink("Register as a new user", "Register")
-                </p>
+                </p>*@
             </section>
         </div>
     </div>

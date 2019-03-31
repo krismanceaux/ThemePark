@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using ThemePark.DAL;
 
 namespace ThemePark.Controllers
 {
@@ -13,17 +14,17 @@ namespace ThemePark.Controllers
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult EmployeeHub()
         {
-            ViewBag.Message = "Your application description page.";
-
             return View();
         }
 
-        public ActionResult Contact()
+        public ActionResult SPH_Profile()
         {
-            ViewBag.Message = "Your contact page.";
-
+            return View();
+        }
+        public ActionResult ManagerHub()
+        {
             return View();
         }
     }
