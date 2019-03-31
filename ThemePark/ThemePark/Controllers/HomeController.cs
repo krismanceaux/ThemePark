@@ -3,34 +3,57 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using ThemePark.AuthData;
 using ThemePark.DAL;
 
 namespace ThemePark.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
+        // Home page on start and that the home button routes to
+        public ActionResult Index(int? id)
         {
-            if(ApplicationSession.Username != "")
+            if (id == 1)
             {
-                ApplicationSession.Username = "";
+                if (ApplicationSession.Username != "")
+                {
+                    ApplicationSession.Username = "";
+                } 
             }
             return View();
         }
 
-        [Authorize]
+        
+
+        [AuthAttribute]
         public ActionResult EmployeeHub()
         {
-            return View();
+            if (ApplicationSession.AccessLevel == "Employee" || ApplicationSession.AccessLevel == "Manager")
+                return View();
+            else
+                return Redirect(ApplicationSession.RedirectToHomeURL);
         }
 
+        [AuthAttribute]
         public ActionResult SPH_Profile()
         {
             return View();
         }
+
+        [AuthAttribute]
+        public ActionResult EmployeeProfile()
+        {
+
+            return View();
+        }
+
+        [AuthAttribute]
         public ActionResult ManagerHub()
         {
-            return View();
+            if (ApplicationSession.AccessLevel == "Manager")
+                return View();
+            else
+                return Redirect(ApplicationSession.RedirectToHomeURL);
         }
     }
 }

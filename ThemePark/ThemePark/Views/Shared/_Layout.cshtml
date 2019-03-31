@@ -12,15 +12,51 @@
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        
-            
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a href="@Url.Action("Index", "Home")" class="navbar-brand"><i class="fas fa-home"></i></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-                <li>@Html.ActionLink("Home", "Index", "Home", null, new { @class = "nav-link" })</li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Employees
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        @Html.ActionLink("Employee Home", "EmployeeHub", "Home", null, new { @class = "nav-link" })
+                        @Html.ActionLink("Profile", "EmployeeProfile", "Home", null, new { @class = "nav-link" })
+                        @Html.ActionLink("Maintenance", "Index", "Maintenance", null, new { @class = "nav-link" })
+                    </div>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Management
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        @Html.ActionLink("Management Home", "ManagementHub", "Home", null, new { @class = "nav-link" })
+                        @Html.ActionLink("Data Center", "Index", "Data", null, new { @class = "nav-link" })
+                       
+                    </div>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Season Pass Holders
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        @Html.ActionLink("Profile", "SPH_Profile", "Home", null, new { @class = "nav-link" })
+                        @Html.ActionLink("Register", "TicketCheck", "SPHAccount", null, new { @class = "nav-link" })
+                    </div>
+                </li>
+
+            </ul>
+            <ul class="navbar-nav ml-auto">
                 <li>@Html.ActionLink("Pass Holder Login", "Login", "SPHAccount", null, new { @class = "nav-link" })</li>
                 <li>@Html.ActionLink("Employee Login", "Login", "EmployeeAccount", null, new { @class = "nav-link" })</li>
-
+                <li>@Html.ActionLink("Logout", "Index", "Home", new { id = 1 }, new { @class = "nav-link ml-auto" })</li>
             </ul>
         </div>
         

@@ -125,6 +125,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AuthData\AuthAttribute.cs" />
     <Compile Include="Controllers\DataController.cs" />
     <Compile Include="Controllers\EmployeeAccountController.cs" />
     <Compile Include="Controllers\MaintenanceController.cs" />
@@ -245,15 +246,14 @@
     <Content Include="Views\Home\EmployeeHub.cshtml" />
     <Content Include="Views\Home\SPH_Profile.cshtml" />
     <Content Include="Views\Home\ManagerHub.cshtml" />
-    <Content Include="Views\Shared\EmployeeLayout.cshtml" />
-    <Content Include="Views\Shared\SPHLayout.cshtml" />
-    <Content Include="Views\Shared\ManagerLayout.cshtml" />
     <Content Include="Views\Maintenance\Create.cshtml" />
     <Content Include="Views\Maintenance\Delete.cshtml" />
     <Content Include="Views\Maintenance\Details.cshtml" />
     <Content Include="Views\Maintenance\Edit.cshtml" />
     <Content Include="Views\Maintenance\Index.cshtml" />
     <Content Include="Views\Data\Index.cshtml" />
+    <Content Include="Views\SPHAccount\Register.cshtml" />
+    <Content Include="Views\Home\EmployeeProfile.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -7,7 +7,8 @@ namespace ThemePark.DAL
 {
     public class ApplicationSession
     {
-
+        public static string RedirectToHomeURL = "~/Home/Index";
+        public static string AccessLevel = "";
         public static string Username
         {
             set

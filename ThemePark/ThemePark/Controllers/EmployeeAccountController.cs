@@ -28,13 +28,13 @@ namespace ThemePark.Controllers
                 var EmployeeLogin = context.EmployeeLogins.Single(x => x.LoginEmail == userAuthInfo.Username && x.Pswd == userAuthInfo.Password);
                 if (EmployeeLogin != null && context.MANAGED_BY.Any(x=> x.EmployeeID == EmployeeLogin.EmployeeID))
                 {
-                    ViewBag.AccessLevel = "Manager";
+                    ApplicationSession.AccessLevel = "Manager";
                     ApplicationSession.Username = userAuthInfo.Username;
                     return Redirect("/Home/ManagerHub");
                 }
                 else if(EmployeeLogin != null)
                 {
-                    ViewBag.AccessLevel = "Employee";
+                    ApplicationSession.AccessLevel = "Employee";
                     ApplicationSession.Username = userAuthInfo.Username;
                     return Redirect("/Home/EmployeeHub");
                 }
