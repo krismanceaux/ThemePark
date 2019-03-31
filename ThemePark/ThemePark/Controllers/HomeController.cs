@@ -11,9 +11,14 @@ namespace ThemePark.Controllers
     {
         public ActionResult Index()
         {
+            if(ApplicationSession.Username != "")
+            {
+                ApplicationSession.Username = "";
+            }
             return View();
         }
 
+        [Authorize]
         public ActionResult EmployeeHub()
         {
             return View();

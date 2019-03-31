@@ -1,0 +1,81 @@
+﻿@model ThemePark.Maintenance
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/EmployeeLayout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Maintenance</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MaintCode1.MaintType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaintCode1.MaintType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ride.RideName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ride.RideName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MaintDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaintDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CorrectiveAction)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CorrectiveAction)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateAdded)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateAdded)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateFixed)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateFixed)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SupervisorID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SupervisorID)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
