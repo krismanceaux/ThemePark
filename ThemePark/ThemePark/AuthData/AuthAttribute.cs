@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Mvc.Filters;
+using ThemePark.DAL;
 
 namespace ThemePark.AuthData
 {
@@ -20,9 +21,16 @@ namespace ThemePark.AuthData
             var user = filterContext.HttpContext.Session["Username"];
             if (user == null || user.ToString() == "")
             {
-
-                filterContext.Result = new RedirectResult("~/EmployeeAccount/Login");
-                //filterContext.Result = new HttpUnauthorizedResult();
+                if(ApplicationSession.AccessLevel == "SPHProfileDenied")
+                {
+                    ApplicationSession.AccessLevel = "";
+                    filterContext.Result = new RedirectResult("~/SPHAccount/Login");
+                }
+                else
+                {
+                    filterContext.Result = new RedirectResult("~/EmployeeAccount/Login");
+                }
+                
             }
         }
     }

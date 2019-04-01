@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using ThemePark;
 using ThemePark.AuthData;
+using ThemePark.DAL;
 
 namespace ThemePark.Controllers
 {
@@ -20,7 +21,12 @@ namespace ThemePark.Controllers
         public ActionResult Index()
         {
             var maintenances = db.Maintenances.Include(m => m.MaintCode1).Include(m => m.Ride);
-            return View(maintenances.ToList());
+
+            if (ApplicationSession.AccessLevel == "Manager" || ApplicationSession.AccessLevel == "Employee")
+                return View(maintenances.ToList());
+            else
+                return Redirect(ApplicationSession.RedirectToHomeURL);
+            
         }
 
         // GET: Maintenance/Details/5

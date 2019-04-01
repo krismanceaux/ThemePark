@@ -37,14 +37,25 @@ namespace ThemePark.Controllers
         [AuthAttribute]
         public ActionResult SPH_Profile()
         {
-            return View();
+            if(ApplicationSession.Username == "" || ApplicationSession.Username == null)
+            {
+                ApplicationSession.AccessLevel = "SPHProfileDenied";
+            }
+
+            if (ApplicationSession.AccessLevel == "SPH")
+                return View();
+            else
+                return Redirect(ApplicationSession.RedirectToHomeURL);
         }
 
         [AuthAttribute]
         public ActionResult EmployeeProfile()
         {
 
-            return View();
+            if (ApplicationSession.AccessLevel == "Employee" || ApplicationSession.AccessLevel == "Manager")
+                return View();
+            else
+                return Redirect(ApplicationSession.RedirectToHomeURL);
         }
 
         [AuthAttribute]

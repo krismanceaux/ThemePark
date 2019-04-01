@@ -26,6 +26,7 @@ namespace ThemePark.Controllers
                 var SPHLogin = context.SPHLogins.First();
                 if (context.SPHLogins.Any(x => x.LoginEmail == userAuthInfo.Username && x.Pswd == userAuthInfo.Password))
                 {
+                    ApplicationSession.AccessLevel = "SPH";
                     ApplicationSession.Username = userAuthInfo.Username;
                     return Redirect("/Home/SPH_Profile");
                 }
