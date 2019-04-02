@@ -175,6 +175,12 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Media\concession.jpg" />
+    <Content Include="Media\ferriswheelday3.jpg" />
+    <Content Include="Media\Parknight3.jpg" />
+    <Content Include="Media\rideswing1.jpg" />
+    <Content Include="Media\rollercoaster3.jpg" />
+    <Content Include="Media\tall1.jpg" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
