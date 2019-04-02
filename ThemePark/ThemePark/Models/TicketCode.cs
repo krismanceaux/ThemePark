@@ -6,7 +6,7 @@ namespace ThemePark
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("ThemePark2.TicketCode")]
+    [Table("ThemePark.TicketCode")]
     public partial class TicketCode
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -17,6 +17,7 @@ namespace ThemePark
 
         [Key]
         [Column("TicketCode")]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public byte TicketCode1 { get; set; }
 
         [StringLength(20)]

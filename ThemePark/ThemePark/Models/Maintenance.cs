@@ -6,7 +6,7 @@ namespace ThemePark
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("ThemePark2.Maintenance")]
+    [Table("ThemePark.Maintenance")]
     public partial class Maintenance
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -15,7 +15,6 @@ namespace ThemePark
             PERFORMED_BY = new HashSet<PERFORMED_BY>();
         }
 
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public long MaintenanceID { get; set; }
 
         [StringLength(200)]

@@ -8,11 +8,11 @@ namespace ThemePark
     public partial class TPContext : DbContext
     {
         public TPContext()
-            : base("name=TPdb")
+            : base("name=TPContext")
         {
         }
 
-        public virtual DbSet<ADMIMTTED_BY> ADMIMTTED_BY { get; set; }
+        public virtual DbSet<ADMITTED_BY> ADMITTED_BY { get; set; }
         public virtual DbSet<Concession> Concessions { get; set; }
         public virtual DbSet<Department> Departments { get; set; }
         public virtual DbSet<DependentPassHolder> DependentPassHolders { get; set; }
@@ -53,7 +53,7 @@ namespace ThemePark
             modelBuilder.Entity<ParkEmployee>()
                 .HasMany(e => e.Rides)
                 .WithMany(e => e.ParkEmployees)
-                .Map(m => m.ToTable("TENDED_BY", "ThemePark2").MapLeftKey("EmployeeID").MapRightKey("RideID"));
+                .Map(m => m.ToTable("TENDED_BY", "ThemePark").MapLeftKey("EmployeeID").MapRightKey("RideID"));
 
             modelBuilder.Entity<Ride>()
                 .HasMany(e => e.Maintenances)
@@ -75,7 +75,7 @@ namespace ThemePark
                 .HasPrecision(10, 4);
 
             modelBuilder.Entity<Ticket>()
-                .HasMany(e => e.ADMIMTTED_BY)
+                .HasMany(e => e.ADMITTED_BY)
                 .WithRequired(e => e.Ticket)
                 .HasForeignKey(e => e.TicketID);
 

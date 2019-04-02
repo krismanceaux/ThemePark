@@ -6,13 +6,13 @@ namespace ThemePark
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("ThemePark2.ParkEmployee")]
+    [Table("ThemePark.ParkEmployee")]
     public partial class ParkEmployee
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public ParkEmployee()
         {
-            ADMIMTTED_BY = new HashSet<ADMIMTTED_BY>();
+            ADMITTED_BY = new HashSet<ADMITTED_BY>();
             EmployeeLogins = new HashSet<EmployeeLogin>();
             MANAGED_BY = new HashSet<MANAGED_BY>();
             PERFORMED_BY = new HashSet<PERFORMED_BY>();
@@ -21,7 +21,6 @@ namespace ThemePark
         }
 
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public long EmployeeID { get; set; }
 
         [StringLength(15)]
@@ -60,7 +59,7 @@ namespace ThemePark
         public long? DepartmentID { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ADMIMTTED_BY> ADMIMTTED_BY { get; set; }
+        public virtual ICollection<ADMITTED_BY> ADMITTED_BY { get; set; }
 
         public virtual Department Department { get; set; }
 

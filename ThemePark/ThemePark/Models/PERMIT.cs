@@ -6,7 +6,7 @@ namespace ThemePark
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("ThemePark2.PERMITS")]
+    [Table("ThemePark.PERMITS")]
     public partial class PERMIT
     {
         [Key]

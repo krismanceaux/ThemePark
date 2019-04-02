@@ -125,26 +125,22 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Migrations\201904020806278_InitialMigration.cs" />
+    <Compile Include="Migrations\201904020806278_InitialMigration.Designer.cs">
+      <DependentUpon>201904020806278_InitialMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\ADMITTED_BY.cs" />
     <Compile Include="AuthData\AuthAttribute.cs" />
+    <Compile Include="Models\Concession.cs" />
     <Compile Include="Controllers\DataController.cs" />
     <Compile Include="Controllers\EmployeeAccountController.cs" />
     <Compile Include="Controllers\MaintenanceController.cs" />
     <Compile Include="Controllers\SPHAccountController.cs" />
     <Compile Include="DAL\ApplicationSession.cs" />
-    <Compile Include="Migrations\201903301844488_InitialMigration.cs" />
-    <Compile Include="Migrations\201903301844488_InitialMigration.Designer.cs">
-      <DependentUpon>201903301844488_InitialMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201903301846496_DroppedSalaryFromEmployeeTable.cs" />
-    <Compile Include="Migrations\201903301846496_DroppedSalaryFromEmployeeTable.Designer.cs">
-      <DependentUpon>201903301846496_DroppedSalaryFromEmployeeTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\ADMIMTTED_BY.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Models\Concession.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Models\Department.cs" />
     <Compile Include="Models\DependentPassHolder.cs" />
@@ -155,7 +151,6 @@
     <Compile Include="Models\MaintCode.cs" />
     <Compile Include="Models\Maintenance.cs" />
     <Compile Include="Models\MANAGED_BY.cs" />
-    <Compile Include="DAL\TPContext.cs" />
     <Compile Include="Models\ParkEmployee.cs" />
     <Compile Include="Models\PERFORMED_BY.cs" />
     <Compile Include="Models\PERMIT.cs" />
@@ -166,6 +161,7 @@
     <Compile Include="Models\SPHLogin.cs" />
     <Compile Include="Models\Ticket.cs" />
     <Compile Include="Models\TicketCode.cs" />
+    <Compile Include="DAL\TPContext.cs" />
     <Compile Include="ViewModels\EmployeeLoginVM.cs" />
     <Compile Include="ViewModels\SPHLoginVM.cs" />
   </ItemGroup>
@@ -270,11 +266,8 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201903301844488_InitialMigration.resx">
-      <DependentUpon>201903301844488_InitialMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903301846496_DroppedSalaryFromEmployeeTable.resx">
-      <DependentUpon>201903301846496_DroppedSalaryFromEmployeeTable.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201904020806278_InitialMigration.resx">
+      <DependentUpon>201904020806278_InitialMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

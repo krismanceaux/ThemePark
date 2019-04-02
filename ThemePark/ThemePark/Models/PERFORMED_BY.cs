@@ -6,7 +6,7 @@ namespace ThemePark
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("ThemePark2.PERFORMED_BY")]
+    [Table("ThemePark.PERFORMED_BY")]
     public partial class PERFORMED_BY
     {
         [Key]

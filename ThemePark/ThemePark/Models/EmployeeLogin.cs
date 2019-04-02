@@ -6,7 +6,7 @@ namespace ThemePark
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("ThemePark2.EmployeeLogin")]
+    [Table("ThemePark.EmployeeLogin")]
     public partial class EmployeeLogin
     {
         [Key]

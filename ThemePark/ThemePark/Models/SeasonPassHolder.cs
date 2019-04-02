@@ -6,7 +6,7 @@ namespace ThemePark
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("ThemePark2.SeasonPassHolder")]
+    [Table("ThemePark.SeasonPassHolder")]
     public partial class SeasonPassHolder
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -17,7 +17,6 @@ namespace ThemePark
         }
 
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public long SPH_ID { get; set; }
 
         [StringLength(30)]

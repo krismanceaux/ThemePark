@@ -6,7 +6,7 @@ namespace ThemePark
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("ThemePark2.MaintCode")]
+    [Table("ThemePark.MaintCode")]
     public partial class MaintCode
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -17,6 +17,7 @@ namespace ThemePark
 
         [Key]
         [Column("MaintCode")]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public byte MaintCode1 { get; set; }
 
         [StringLength(20)]

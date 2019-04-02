@@ -6,7 +6,7 @@ namespace ThemePark
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("ThemePark2.Ride")]
+    [Table("ThemePark.Ride")]
     public partial class Ride
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -17,7 +17,6 @@ namespace ThemePark
             ParkEmployees = new HashSet<ParkEmployee>();
         }
 
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public long RideID { get; set; }
 
         [StringLength(20)]

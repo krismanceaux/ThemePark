@@ -6,19 +6,19 @@ namespace ThemePark
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("ThemePark2.Ticket")]
+    [Table("ThemePark.Ticket")]
     public partial class Ticket
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Ticket()
         {
-            ADMIMTTED_BY = new HashSet<ADMIMTTED_BY>();
+            ADMITTED_BY = new HashSet<ADMITTED_BY>();
+            DependentPassHolders = new HashSet<DependentPassHolder>();
             PERMITS = new HashSet<PERMIT>();
             SeasonPassHolders = new HashSet<SeasonPassHolder>();
         }
 
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public long TicketNumber { get; set; }
 
         [Column(TypeName = "smallmoney")]
@@ -30,7 +30,10 @@ namespace ThemePark
         public byte? TicketCode { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ADMIMTTED_BY> ADMIMTTED_BY { get; set; }
+        public virtual ICollection<ADMITTED_BY> ADMITTED_BY { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<DependentPassHolder> DependentPassHolders { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PERMIT> PERMITS { get; set; }

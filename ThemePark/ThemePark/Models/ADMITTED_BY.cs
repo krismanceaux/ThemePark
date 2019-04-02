@@ -6,8 +6,8 @@ namespace ThemePark
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("ThemePark2.ADMIMTTED_BY")]
-    public partial class ADMIMTTED_BY
+    [Table("ThemePark.ADMITTED_BY")]
+    public partial class ADMITTED_BY
     {
         [Key]
         [Column(Order = 0)]
