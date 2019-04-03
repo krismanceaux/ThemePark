@@ -125,6 +125,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\ParkEmployeesController.cs" />
     <Compile Include="Migrations\201904030444090_InitialMigration.cs" />
     <Compile Include="Migrations\201904030444090_InitialMigration.Designer.cs">
       <DependentUpon>201904030444090_InitialMigration.cs</DependentUpon>
@@ -148,6 +149,30 @@
     <Compile Include="Migrations\201904030634132_PopPerformedBy1.cs" />
     <Compile Include="Migrations\201904030634132_PopPerformedBy1.Designer.cs">
       <DependentUpon>201904030634132_PopPerformedBy1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904031434565_PopDepTable.cs" />
+    <Compile Include="Migrations\201904031434565_PopDepTable.Designer.cs">
+      <DependentUpon>201904031434565_PopDepTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904031453561_PopJames.cs" />
+    <Compile Include="Migrations\201904031453561_PopJames.Designer.cs">
+      <DependentUpon>201904031453561_PopJames.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904031456474_PopJamesManager.cs" />
+    <Compile Include="Migrations\201904031456474_PopJamesManager.Designer.cs">
+      <DependentUpon>201904031456474_PopJamesManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904031504538_PopTheRestofManagers.cs" />
+    <Compile Include="Migrations\201904031504538_PopTheRestofManagers.Designer.cs">
+      <DependentUpon>201904031504538_PopTheRestofManagers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904031515070_PopTheRestofManagers2.cs" />
+    <Compile Include="Migrations\201904031515070_PopTheRestofManagers2.Designer.cs">
+      <DependentUpon>201904031515070_PopTheRestofManagers2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904031522574_PopTheRestofManagers3.cs" />
+    <Compile Include="Migrations\201904031522574_PopTheRestofManagers3.Designer.cs">
+      <DependentUpon>201904031522574_PopTheRestofManagers3.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ADMITTED_BY.cs" />
@@ -282,9 +307,15 @@
     <Content Include="Views\Data\Index.cshtml" />
     <Content Include="Views\SPHAccount\Register.cshtml" />
     <Content Include="Views\Home\EmployeeProfile.cshtml" />
+    <Content Include="Views\ParkEmployees\Create.cshtml" />
+    <Content Include="Views\ParkEmployees\Delete.cshtml" />
+    <Content Include="Views\ParkEmployees\Details.cshtml" />
+    <Content Include="Views\ParkEmployees\Edit.cshtml" />
+    <Content Include="Views\ParkEmployees\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Default\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -315,6 +346,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201904030634132_PopPerformedBy1.resx">
       <DependentUpon>201904030634132_PopPerformedBy1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904031434565_PopDepTable.resx">
+      <DependentUpon>201904031434565_PopDepTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904031453561_PopJames.resx">
+      <DependentUpon>201904031453561_PopJames.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904031456474_PopJamesManager.resx">
+      <DependentUpon>201904031456474_PopJamesManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904031504538_PopTheRestofManagers.resx">
+      <DependentUpon>201904031504538_PopTheRestofManagers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904031515070_PopTheRestofManagers2.resx">
+      <DependentUpon>201904031515070_PopTheRestofManagers2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904031522574_PopTheRestofManagers3.resx">
+      <DependentUpon>201904031522574_PopTheRestofManagers3.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
