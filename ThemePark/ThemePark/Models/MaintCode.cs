@@ -17,9 +17,9 @@ namespace ThemePark
 
         [Key]
         [Column("MaintCode")]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public byte MaintCode1 { get; set; }
+        public int MaintCode1 { get; set; }
 
+        [Display(Name ="Maintenance Type")]
         [StringLength(20)]
         public string MaintType { get; set; }
 

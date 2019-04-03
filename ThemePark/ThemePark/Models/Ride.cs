@@ -19,6 +19,7 @@ namespace ThemePark
 
         public long RideID { get; set; }
 
+        [Display(Name ="Ride")]
         [StringLength(20)]
         public string RideName { get; set; }
 
@@ -28,7 +29,7 @@ namespace ThemePark
         [StringLength(20)]
         public string RideLocation { get; set; }
 
-        public byte? RideCapacity { get; set; }
+        public int? RideCapacity { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Maintenance> Maintenances { get; set; }

@@ -5,6 +5,7 @@ namespace ThemePark
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
+    using ThemePark.DAL;
 
     [Table("ThemePark.Maintenance")]
     public partial class Maintenance
@@ -17,22 +18,30 @@ namespace ThemePark
 
         public long MaintenanceID { get; set; }
 
+        [Display(Name = "Discrepancy")]
         [StringLength(200)]
         public string MaintDescription { get; set; }
 
+        [Display(Name = "Corrective Action")]
         [StringLength(100)]
         public string CorrectiveAction { get; set; }
 
+        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}", ApplyFormatInEditMode = true)]
+        [Display(Name = "Date Discovered")]
         [Column(TypeName = "date")]
         public DateTime? DateAdded { get; set; }
 
+        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}", ApplyFormatInEditMode = true)]
+        [Display(Name = "Date Corrected")]
         [Column(TypeName = "date")]
         public DateTime? DateFixed { get; set; }
 
-        public byte? MaintCode { get; set; }
+        [Display(Name ="Type of Maintenance")]
+        public int? MaintCode { get; set; }
 
-        public long? SupervisorID { get; set; }
+        //Removed SupervisorID
 
+        [Display(Name ="Ride")]
         public long? RideID { get; set; }
 
         public virtual MaintCode MaintCode1 { get; set; }

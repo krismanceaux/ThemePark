@@ -17,8 +17,7 @@ namespace ThemePark
 
         [Key]
         [Column("TicketCode")]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public byte TicketCode1 { get; set; }
+        public int TicketCode1 { get; set; }
 
         [StringLength(20)]
         public string TicketType { get; set; }

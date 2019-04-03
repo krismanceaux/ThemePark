@@ -27,7 +27,7 @@ namespace ThemePark
         [Column(TypeName = "date")]
         public DateTime? DateOfPurchase { get; set; }
 
-        public byte? TicketCode { get; set; }
+        public int? TicketCode { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ADMITTED_BY> ADMITTED_BY { get; set; }

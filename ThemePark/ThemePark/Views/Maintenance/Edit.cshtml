@@ -2,7 +2,6 @@
 
 @{
     ViewBag.Title = "Edit";
-    Layout = "~/Views/Shared/EmployeeLayout.cshtml";
 }
 
 <h2>Edit</h2>
@@ -20,7 +19,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.MaintDescription, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.MaintDescription, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.MaintDescription, new { htmlAttributes = new { @readonly = "readonly", @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.MaintDescription, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -36,7 +35,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.DateAdded, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.DateAdded, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.DateAdded, new { htmlAttributes = new { @readonly = "readonly", @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.DateAdded, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -44,7 +43,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.DateFixed, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.DateFixed, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.DateFixed, new { htmlAttributes = new { @class = "form-control", type ="date" } })
                 @Html.ValidationMessageFor(model => model.DateFixed, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -52,23 +51,17 @@
         <div class="form-group">
             @Html.LabelFor(model => model.MaintCode, "MaintCode", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("MaintCode", null, htmlAttributes: new { @class = "form-control" })
+                @Html.DropDownList("MaintCode", null, htmlAttributes: new { @disabled = "disabled", @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.MaintCode, "", new { @class = "text-danger" })
             </div>
         </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.SupervisorID, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.SupervisorID, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.SupervisorID, "", new { @class = "text-danger" })
-            </div>
-        </div>
+        
 
         <div class="form-group">
             @Html.LabelFor(model => model.RideID, "RideID", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("RideID", null, htmlAttributes: new { @class = "form-control" })
+                @Html.DropDownList("RideID", null, htmlAttributes: new { @disabled = "disabled", @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.RideID, "", new { @class = "text-danger" })
             </div>
         </div>
