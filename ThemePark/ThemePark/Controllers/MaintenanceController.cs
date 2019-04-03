@@ -97,6 +97,14 @@ namespace ThemePark.Controllers
         {
             if (ModelState.IsValid)
             {
+                var login = db.EmployeeLogins.Single(x => x.LoginEmail == ApplicationSession.Username);
+                var employee = login.ParkEmployee;
+                var performed_by = new PERFORMED_BY();
+                performed_by.ParkEmployee = employee;
+                performed_by.Maintenance = maintenance;
+                performed_by.ManHours = 4;
+
+                db.PERFORMED_BY.Add(performed_by);
                 db.Entry(maintenance).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
