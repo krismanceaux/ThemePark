@@ -125,7 +125,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\ParkEmployeesController.cs" />
     <Compile Include="Migrations\201904030444090_InitialMigration.cs" />
     <Compile Include="Migrations\201904030444090_InitialMigration.Designer.cs">
       <DependentUpon>201904030444090_InitialMigration.cs</DependentUpon>
@@ -307,11 +306,6 @@
     <Content Include="Views\Data\Index.cshtml" />
     <Content Include="Views\SPHAccount\Register.cshtml" />
     <Content Include="Views\Home\EmployeeProfile.cshtml" />
-    <Content Include="Views\ParkEmployees\Create.cshtml" />
-    <Content Include="Views\ParkEmployees\Delete.cshtml" />
-    <Content Include="Views\ParkEmployees\Details.cshtml" />
-    <Content Include="Views\ParkEmployees\Edit.cshtml" />
-    <Content Include="Views\ParkEmployees\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
