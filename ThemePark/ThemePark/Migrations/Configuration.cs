@@ -185,6 +185,30 @@ namespace ThemePark.Migrations
             //        Pswd = "1qaz!QAZ",
             //        ParkEmployee = context.ParkEmployees.Single(x => x.FirstName == "Jacky")
             //    });
+
+            context.TicketCodes.AddOrUpdate(m => m.TicketCode1,
+                new TicketCode
+                {
+                    TicketCode1 = 1,
+                    TicketType = "Adult"
+
+                },
+                new TicketCode
+                {
+                    TicketCode1 = 2,
+                    TicketType = "Child"
+                },
+                new TicketCode
+                {
+                    TicketCode1 = 3,
+                    TicketType = "Student"
+                },
+                 new TicketCode
+                 {
+                     TicketCode1 = 4,
+                     TicketType = "Veteran"
+                 });
+
         }
     }
 }

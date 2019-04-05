@@ -1,0 +1,56 @@
+﻿@model ThemePark.Ride
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Ride</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.RideName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RideName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RideDiscription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RideDiscription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RideLocation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RideLocation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RideCapacity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RideCapacity)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

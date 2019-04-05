@@ -15,7 +15,7 @@ namespace ThemePark
         {
             PERFORMED_BY = new HashSet<PERFORMED_BY>();
         }
-
+        [Display(Name = "Maintenance ID")]
         public long MaintenanceID { get; set; }
 
         [Display(Name = "Discrepancy")]

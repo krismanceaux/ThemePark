@@ -1,0 +1,50 @@
+﻿@model ThemePark.Ride
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Ride</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.RideName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RideName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RideDiscription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RideDiscription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RideLocation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RideLocation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RideCapacity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RideCapacity)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.RideID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
