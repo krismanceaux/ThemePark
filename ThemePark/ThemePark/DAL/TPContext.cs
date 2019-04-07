@@ -27,6 +27,7 @@ namespace ThemePark
         public virtual DbSet<SeasonPassHolder> SeasonPassHolders { get; set; }
         public virtual DbSet<SOLD_BY> SOLD_BY { get; set; }
         public virtual DbSet<SPHLogin> SPHLogins { get; set; }
+        public virtual DbSet<TENDED_BY> TENDED_BY { get; set; }
         public virtual DbSet<Ticket> Tickets { get; set; }
         public virtual DbSet<TicketCode> TicketCodes { get; set; }
 
@@ -49,11 +50,6 @@ namespace ThemePark
                 .HasMany(e => e.EmployeeLogins)
                 .WithOptional(e => e.ParkEmployee)
                 .WillCascadeOnDelete();
-
-            modelBuilder.Entity<ParkEmployee>()
-                .HasMany(e => e.Rides)
-                .WithMany(e => e.ParkEmployees)
-                .Map(m => m.ToTable("TENDED_BY", "ThemePark").MapLeftKey("EmployeeID").MapRightKey("RideID"));
 
             modelBuilder.Entity<Ride>()
                 .HasMany(e => e.Maintenances)

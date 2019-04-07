@@ -14,12 +14,11 @@ namespace ThemePark
         {
             Maintenances = new HashSet<Maintenance>();
             PERMITS = new HashSet<PERMIT>();
-            ParkEmployees = new HashSet<ParkEmployee>();
+            TENDED_BY = new HashSet<TENDED_BY>();
         }
 
         public long RideID { get; set; }
 
-        [Display(Name ="Ride")]
         [StringLength(20)]
         public string RideName { get; set; }
 
@@ -38,6 +37,6 @@ namespace ThemePark
         public virtual ICollection<PERMIT> PERMITS { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ParkEmployee> ParkEmployees { get; set; }
+        public virtual ICollection<TENDED_BY> TENDED_BY { get; set; }
     }
 }

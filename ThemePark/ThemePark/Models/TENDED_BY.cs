@@ -6,13 +6,13 @@ namespace ThemePark
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("ThemePark.ADMITTED_BY")]
-    public partial class ADMITTED_BY
+    [Table("ThemePark.TENDED_BY")]
+    public partial class TENDED_BY
     {
         [Key]
         [Column(Order = 0)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public long TicketID { get; set; }
+        public long RideID { get; set; }
 
         [Key]
         [Column(Order = 1)]
@@ -20,10 +20,10 @@ namespace ThemePark
         public long EmployeeID { get; set; }
 
         [Column(TypeName = "date")]
-        public DateTime? AdmissionsDate { get; set; }
-
-        public virtual Ticket Ticket { get; set; }
+        public DateTime DateTended { get; set; }
 
         public virtual ParkEmployee ParkEmployee { get; set; }
+
+        public virtual Ride Ride { get; set; }
     }
 }
