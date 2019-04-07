@@ -30,7 +30,7 @@ namespace ThemePark.Controllers
         [HttpGet]
         public ActionResult CurrentMaintenance()
         {
-            var currentMaintenance = db.Maintenances.Include(m => m.MaintCode1).Include(m => m.Ride).Where(m => m.CorrectiveAction == null);
+            var currentMaintenance = db.Maintenances.Include(m => m.MaintCode1).Include(m => m.Ride).Where(m => m.CorrectiveAction == null).ToList();
             return View(currentMaintenance);
         }
 
@@ -43,6 +43,8 @@ namespace ThemePark.Controllers
             maintVM.CurrentNumScheduled = db.Maintenances.Count(m => m.MaintCode == 2);
             maintVM.CurrentNumUnscheduled = db.Maintenances.Count(m => m.MaintCode == 3);
             maintVM.CurrentNumPeriodic = db.Maintenances.Count(m => m.MaintCode == 1);
+
+            //retrieve info from DB and store in ViewModel to be displayed
             return View(maintVM);
         }
 

@@ -44,10 +44,5 @@ namespace ThemePark.Controllers
             }
 
         }
-
-        public ActionResult Register()
-        {
-            return View();
-        }
     }
 }

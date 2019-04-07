@@ -7,122 +7,110 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using ThemePark;
-using ThemePark.DAL;
 
 namespace ThemePark.Controllers
 {
-    public class TicketsController : Controller
+    public class TicketCodesController : Controller
     {
         private TPContext db = new TPContext();
 
-        // GET: Tickets
+        // GET: TicketCodes
         public ActionResult Index()
         {
-            var tickets = db.Tickets.Include(t => t.TicketCode1);
-            return View(tickets.ToList());
+            return View(db.TicketCodes.ToList());
         }
 
-        // GET: Tickets/Details/5
-        public ActionResult Details(long? id)
+        // GET: TicketCodes/Details/5
+        public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Ticket ticket = db.Tickets.Find(id);
-            if (ticket == null)
+            TicketCode ticketCode = db.TicketCodes.Find(id);
+            if (ticketCode == null)
             {
                 return HttpNotFound();
             }
-            return View(ticket);
+            return View(ticketCode);
         }
 
-        // GET: Tickets/Create
+        // GET: TicketCodes/Create
         public ActionResult Create()
         {
-            ViewBag.TicketCode = new SelectList(db.TicketCodes, "TicketCode1", "TicketType");
             return View();
         }
 
-        // POST: Tickets/Create
+        // POST: TicketCodes/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "TicketNumber,Price,DateOfPurchase,TicketCode")] Ticket ticket)
+        public ActionResult Create([Bind(Include = "TicketCode1,TicketType")] TicketCode ticketCode)
         {
             if (ModelState.IsValid)
             {
-                db.Tickets.Add(ticket);
-                db.SaveChanges();
-                if (ticket.TicketCode == 5)
-                {
-                    ApplicationSession.TicketNumber = ticket.TicketNumber;
-                    return RedirectToAction("Create", "SeasonPassholders");
-                }
-                else
-                    return RedirectToAction("Index", "Home");
-            }
-
-            ViewBag.TicketCode = new SelectList(db.TicketCodes, "TicketCode1", "TicketType", ticket.TicketCode);
-            return View(ticket);
-        }
-
-        // GET: Tickets/Edit/5
-        public ActionResult Edit(long? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Ticket ticket = db.Tickets.Find(id);
-            if (ticket == null)
-            {
-                return HttpNotFound();
-            }
-            ViewBag.TicketCode = new SelectList(db.TicketCodes, "TicketCode1", "TicketType", ticket.TicketCode);
-            return View(ticket);
-        }
-
-        // POST: Tickets/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "TicketNumber,Price,DateOfPurchase,TicketCode")] Ticket ticket)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Entry(ticket).State = EntityState.Modified;
+                db.TicketCodes.Add(ticketCode);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.TicketCode = new SelectList(db.TicketCodes, "TicketCode1", "TicketType", ticket.TicketCode);
-            return View(ticket);
+
+            return View(ticketCode);
         }
 
-        // GET: Tickets/Delete/5
-        public ActionResult Delete(long? id)
+        // GET: TicketCodes/Edit/5
+        public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Ticket ticket = db.Tickets.Find(id);
-            if (ticket == null)
+            TicketCode ticketCode = db.TicketCodes.Find(id);
+            if (ticketCode == null)
             {
                 return HttpNotFound();
             }
-            return View(ticket);
+            return View(ticketCode);
         }
 
-        // POST: Tickets/Delete/5
+        // POST: TicketCodes/Edit/5
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit([Bind(Include = "TicketCode1,TicketType")] TicketCode ticketCode)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(ticketCode).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(ticketCode);
+        }
+
+        // GET: TicketCodes/Delete/5
+        public ActionResult Delete(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            TicketCode ticketCode = db.TicketCodes.Find(id);
+            if (ticketCode == null)
+            {
+                return HttpNotFound();
+            }
+            return View(ticketCode);
+        }
+
+        // POST: TicketCodes/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(long id)
+        public ActionResult DeleteConfirmed(int id)
         {
-            Ticket ticket = db.Tickets.Find(id);
-            db.Tickets.Remove(ticket);
+            TicketCode ticketCode = db.TicketCodes.Find(id);
+            db.TicketCodes.Remove(ticketCode);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

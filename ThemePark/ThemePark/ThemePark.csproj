@@ -132,6 +132,7 @@
     <Compile Include="Controllers\RidesController.cs" />
     <Compile Include="Controllers\SeasonPassHoldersController.cs" />
     <Compile Include="Controllers\SPHLoginsController.cs" />
+    <Compile Include="Controllers\TicketCodesController.cs" />
     <Compile Include="Controllers\TicketsController.cs" />
     <Compile Include="Migrations\201904030444090_InitialMigration.cs" />
     <Compile Include="Migrations\201904030444090_InitialMigration.Designer.cs">
@@ -223,6 +224,7 @@
     <Compile Include="ViewModels\EmployeeLoginVM.cs" />
     <Compile Include="ViewModels\EmployeeVM.cs" />
     <Compile Include="ViewModels\MaintenanceVM.cs" />
+    <Compile Include="ViewModels\SPH-VM.cs" />
     <Compile Include="ViewModels\SPHLoginVM.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -282,6 +284,7 @@
     <Content Include="Scripts\popper-utils.min.js" />
     <Content Include="Scripts\popper.js" />
     <Content Include="Scripts\popper.min.js" />
+    <Content Include="Scripts\SiteScripts\DynamicTicket.js" />
     <Content Include="Scripts\umd\popper-utils.js" />
     <Content Include="Scripts\umd\popper-utils.min.js" />
     <Content Include="Scripts\umd\popper.js" />
@@ -318,7 +321,6 @@
     <Content Include="Views\Maintenance\Edit.cshtml" />
     <Content Include="Views\Maintenance\Index.cshtml" />
     <Content Include="Views\Data\Index.cshtml" />
-    <Content Include="Views\SPHAccount\Register.cshtml" />
     <Content Include="Views\Home\EmployeeProfile.cshtml" />
     <Content Include="Views\ParkEmployees\Create.cshtml" />
     <Content Include="Views\ParkEmployees\Delete.cshtml" />
@@ -362,6 +364,12 @@
     <Content Include="Views\DependentPassHolders\Index.cshtml" />
     <Content Include="Views\Data\CurrentMaintenance.cshtml" />
     <Content Include="Views\Data\MaintenanceReport.cshtml" />
+    <Content Include="Views\TicketCodes\Create.cshtml" />
+    <Content Include="Views\TicketCodes\Delete.cshtml" />
+    <Content Include="Views\TicketCodes\Details.cshtml" />
+    <Content Include="Views\TicketCodes\Edit.cshtml" />
+    <Content Include="Views\TicketCodes\Index.cshtml" />
+    <Content Include="Views\DependentPassHolders\DepQuestion.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

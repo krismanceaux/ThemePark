@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using ThemePark;
+using ThemePark.DAL;
 
 namespace ThemePark.Controllers
 {
@@ -19,6 +20,12 @@ namespace ThemePark.Controllers
         {
             var dependentPassHolders = db.DependentPassHolders.Include(d => d.SeasonPassHolder).Include(d => d.Ticket);
             return View(dependentPassHolders.ToList());
+        }
+
+        public ActionResult DepQuestion()
+        {
+
+            return View();
         }
 
         // GET: DependentPassHolders/Details/5
@@ -53,9 +60,18 @@ namespace ThemePark.Controllers
         {
             if (ModelState.IsValid)
             {
+                var sphLogin = db.SPHLogins.Single(x => x.LoginEmail == ApplicationSession.Username);
+                var SPHId = sphLogin.SPH_ID;
+                dependentPassHolder.SPH_ID = SPHId;
+                var ticket = new Ticket();
+                ticket.Price = (decimal)10.00;
+                ticket.DateOfPurchase = DateTime.Now.Date;
+                ticket.TicketCode = 5;
+                dependentPassHolder.Ticket = ticket;
+
                 db.DependentPassHolders.Add(dependentPassHolder);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("DepQuestion");
             }
 
             ViewBag.SPH_ID = new SelectList(db.SeasonPassHolders, "SPH_ID", "StreetAddress", dependentPassHolder.SPH_ID);
