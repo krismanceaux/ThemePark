@@ -1,0 +1,42 @@
+﻿@model ThemePark.TENDED_BY
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>TENDED_BY</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ParkEmployee.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ParkEmployee.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ride.RideName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ride.RideName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateTended)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateTended)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

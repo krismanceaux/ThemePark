@@ -1,0 +1,10 @@
+﻿
+@{
+    ViewBag.Title = "DepQuestion";
+}
+
+<h2>Would you like to add a family member?</h2>
+
+@Html.ActionLink("Yes", "Create", "DependentPassHolders", null, new { @class = "btn btn-primary" })
+@Html.ActionLink("No", "Index", "Home", null, new { @class = "btn btn-primary" })
+

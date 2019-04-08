@@ -15,7 +15,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ThemePark</RootNamespace>
     <AssemblyName>ThemePark</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
@@ -27,6 +27,7 @@
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <TypeScriptToolsVersion>3.1</TypeScriptToolsVersion>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -65,6 +66,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.3.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.5.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
     </Reference>
@@ -75,8 +77,7 @@
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
     </Reference>
@@ -95,9 +96,7 @@
     <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
-    <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
-    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Abstractions" />
     <Reference Include="System.Web.Routing" />
     <Reference Include="System.Xml" />
@@ -115,6 +114,7 @@
     <Reference Include="System.Web.Optimization">
       <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
     </Reference>
+    <Reference Include="System.Xml.Linq" />
     <Reference Include="WebGrease">
       <Private>True</Private>
       <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
@@ -125,57 +125,23 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\201904030444090_InitialMigration.cs" />
-    <Compile Include="Migrations\201904030444090_InitialMigration.Designer.cs">
-      <DependentUpon>201904030444090_InitialMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201904030456518_PopMaintenance.cs" />
-    <Compile Include="Migrations\201904030456518_PopMaintenance.Designer.cs">
-      <DependentUpon>201904030456518_PopMaintenance.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201904030518455_PopMaintCode.cs" />
-    <Compile Include="Migrations\201904030518455_PopMaintCode.Designer.cs">
-      <DependentUpon>201904030518455_PopMaintCode.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201904030533328_DropSuperVisorID.cs" />
-    <Compile Include="Migrations\201904030533328_DropSuperVisorID.Designer.cs">
-      <DependentUpon>201904030533328_DropSuperVisorID.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201904030622378_PopMantenance1.cs" />
-    <Compile Include="Migrations\201904030622378_PopMantenance1.Designer.cs">
-      <DependentUpon>201904030622378_PopMantenance1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201904030634132_PopPerformedBy1.cs" />
-    <Compile Include="Migrations\201904030634132_PopPerformedBy1.Designer.cs">
-      <DependentUpon>201904030634132_PopPerformedBy1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201904031434565_PopDepTable.cs" />
-    <Compile Include="Migrations\201904031434565_PopDepTable.Designer.cs">
-      <DependentUpon>201904031434565_PopDepTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201904031453561_PopJames.cs" />
-    <Compile Include="Migrations\201904031453561_PopJames.Designer.cs">
-      <DependentUpon>201904031453561_PopJames.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201904031456474_PopJamesManager.cs" />
-    <Compile Include="Migrations\201904031456474_PopJamesManager.Designer.cs">
-      <DependentUpon>201904031456474_PopJamesManager.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201904031504538_PopTheRestofManagers.cs" />
-    <Compile Include="Migrations\201904031504538_PopTheRestofManagers.Designer.cs">
-      <DependentUpon>201904031504538_PopTheRestofManagers.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201904031515070_PopTheRestofManagers2.cs" />
-    <Compile Include="Migrations\201904031515070_PopTheRestofManagers2.Designer.cs">
-      <DependentUpon>201904031515070_PopTheRestofManagers2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201904031522574_PopTheRestofManagers3.cs" />
-    <Compile Include="Migrations\201904031522574_PopTheRestofManagers3.Designer.cs">
-      <DependentUpon>201904031522574_PopTheRestofManagers3.cs</DependentUpon>
+    <Compile Include="Controllers\TENDED_BYController.cs" />
+    <Compile Include="Migrations\201904071928527_init.cs" />
+    <Compile Include="Migrations\201904071928527_init.Designer.cs">
+      <DependentUpon>201904071928527_init.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ADMITTED_BY.cs" />
     <Compile Include="Models\Concession.cs" />
+    <Compile Include="Controllers\ConcessionsController.cs" />
+    <Compile Include="Controllers\DependentPassHoldersController.cs" />
+    <Compile Include="Controllers\EmployeeLoginsController.cs" />
+    <Compile Include="Controllers\ParkEmployeesController.cs" />
+    <Compile Include="Controllers\RidesController.cs" />
+    <Compile Include="Controllers\SeasonPassHoldersController.cs" />
+    <Compile Include="Controllers\SPHLoginsController.cs" />
+    <Compile Include="Controllers\TicketCodesController.cs" />
+    <Compile Include="Controllers\TicketsController.cs" />
     <Compile Include="Models\Department.cs" />
     <Compile Include="Models\DependentPassHolder.cs" />
     <Compile Include="Models\EmployeeLogin.cs" />
@@ -205,10 +171,14 @@
     <Compile Include="Models\SeasonPassHolder.cs" />
     <Compile Include="Models\SOLD_BY.cs" />
     <Compile Include="Models\SPHLogin.cs" />
+    <Compile Include="Models\TENDED_BY.cs" />
     <Compile Include="Models\Ticket.cs" />
     <Compile Include="Models\TicketCode.cs" />
     <Compile Include="DAL\TPContext.cs" />
     <Compile Include="ViewModels\EmployeeLoginVM.cs" />
+    <Compile Include="ViewModels\EmployeeVM.cs" />
+    <Compile Include="ViewModels\MaintenanceVM.cs" />
+    <Compile Include="ViewModels\SPH-VM.cs" />
     <Compile Include="ViewModels\SPHLoginVM.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -268,6 +238,7 @@
     <Content Include="Scripts\popper-utils.min.js" />
     <Content Include="Scripts\popper.js" />
     <Content Include="Scripts\popper.min.js" />
+    <Content Include="Scripts\SiteScripts\DynamicTicket.js" />
     <Content Include="Scripts\umd\popper-utils.js" />
     <Content Include="Scripts\umd\popper-utils.min.js" />
     <Content Include="Scripts\umd\popper.js" />
@@ -304,8 +275,60 @@
     <Content Include="Views\Maintenance\Edit.cshtml" />
     <Content Include="Views\Maintenance\Index.cshtml" />
     <Content Include="Views\Data\Index.cshtml" />
-    <Content Include="Views\SPHAccount\Register.cshtml" />
     <Content Include="Views\Home\EmployeeProfile.cshtml" />
+    <Content Include="Views\ParkEmployees\Create.cshtml" />
+    <Content Include="Views\ParkEmployees\Delete.cshtml" />
+    <Content Include="Views\ParkEmployees\Details.cshtml" />
+    <Content Include="Views\ParkEmployees\Edit.cshtml" />
+    <Content Include="Views\ParkEmployees\Index.cshtml" />
+    <Content Include="Views\EmployeeLogins\Create.cshtml" />
+    <Content Include="Views\EmployeeLogins\Delete.cshtml" />
+    <Content Include="Views\EmployeeLogins\Details.cshtml" />
+    <Content Include="Views\EmployeeLogins\Edit.cshtml" />
+    <Content Include="Views\EmployeeLogins\Index.cshtml" />
+    <Content Include="Views\Concessions\Create.cshtml" />
+    <Content Include="Views\Concessions\Delete.cshtml" />
+    <Content Include="Views\Concessions\Details.cshtml" />
+    <Content Include="Views\Concessions\Edit.cshtml" />
+    <Content Include="Views\Concessions\Index.cshtml" />
+    <Content Include="Views\Rides\Create.cshtml" />
+    <Content Include="Views\Rides\Delete.cshtml" />
+    <Content Include="Views\Rides\Details.cshtml" />
+    <Content Include="Views\Rides\Edit.cshtml" />
+    <Content Include="Views\Rides\Index.cshtml" />
+    <Content Include="Views\Tickets\Create.cshtml" />
+    <Content Include="Views\Tickets\Delete.cshtml" />
+    <Content Include="Views\Tickets\Details.cshtml" />
+    <Content Include="Views\Tickets\Edit.cshtml" />
+    <Content Include="Views\Tickets\Index.cshtml" />
+    <Content Include="Views\SeasonPassHolders\Create.cshtml" />
+    <Content Include="Views\SeasonPassHolders\Delete.cshtml" />
+    <Content Include="Views\SeasonPassHolders\Details.cshtml" />
+    <Content Include="Views\SeasonPassHolders\Edit.cshtml" />
+    <Content Include="Views\SeasonPassHolders\Index.cshtml" />
+    <Content Include="Views\SPHLogins\Create.cshtml" />
+    <Content Include="Views\SPHLogins\Delete.cshtml" />
+    <Content Include="Views\SPHLogins\Details.cshtml" />
+    <Content Include="Views\SPHLogins\Edit.cshtml" />
+    <Content Include="Views\SPHLogins\Index.cshtml" />
+    <Content Include="Views\DependentPassHolders\Create.cshtml" />
+    <Content Include="Views\DependentPassHolders\Delete.cshtml" />
+    <Content Include="Views\DependentPassHolders\Details.cshtml" />
+    <Content Include="Views\DependentPassHolders\Edit.cshtml" />
+    <Content Include="Views\DependentPassHolders\Index.cshtml" />
+    <Content Include="Views\Data\CurrentMaintenance.cshtml" />
+    <Content Include="Views\Data\MaintenanceReport.cshtml" />
+    <Content Include="Views\TicketCodes\Create.cshtml" />
+    <Content Include="Views\TicketCodes\Delete.cshtml" />
+    <Content Include="Views\TicketCodes\Details.cshtml" />
+    <Content Include="Views\TicketCodes\Edit.cshtml" />
+    <Content Include="Views\TicketCodes\Index.cshtml" />
+    <Content Include="Views\DependentPassHolders\DepQuestion.cshtml" />
+    <Content Include="Views\TENDED_BY\Create.cshtml" />
+    <Content Include="Views\TENDED_BY\Delete.cshtml" />
+    <Content Include="Views\TENDED_BY\Details.cshtml" />
+    <Content Include="Views\TENDED_BY\Edit.cshtml" />
+    <Content Include="Views\TENDED_BY\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -323,41 +346,8 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201904030444090_InitialMigration.resx">
-      <DependentUpon>201904030444090_InitialMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201904030456518_PopMaintenance.resx">
-      <DependentUpon>201904030456518_PopMaintenance.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201904030518455_PopMaintCode.resx">
-      <DependentUpon>201904030518455_PopMaintCode.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201904030533328_DropSuperVisorID.resx">
-      <DependentUpon>201904030533328_DropSuperVisorID.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201904030622378_PopMantenance1.resx">
-      <DependentUpon>201904030622378_PopMantenance1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201904030634132_PopPerformedBy1.resx">
-      <DependentUpon>201904030634132_PopPerformedBy1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201904031434565_PopDepTable.resx">
-      <DependentUpon>201904031434565_PopDepTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201904031453561_PopJames.resx">
-      <DependentUpon>201904031453561_PopJames.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201904031456474_PopJamesManager.resx">
-      <DependentUpon>201904031456474_PopJamesManager.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201904031504538_PopTheRestofManagers.resx">
-      <DependentUpon>201904031504538_PopTheRestofManagers.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201904031515070_PopTheRestofManagers2.resx">
-      <DependentUpon>201904031515070_PopTheRestofManagers2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201904031522574_PopTheRestofManagers3.resx">
-      <DependentUpon>201904031522574_PopTheRestofManagers3.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201904071928527_init.resx">
+      <DependentUpon>201904071928527_init.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

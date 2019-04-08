@@ -17,22 +17,26 @@ namespace ThemePark
             MANAGED_BY = new HashSet<MANAGED_BY>();
             PERFORMED_BY = new HashSet<PERFORMED_BY>();
             SOLD_BY = new HashSet<SOLD_BY>();
-            Rides = new HashSet<Ride>();
+            TENDED_BY = new HashSet<TENDED_BY>();
         }
 
         [Key]
         public long EmployeeID { get; set; }
 
         [StringLength(15)]
+        [Display(Name = "First Name")]
         public string FirstName { get; set; }
 
         [StringLength(15)]
+        [Display(Name = "Middle Name")]
         public string MiddleName { get; set; }
 
         [StringLength(15)]
+        [Display(Name = "Last Name")]
         public string LastName { get; set; }
 
         [StringLength(50)]
+        [Display(Name = "Street Address")]
         public string StreetAddress { get; set; }
 
         [StringLength(20)]
@@ -42,18 +46,22 @@ namespace ThemePark
         public string City { get; set; }
 
         [StringLength(5)]
+        [Display(Name = "Zip Code")]
         public string ZipCode { get; set; }
 
         [StringLength(12)]
+        [Display(Name = "Phone Number")]
         public string PhoneNumber { get; set; }
 
         [Column(TypeName = "date")]
+        [Display(Name = "Date of Birth")]
         public DateTime? DateOfBirth { get; set; }
 
         [StringLength(1)]
         public string Sex { get; set; }
 
         [StringLength(20)]
+        [Display(Name = "Job Title")]
         public string JobTitle { get; set; }
 
         public long? DepartmentID { get; set; }
@@ -76,6 +84,6 @@ namespace ThemePark
         public virtual ICollection<SOLD_BY> SOLD_BY { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Ride> Rides { get; set; }
+        public virtual ICollection<TENDED_BY> TENDED_BY { get; set; }
     }
 }

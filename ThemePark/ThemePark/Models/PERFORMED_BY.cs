@@ -19,6 +19,7 @@ namespace ThemePark
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public long EmployeeID { get; set; }
 
+        [Display(Name ="Number of hours took to complete")]
         public int? ManHours { get; set; }
 
         public virtual Maintenance Maintenance { get; set; }

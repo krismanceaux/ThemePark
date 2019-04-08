@@ -9,6 +9,7 @@ namespace ThemePark.DAL
     {
         public static string RedirectToHomeURL = "~/Home/Index";
         public static string AccessLevel = "";
+        public static long TicketNumber;
         public static string Username
         {
             set

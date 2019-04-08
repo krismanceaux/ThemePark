@@ -1,0 +1,63 @@
+﻿@model IEnumerable<ThemePark.Maintenance>
+
+@{
+    ViewBag.Title = "CurrentMaintenance";
+}
+
+<h2>CurrentMaintenance</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MaintCode1.MaintType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ride.RideName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MaintDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CorrectiveAction)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateAdded)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateFixed)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaintCode1.MaintType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ride.RideName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaintDescription)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CorrectiveAction)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateAdded)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateFixed)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MaintenanceID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MaintenanceID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MaintenanceID })
+        </td>
+    </tr>
+}
+
+</table>

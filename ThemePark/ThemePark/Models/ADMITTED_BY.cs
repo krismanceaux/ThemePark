@@ -22,8 +22,8 @@ namespace ThemePark
         [Column(TypeName = "date")]
         public DateTime? AdmissionsDate { get; set; }
 
-        public virtual ParkEmployee ParkEmployee { get; set; }
-
         public virtual Ticket Ticket { get; set; }
+
+        public virtual ParkEmployee ParkEmployee { get; set; }
     }
 }
