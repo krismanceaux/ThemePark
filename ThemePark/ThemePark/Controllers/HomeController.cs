@@ -41,15 +41,39 @@ namespace ThemePark.Controllers
         [AuthAttribute]
         public ActionResult SPH_Profile()
         {
-            if(ApplicationSession.Username == "" || ApplicationSession.Username == null)
-            {
-                ApplicationSession.AccessLevel = "SPHProfileDenied";
-            }
+            if (ApplicationSession.Username == "" || ApplicationSession.Username == null)
+                {
+                    ApplicationSession.AccessLevel = "SPHProfileDenied";
+                }
 
             if (ApplicationSession.AccessLevel == "SPH")
-                return View();
+            {
+               
+                SPHLogin login = db.SPHLogins.Single(x => x.LoginEmail == ApplicationSession.Username);
+                SeasonPassHolder sPHolder = db.SeasonPassHolders.Find(login.SPH_ID);
+
+                if (sPHolder == null)
+                {
+                    return HttpNotFound();
+                }
+                return View(sPHolder);
+            }
             else
                 return Redirect(ApplicationSession.RedirectToHomeURL);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [AuthAttribute]
+        public ActionResult SPH_Profile([Bind(Include = "StreetAddress,CityOfAddress,StateOfAddress,ZipCode,FirstName,LastName,MiddleName,TicketNumber")] SeasonPassHolder sPHolder)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(sPHolder).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("SPH_Profile");
+            }
+            return View(sPHolder);
         }
 
         [AuthAttribute]

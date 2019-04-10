@@ -329,6 +329,11 @@
     <Content Include="Views\TENDED_BY\Details.cshtml" />
     <Content Include="Views\TENDED_BY\Edit.cshtml" />
     <Content Include="Views\TENDED_BY\Index.cshtml" />
+    <Content Include="Views\SPHProfile\Create.cshtml" />
+    <Content Include="Views\SPHProfile\Delete.cshtml" />
+    <Content Include="Views\SPHProfile\Details.cshtml" />
+    <Content Include="Views\SPHProfile\Edit.cshtml" />
+    <Content Include="Views\SPHProfile\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
