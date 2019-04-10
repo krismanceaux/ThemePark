@@ -20,24 +20,31 @@ namespace ThemePark
         public long SPH_ID { get; set; }
 
         [StringLength(30)]
+        [Display(Name = "Street Address")]
         public string StreetAddress { get; set; }
 
         [StringLength(15)]
+        [Display(Name = "City")]
         public string CityOfAddress { get; set; }
 
         [StringLength(15)]
+        [Display(Name = "State")]
         public string StateOfAddress { get; set; }
 
         [StringLength(5)]
+        [Display(Name = "Zip Code")]
         public string ZipCode { get; set; }
 
         [StringLength(15)]
+        [Display(Name = "First Name")]
         public string FirstName { get; set; }
 
         [StringLength(15)]
+        [Display(Name = "Last Name")]
         public string LastName { get; set; }
 
         [StringLength(15)]
+        [Display(Name = "Middle Name")]
         public string MiddleName { get; set; }
 
         public long? TicketNumber { get; set; }
