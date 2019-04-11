@@ -125,6 +125,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\ADMITTED_BYController.cs" />
     <Compile Include="Migrations\201904101511567_init.cs" />
     <Compile Include="Migrations\201904101511567_init.Designer.cs">
       <DependentUpon>201904101511567_init.cs</DependentUpon>
@@ -334,6 +335,11 @@
     <Content Include="Views\SPHProfile\Details.cshtml" />
     <Content Include="Views\SPHProfile\Edit.cshtml" />
     <Content Include="Views\SPHProfile\Index.cshtml" />
+    <Content Include="Views\ADMITTED_BY\Create.cshtml" />
+    <Content Include="Views\ADMITTED_BY\Delete.cshtml" />
+    <Content Include="Views\ADMITTED_BY\Details.cshtml" />
+    <Content Include="Views\ADMITTED_BY\Edit.cshtml" />
+    <Content Include="Views\ADMITTED_BY\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
