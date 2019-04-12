@@ -126,6 +126,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\ADMITTED_BYController.cs" />
+    <Compile Include="Controllers\PERMITsController.cs" />
+    <Compile Include="Controllers\SOLD_BYController.cs" />
     <Compile Include="Migrations\201904101511567_init.cs" />
     <Compile Include="Migrations\201904101511567_init.Designer.cs">
       <DependentUpon>201904101511567_init.cs</DependentUpon>
@@ -340,6 +342,16 @@
     <Content Include="Views\ADMITTED_BY\Details.cshtml" />
     <Content Include="Views\ADMITTED_BY\Edit.cshtml" />
     <Content Include="Views\ADMITTED_BY\Index.cshtml" />
+    <Content Include="Views\PERMITs\Create.cshtml" />
+    <Content Include="Views\PERMITs\Delete.cshtml" />
+    <Content Include="Views\PERMITs\Details.cshtml" />
+    <Content Include="Views\PERMITs\Edit.cshtml" />
+    <Content Include="Views\PERMITs\Index.cshtml" />
+    <Content Include="Views\SOLD_BY\Create.cshtml" />
+    <Content Include="Views\SOLD_BY\Delete.cshtml" />
+    <Content Include="Views\SOLD_BY\Details.cshtml" />
+    <Content Include="Views\SOLD_BY\Edit.cshtml" />
+    <Content Include="Views\SOLD_BY\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
