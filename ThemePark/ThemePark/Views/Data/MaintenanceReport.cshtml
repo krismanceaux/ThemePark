@@ -1,11 +1,9 @@
 ﻿@model ThemePark.ViewModels.MaintenanceVM
-
 @{
     ViewBag.Title = "MaintenanceReport";
+    Layout = "~/Views/Shared/Manager_Layout.cshtml";
 }
-
 <h2>MaintenanceReport</h2>
-
 <table class="table">
     <tr>
         <th>
@@ -23,11 +21,9 @@
         <th>
             @Html.DisplayNameFor(model => model.CurrentNumUnscheduled)
         </th>
-
         <th></th>
     </tr>
 
-   
     <tr>
         <td>
             @Html.DisplayFor(model => model.AvgNumRidesInop)
@@ -44,12 +40,10 @@
         <td>
             @Html.DisplayFor(model => model.CurrentNumUnscheduled)
         </td>
-        
+
     </tr>
-    
 
 </table>
-
 <table class="table">
     <tr>
         <th>
@@ -67,10 +61,8 @@
         <th>
             @Html.DisplayNameFor(model => model.CurrentNumUnscheduled)
         </th>
-
         <th></th>
     </tr>
-
 
     <tr>
         <td>
@@ -88,8 +80,6 @@
         <td>
             @Html.DisplayFor(model => model.CurrentNumUnscheduled)
         </td>
-
     </tr>
-
 
 </table>s
