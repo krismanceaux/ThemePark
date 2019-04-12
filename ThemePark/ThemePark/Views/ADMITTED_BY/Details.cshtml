@@ -1,0 +1,42 @@
+﻿@model ThemePark.ADMITTED_BY
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ADMITTED_BY</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ParkEmployee.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ParkEmployee.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ticket.TicketNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ticket.TicketNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AdmissionsDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AdmissionsDate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

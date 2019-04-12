@@ -125,14 +125,21 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\TENDED_BYController.cs" />
-    <Compile Include="Migrations\201904071928527_init.cs" />
-    <Compile Include="Migrations\201904071928527_init.Designer.cs">
-      <DependentUpon>201904071928527_init.cs</DependentUpon>
+    <Compile Include="Controllers\ADMITTED_BYController.cs" />
+    <Compile Include="Migrations\201904101511567_init.cs" />
+    <Compile Include="Migrations\201904101511567_init.Designer.cs">
+      <DependentUpon>201904101511567_init.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ADMITTED_BY.cs" />
     <Compile Include="Models\Concession.cs" />
+    <Compile Include="Controllers\TENDED_BYController.cs" />
+    <Compile Include="Models\Department.cs" />
+    <Compile Include="Models\DependentPassHolder.cs" />
+    <Compile Include="Models\EmployeeLogin.cs" />
+    <Compile Include="Models\MaintCode.cs" />
+    <Compile Include="Models\Maintenance.cs" />
+    <Compile Include="Models\MANAGED_BY.cs" />
     <Compile Include="Controllers\ConcessionsController.cs" />
     <Compile Include="Controllers\DependentPassHoldersController.cs" />
     <Compile Include="Controllers\EmployeeLoginsController.cs" />
@@ -142,9 +149,6 @@
     <Compile Include="Controllers\SPHLoginsController.cs" />
     <Compile Include="Controllers\TicketCodesController.cs" />
     <Compile Include="Controllers\TicketsController.cs" />
-    <Compile Include="Models\Department.cs" />
-    <Compile Include="Models\DependentPassHolder.cs" />
-    <Compile Include="Models\EmployeeLogin.cs" />
     <Compile Include="Enums\MaintCodes.cs" />
     <Compile Include="Enums\TicketCodes.cs" />
     <Compile Include="AuthData\AuthAttribute.cs" />
@@ -160,9 +164,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\MaintCode.cs" />
-    <Compile Include="Models\Maintenance.cs" />
-    <Compile Include="Models\MANAGED_BY.cs" />
     <Compile Include="Models\ParkEmployee.cs" />
     <Compile Include="Models\PERFORMED_BY.cs" />
     <Compile Include="Models\PERMIT.cs" />
@@ -334,6 +335,11 @@
     <Content Include="Views\SPHProfile\Details.cshtml" />
     <Content Include="Views\SPHProfile\Edit.cshtml" />
     <Content Include="Views\SPHProfile\Index.cshtml" />
+    <Content Include="Views\ADMITTED_BY\Create.cshtml" />
+    <Content Include="Views\ADMITTED_BY\Delete.cshtml" />
+    <Content Include="Views\ADMITTED_BY\Details.cshtml" />
+    <Content Include="Views\ADMITTED_BY\Edit.cshtml" />
+    <Content Include="Views\ADMITTED_BY\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -351,8 +357,8 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201904071928527_init.resx">
-      <DependentUpon>201904071928527_init.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201904101511567_init.resx">
+      <DependentUpon>201904101511567_init.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

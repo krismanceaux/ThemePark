@@ -33,6 +33,8 @@ namespace ThemePark
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            Database.SetInitializer<TPContext>(null);
+
             modelBuilder.Entity<Concession>()
                 .Property(e => e.ItemPrice)
                 .HasPrecision(10, 4);

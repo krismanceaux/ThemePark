@@ -13,7 +13,7 @@ namespace ThemePark.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201904071928527_init"; }
+            get { return "201904101511567_init"; }
         }
         
         string IMigrationMetadata.Source

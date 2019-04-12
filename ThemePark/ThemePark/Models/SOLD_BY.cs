@@ -19,8 +19,9 @@ namespace ThemePark
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public long EmployeeID { get; set; }
 
-        [Column(TypeName = "date")]
-        public DateTime? DateSold { get; set; }
+        [Key]
+        [Column(Order = 2)]
+        public DateTime DateSold { get; set; }
 
         public virtual Concession Concession { get; set; }
 
