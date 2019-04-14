@@ -11,15 +11,64 @@
         <th>
             @Html.DisplayNameFor(model => model.DailyTotal)
         </th>
+        
+        <th></th>
+    </tr>
+    <tr>
+        <td>
+            @Html.DisplayFor(model => model.DailyTotal)
+        </td>
+    </tr>
+</table>
+
+<table class="table">
+    <tr>
         <th>
             @Html.DisplayNameFor(model => model.WeeklyTotal)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WeeklyAvg)
+        </th>
+
+        <th></th>
+    </tr>
+    <tr>
+        <th>
+            @Html.DisplayFor(model => model.WeeklyTotal)
+        </th>
+        <th>
+            @Html.DisplayFor(model => model.WeeklyAvg)
+        </th>
+
+        <th></th>
+    </tr>
+</table>
+
+<table class="table">
+    <tr>
         <th>
             @Html.DisplayNameFor(model => model.MonthlyTotal)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.MonthlyAvg)
         </th>
+
+        <th></th>
+    </tr>
+    <tr>
+        <th>
+            @Html.DisplayFor(model => model.MonthlyTotal)
+        </th>
+        <th>
+            @Html.DisplayFor(model => model.MonthlyAvg)
+        </th>
+
+        <th></th>
+    </tr>
+</table>
+
+<table class="table">
+    <tr>
         <th>
             @Html.DisplayNameFor(model => model.YearlyTotal)
         </th>
@@ -29,30 +78,15 @@
 
         <th></th>
     </tr>
-
-
     <tr>
-        <td>
-            @Html.DisplayFor(model => model.DailyTotal)
-        </td>
-        <td>
-            @Html.DisplayFor(model => model.WeeklyTotal)
-        </td>
-        <td>
-            @Html.DisplayFor(model => model.MonthlyTotal)
-        </td>
-        <td>
-            @Html.DisplayFor(model => model.MonthlyAvg)
-        </td>
-        <td>
+        <th>
             @Html.DisplayFor(model => model.YearlyTotal)
-        </td>
+        </th>
         <th>
             @Html.DisplayFor(model => model.YearlyAvg)
         </th>
 
+        <th></th>
     </tr>
-
-
 </table>
 

@@ -37,37 +37,48 @@ namespace ThemePark.Controllers
         [HttpGet]
         public ActionResult AdmissionsReport()
         {
-            var AdmitVM = new AdmissionsVM();
-
-            //Create Dropdown list to chose what month it is?
-            int year = DateTime.Now.Year;
-            int month = DateTime.Now.Month;
-            int day = DateTime.Now.Day;
-
-            //Daily
-            AdmitVM.DailyTotal = db.ADMITTED_BY.Count(m => m.AdmissionsDate.Value.Day == day);
-
-            //Weekly
-            int weekno = CultureInfo.InvariantCulture.Calendar.GetWeekOfYear(DateTime.Now, CalendarWeekRule.FirstDay, DayOfWeek.Monday);
-            AdmitVM.WeeklyTotal = db.ADMITTED_BY.ToList().Count
-                (m => CultureInfo.InvariantCulture.Calendar.GetWeekOfYear
-                (m.AdmissionsDate.Value, CalendarWeekRule.FirstDay, DayOfWeek.Monday) == weekno);
-
-            //Monthly
-            int average = 0;
-            for (int i = 1; i <= day; i++)
+            if (ApplicationSession.AccessLevel == "Manager")
             {
-                int daily = db.ADMITTED_BY.Count(m => m.AdmissionsDate.Value.Month == month && m.AdmissionsDate.Value.Year == year && m.AdmissionsDate.Value.Day == i);
-                average = average + daily;
+                var AdmitVM = new AdmissionsVM();
+
+                //Create Dropdown list to chose what month it is?
+                int year = DateTime.Now.Year;
+                int month = DateTime.Now.Month;
+                int day = DateTime.Now.Day;
+
+                //Daily
+                AdmitVM.DailyTotal = db.ADMITTED_BY.Count(m => m.AdmissionsDate.Value.Day == day);
+
+                //Weekly
+                int weekno = CultureInfo.InvariantCulture.Calendar.GetWeekOfYear(DateTime.Now, CalendarWeekRule.FirstDay, DayOfWeek.Monday);
+                AdmitVM.WeeklyTotal = db.ADMITTED_BY.ToList().Count
+                    (m => CultureInfo.InvariantCulture.Calendar.GetWeekOfYear
+                    (m.AdmissionsDate.Value, CalendarWeekRule.FirstDay, DayOfWeek.Monday) == weekno);
+                int WeekDay = (((int)DateTime.Today.DayOfWeek + 6) % 7) + 1;
+                AdmitVM.WeeklyAvg = AdmitVM.WeeklyTotal / WeekDay;
+
+                //Monthly
+                ///int average = 0;
+                /*
+                for (int i = 1; i <= day; i++)
+                {
+                    int daily = db.ADMITTED_BY.Count(m => m.AdmissionsDate.Value.Month == month && m.AdmissionsDate.Value.Year == year && m.AdmissionsDate.Value.Day == i);
+                    average = average + daily;
+                }
+                */
+                AdmitVM.MonthlyTotal = db.ADMITTED_BY.Count(m => m.AdmissionsDate.Value.Month == month && m.AdmissionsDate.Value.Year == year);
+                AdmitVM.MonthlyAvg = AdmitVM.MonthlyTotal / day;
+
+                //Yearly
+                AdmitVM.YearlyTotal = db.ADMITTED_BY.Count(m => m.AdmissionsDate.Value.Year == year);
+                AdmitVM.YearlyAvg = db.ADMITTED_BY.Count(m => m.AdmissionsDate.Value.Year == year) / DateTime.Today.DayOfYear;
+
+                return View(AdmitVM);
             }
-            AdmitVM.MonthlyTotal = db.ADMITTED_BY.Count(m => m.AdmissionsDate.Value.Month == month && m.AdmissionsDate.Value.Year == year);
-            AdmitVM.MonthlyAvg = average / day;
-
-            //Yearly
-            AdmitVM.YearlyTotal = db.ADMITTED_BY.Count(m => m.AdmissionsDate.Value.Year == year);
-            AdmitVM.YearlyAvg = db.ADMITTED_BY.Count(m => m.AdmissionsDate.Value.Year == year) / DateTime.Today.DayOfYear;
-
-            return View(AdmitVM);
+            else
+            {
+                return Redirect(ApplicationSession.RedirectToHomeURL);
+            }
         }
 
         //Maintenance Report Page
