@@ -132,6 +132,94 @@
     <Compile Include="Migrations\201904101511567_init.Designer.cs">
       <DependentUpon>201904101511567_init.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201904131920568_PopTickets.cs" />
+    <Compile Include="Migrations\201904131920568_PopTickets.Designer.cs">
+      <DependentUpon>201904131920568_PopTickets.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904132017181_PopTickets2.cs" />
+    <Compile Include="Migrations\201904132017181_PopTickets2.Designer.cs">
+      <DependentUpon>201904132017181_PopTickets2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904132059593_PopADMITTED_BY.cs" />
+    <Compile Include="Migrations\201904132059593_PopADMITTED_BY.Designer.cs">
+      <DependentUpon>201904132059593_PopADMITTED_BY.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904132110434_PopADMITTED_BYandTicket.cs" />
+    <Compile Include="Migrations\201904132110434_PopADMITTED_BYandTicket.Designer.cs">
+      <DependentUpon>201904132110434_PopADMITTED_BYandTicket.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904132115057_PopADMITTED_BY2.cs" />
+    <Compile Include="Migrations\201904132115057_PopADMITTED_BY2.Designer.cs">
+      <DependentUpon>201904132115057_PopADMITTED_BY2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904132130385_PopADMITTED_BY3.cs" />
+    <Compile Include="Migrations\201904132130385_PopADMITTED_BY3.Designer.cs">
+      <DependentUpon>201904132130385_PopADMITTED_BY3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904132145311_PopADMITTED_BY4.cs" />
+    <Compile Include="Migrations\201904132145311_PopADMITTED_BY4.Designer.cs">
+      <DependentUpon>201904132145311_PopADMITTED_BY4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904132159441_PopADMITTED_BY5.cs" />
+    <Compile Include="Migrations\201904132159441_PopADMITTED_BY5.Designer.cs">
+      <DependentUpon>201904132159441_PopADMITTED_BY5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904132202351_PopADMITTED_BY6.cs" />
+    <Compile Include="Migrations\201904132202351_PopADMITTED_BY6.Designer.cs">
+      <DependentUpon>201904132202351_PopADMITTED_BY6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904132240502_PopADMITTED_BY7.cs" />
+    <Compile Include="Migrations\201904132240502_PopADMITTED_BY7.Designer.cs">
+      <DependentUpon>201904132240502_PopADMITTED_BY7.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904140051110_UpdateKeyInPERMITS.cs" />
+    <Compile Include="Migrations\201904140051110_UpdateKeyInPERMITS.Designer.cs">
+      <DependentUpon>201904140051110_UpdateKeyInPERMITS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904140143095_PopPermits.cs" />
+    <Compile Include="Migrations\201904140143095_PopPermits.Designer.cs">
+      <DependentUpon>201904140143095_PopPermits.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904140409014_poppermits2.cs" />
+    <Compile Include="Migrations\201904140409014_poppermits2.Designer.cs">
+      <DependentUpon>201904140409014_poppermits2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904140418258_poppermits3.cs" />
+    <Compile Include="Migrations\201904140418258_poppermits3.Designer.cs">
+      <DependentUpon>201904140418258_poppermits3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904140431032_poppermits4.cs" />
+    <Compile Include="Migrations\201904140431032_poppermits4.Designer.cs">
+      <DependentUpon>201904140431032_poppermits4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904140431568_poppermits5.cs" />
+    <Compile Include="Migrations\201904140431568_poppermits5.Designer.cs">
+      <DependentUpon>201904140431568_poppermits5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904140434311_poppermits6.cs" />
+    <Compile Include="Migrations\201904140434311_poppermits6.Designer.cs">
+      <DependentUpon>201904140434311_poppermits6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904140518553_poppermits7.cs" />
+    <Compile Include="Migrations\201904140518553_poppermits7.Designer.cs">
+      <DependentUpon>201904140518553_poppermits7.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904140535131_poppermits8.cs" />
+    <Compile Include="Migrations\201904140535131_poppermits8.Designer.cs">
+      <DependentUpon>201904140535131_poppermits8.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904140604536_updateTendedByKey.cs" />
+    <Compile Include="Migrations\201904140604536_updateTendedByKey.Designer.cs">
+      <DependentUpon>201904140604536_updateTendedByKey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904140645398_poptendedby.cs" />
+    <Compile Include="Migrations\201904140645398_poptendedby.Designer.cs">
+      <DependentUpon>201904140645398_poptendedby.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904140722441_popsoldby.cs" />
+    <Compile Include="Migrations\201904140722441_popsoldby.Designer.cs">
+      <DependentUpon>201904140722441_popsoldby.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ADMITTED_BY.cs" />
     <Compile Include="Models\Concession.cs" />
@@ -371,6 +459,72 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201904101511567_init.resx">
       <DependentUpon>201904101511567_init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904131920568_PopTickets.resx">
+      <DependentUpon>201904131920568_PopTickets.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904132017181_PopTickets2.resx">
+      <DependentUpon>201904132017181_PopTickets2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904132059593_PopADMITTED_BY.resx">
+      <DependentUpon>201904132059593_PopADMITTED_BY.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904132110434_PopADMITTED_BYandTicket.resx">
+      <DependentUpon>201904132110434_PopADMITTED_BYandTicket.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904132115057_PopADMITTED_BY2.resx">
+      <DependentUpon>201904132115057_PopADMITTED_BY2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904132130385_PopADMITTED_BY3.resx">
+      <DependentUpon>201904132130385_PopADMITTED_BY3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904132145311_PopADMITTED_BY4.resx">
+      <DependentUpon>201904132145311_PopADMITTED_BY4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904132159441_PopADMITTED_BY5.resx">
+      <DependentUpon>201904132159441_PopADMITTED_BY5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904132202351_PopADMITTED_BY6.resx">
+      <DependentUpon>201904132202351_PopADMITTED_BY6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904132240502_PopADMITTED_BY7.resx">
+      <DependentUpon>201904132240502_PopADMITTED_BY7.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904140051110_UpdateKeyInPERMITS.resx">
+      <DependentUpon>201904140051110_UpdateKeyInPERMITS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904140143095_PopPermits.resx">
+      <DependentUpon>201904140143095_PopPermits.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904140409014_poppermits2.resx">
+      <DependentUpon>201904140409014_poppermits2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904140418258_poppermits3.resx">
+      <DependentUpon>201904140418258_poppermits3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904140431032_poppermits4.resx">
+      <DependentUpon>201904140431032_poppermits4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904140431568_poppermits5.resx">
+      <DependentUpon>201904140431568_poppermits5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904140434311_poppermits6.resx">
+      <DependentUpon>201904140434311_poppermits6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904140518553_poppermits7.resx">
+      <DependentUpon>201904140518553_poppermits7.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904140535131_poppermits8.resx">
+      <DependentUpon>201904140535131_poppermits8.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904140604536_updateTendedByKey.resx">
+      <DependentUpon>201904140604536_updateTendedByKey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904140645398_poptendedby.resx">
+      <DependentUpon>201904140645398_poptendedby.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904140722441_popsoldby.resx">
+      <DependentUpon>201904140722441_popsoldby.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
