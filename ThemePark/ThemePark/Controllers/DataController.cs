@@ -38,11 +38,16 @@ namespace ThemePark.Controllers
         public ActionResult MaintenanceReport()
         {
             var maintVM = new MaintenanceVM();
+
+            int year = DateTime.Now.Year;
+            int month = DateTime.Now.Month;
+
             maintVM.AvgNumRidesInop = 0;
             maintVM.CurrentNumEmergency = db.Maintenances.Count(m => m.MaintCode == 4);
             maintVM.CurrentNumScheduled = db.Maintenances.Count(m => m.MaintCode == 2);
             maintVM.CurrentNumUnscheduled = db.Maintenances.Count(m => m.MaintCode == 3);
             maintVM.CurrentNumPeriodic = db.Maintenances.Count(m => m.MaintCode == 1);
+            maintVM.MonthlyAdmitted = db.ADMITTED_BY.Count(m => m.AdmissionsDate.Value.Month == month && m.AdmissionsDate.Value.Year == year);
 
             //retrieve info from DB and store in ViewModel to be displayed
             return View(maintVM);

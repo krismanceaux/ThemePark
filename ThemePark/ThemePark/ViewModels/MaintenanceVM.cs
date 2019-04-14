@@ -12,6 +12,8 @@ namespace ThemePark.ViewModels
         public int CurrentNumEmergency { get; set; }
         public int CurrentNumScheduled { get; set; }
         public int CurrentNumUnscheduled { get; set; }
+        public int MonthlyAdmitted { get; set; }
+        public int RequestedMonth { get; set; }
         // add all data we need from project description under
     }
 }
