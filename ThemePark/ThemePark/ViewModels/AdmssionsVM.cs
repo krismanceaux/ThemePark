@@ -31,6 +31,12 @@ namespace ThemePark.ViewModels
         [Display(Name = "Average Daily Adimssions for the Year")]
         public int YearlyAvg { get; set; }
 
+        [Display(Name = "Total Number of Rainouts")]
+        public int Rainouts { get; set; }
+
+        [Display(Name = "Rainouts for the Month")]
+        public int MonthlyRainouts { get; set; }
+
         [Display(Name = "Choose Month")]
         public int SelectedMonth { get; set; }
 

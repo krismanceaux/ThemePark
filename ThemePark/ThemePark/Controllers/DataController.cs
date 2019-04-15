@@ -116,7 +116,6 @@ namespace ThemePark.Controllers
                 //Create Dropdown list to chose what month it is?
                 int year = DateTime.Now.Year;
                 int month = DateTime.Now.Month;
-                //int month = AdmitVM.SelectedMonth;
                 //int day = DateTime.Now.Day;
                 int day = 13;
 
@@ -135,14 +134,6 @@ namespace ThemePark.Controllers
                 AdmitVM.WeeklyAvg = AdmitVM.WeeklyTotal / WeekDay;
 
                 //Monthly
-                ///int average = 0;
-                /*
-                for (int i = 1; i <= day; i++)
-                {
-                    int daily = db.ADMITTED_BY.Count(m => m.AdmissionsDate.Value.Month == month && m.AdmissionsDate.Value.Year == year && m.AdmissionsDate.Value.Day == i);
-                    average = average + daily;
-                }
-                */
                 AdmitVM.MonthlyTotal = db.ADMITTED_BY.Count(m => m.AdmissionsDate.Value.Month == month && m.AdmissionsDate.Value.Year == year);
                 AdmitVM.MonthlyAvg = AdmitVM.MonthlyTotal / day;
 
@@ -150,6 +141,36 @@ namespace ThemePark.Controllers
                 AdmitVM.YearlyTotal = db.ADMITTED_BY.Count(m => m.AdmissionsDate.Value.Year == year);
                 AdmitVM.YearlyAvg = db.ADMITTED_BY.Count(m => m.AdmissionsDate.Value.Year == year) / DateTime.Today.DayOfYear;
 
+                //Rainouts
+                int count = 0;
+                //Count Current Month
+                for (int i = 1; i <= day; i++)
+                {
+                    int DayCheck = db.ADMITTED_BY.Count(m => m.AdmissionsDate.Value.Month == month &&
+                    m.AdmissionsDate.Value.Day == i &&
+                    m.AdmissionsDate.Value.Year == year);
+                    if (DayCheck == 0)
+                    {
+                        count++;
+                    }
+                }
+                AdmitVM.MonthlyRainouts = count;
+
+                //Count Previous Months
+                for (int i = 1; i < month; i++)
+                {
+                    for (int j = 1; j <= DateTime.DaysInMonth(year, i); j++)
+                    {
+                        int DayCheck = db.ADMITTED_BY.Count(m => m.AdmissionsDate.Value.Month == i &&
+                        m.AdmissionsDate.Value.Day == j &&
+                        m.AdmissionsDate.Value.Year == year);
+                        if (DayCheck == 0)
+                        {
+                            count++;
+                        }
+                    }
+                }
+                AdmitVM.Rainouts = count;
                 return View(AdmitVM);
             }
             else
@@ -188,9 +209,67 @@ namespace ThemePark.Controllers
             //Yearly
             NewAdmit.YearlyTotal = db.ADMITTED_BY.Count(m => m.AdmissionsDate.Value.Year == year);
             NewAdmit.YearlyAvg = db.ADMITTED_BY.Count(m => m.AdmissionsDate.Value.Year == year) / DateTime.Today.DayOfYear;
-            
+
+            //Rainouts
+            int count = 0;
+            //Count Current Month
+            int DayCount;
+            //IF current month, go up to current day
+            if(month == DateTime.Now.Month)
+            {
+                DayCount = day;
+            }
+            else
+            {
+                DayCount = DateTime.DaysInMonth(year, month);
+            }
+
+            for (int i = 1; i <= DayCount; i++)
+            {
+                int DayCheck = db.ADMITTED_BY.Count(m => m.AdmissionsDate.Value.Month == month &&
+                m.AdmissionsDate.Value.Day == i &&
+                m.AdmissionsDate.Value.Year == year);
+                if (DayCheck == 0)
+                {
+                    count++;
+                }
+            }
+
+            NewAdmit.MonthlyRainouts = count;
+
+            //Need to reset count, so as not to double count a month accidentally
+            //Count Previous Months
+            month = DateTime.Now.Month;
+            count = 0;
+            for (int i = 1; i < month; i++)
+            {
+                for (int j = 1; j <= DateTime.DaysInMonth(year, i); j++)
+                {
+                    int DayCheck = db.ADMITTED_BY.Count(m => m.AdmissionsDate.Value.Month == i &&
+                    m.AdmissionsDate.Value.Day == j &&
+                    m.AdmissionsDate.Value.Year == year);
+                    if (DayCheck == 0)
+                    {
+                        count++;
+                    }
+                }
+            }
+            for (int i = 1; i <= day; i++)
+            {
+                int DayCheck = db.ADMITTED_BY.Count(m => m.AdmissionsDate.Value.Month == month &&
+                m.AdmissionsDate.Value.Day == i &&
+                m.AdmissionsDate.Value.Year == year);
+                if (DayCheck == 0)
+                {
+                    count++;
+                }
+            }
+            NewAdmit.Rainouts = count;
+
             return View(NewAdmit);
         }
+
+
 
         //Maintenance Report Page
         [HttpGet]
