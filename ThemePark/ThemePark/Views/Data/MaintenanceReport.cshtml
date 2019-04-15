@@ -68,8 +68,14 @@
 
 
 
-<img src=@Url.Action("MaintenanceGraphic", "Data")/>
-<img src=@Url.Action("MaintenanceGraphic2", "Data")/>
+<img src=@Url.Action("MaintenanceGraphic", "Data") />
+<img src=@Url.Action("MaintenanceGraphic2", "Data") />
+
+@using (Html.BeginForm("MaintenanceReport", "Data", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    @Html.DropDownListFor(model => model.SelectedMonth, Model.Months)
+    <input type="submit" value="Submit" />
+}
 
 <h3> ANGRY BUBBLE </h3>
 

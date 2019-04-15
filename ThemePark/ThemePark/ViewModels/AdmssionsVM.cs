@@ -10,6 +10,11 @@ namespace ThemePark.ViewModels
 {
     public class AdmissionsVM
     {
+        public AdmissionsVM()
+        {
+            SpikedMonths = new List<String>();
+        }
+
         [Display(Name = "Total Admissions for the Day")]
         public int DailyTotal { get; set; }
 
@@ -30,6 +35,18 @@ namespace ThemePark.ViewModels
 
         [Display(Name = "Average Daily Adimssions for the Year")]
         public int YearlyAvg { get; set; }
+
+        [Display(Name = "Average Monthly Admissions for the year")]
+        public int YearlyAvgPerMonth { get; set; }
+
+        [Display(Name = "Months Over the Average")]
+        public List<String> SpikedMonths { get; set; }
+
+        [Display(Name = "Total Number of Rainouts")]
+        public int Rainouts { get; set; }
+
+        [Display(Name = "Rainouts for the Month")]
+        public int MonthlyRainouts { get; set; }
 
         [Display(Name = "Choose Month")]
         public int SelectedMonth { get; set; }
@@ -62,5 +79,7 @@ namespace ThemePark.ViewModels
                 }, count: 1);
             }
         }
+
+        
     }
 }
