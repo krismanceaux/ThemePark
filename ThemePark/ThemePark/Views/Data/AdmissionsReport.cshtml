@@ -52,7 +52,9 @@
         <th>
             @Html.DisplayNameFor(model => model.MonthlyAvg)
         </th>
-
+        <th>
+            @Html.DisplayNameFor(model => model.SelectedMonth)
+        </th>
         <th></th>
     </tr>
     <tr>
@@ -61,6 +63,14 @@
         </th>
         <th>
             @Html.DisplayFor(model => model.MonthlyAvg)
+        </th>
+        <th>
+            @using (Html.BeginForm("AdmissionsReport", "Data", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            {
+                @Html.DropDownListFor(model => model.SelectedMonth, Model.Months)
+                <input type="submit" value="Submit" />
+            }
+
         </th>
 
         <th></th>

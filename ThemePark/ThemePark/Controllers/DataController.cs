@@ -44,6 +44,7 @@ namespace ThemePark.Controllers
                 //Create Dropdown list to chose what month it is?
                 int year = DateTime.Now.Year;
                 int month = DateTime.Now.Month;
+                //int month = AdmitVM.SelectedMonth;
                 int day = DateTime.Now.Day;
 
                 //Daily
@@ -79,6 +80,35 @@ namespace ThemePark.Controllers
             {
                 return Redirect(ApplicationSession.RedirectToHomeURL);
             }
+        }
+
+        [HttpPost]
+        public ActionResult AdmissionsReport(AdmissionsVM AdmitVM)
+        {
+            var NewAdmit = new AdmissionsVM();
+            int year = DateTime.Now.Year;
+            int month = AdmitVM.SelectedMonth;
+            int day = DateTime.Now.Day;
+            //Daily
+            NewAdmit.DailyTotal = db.ADMITTED_BY.Count(m => m.AdmissionsDate.Value.Day == day);
+
+            //Weekly
+            int weekno = CultureInfo.InvariantCulture.Calendar.GetWeekOfYear(DateTime.Now, CalendarWeekRule.FirstDay, DayOfWeek.Monday);
+            NewAdmit.WeeklyTotal = db.ADMITTED_BY.ToList().Count
+                (m => CultureInfo.InvariantCulture.Calendar.GetWeekOfYear
+                (m.AdmissionsDate.Value, CalendarWeekRule.FirstDay, DayOfWeek.Monday) == weekno);
+            int WeekDay = (((int)DateTime.Today.DayOfWeek + 6) % 7) + 1;
+            NewAdmit.WeeklyAvg = NewAdmit.WeeklyTotal / WeekDay;
+
+            //Monthly
+            NewAdmit.MonthlyTotal = db.ADMITTED_BY.Count(m => m.AdmissionsDate.Value.Month == month && m.AdmissionsDate.Value.Year == year);
+            NewAdmit.MonthlyAvg = NewAdmit.MonthlyTotal / day;
+
+            //Yearly
+            NewAdmit.YearlyTotal = db.ADMITTED_BY.Count(m => m.AdmissionsDate.Value.Year == year);
+            NewAdmit.YearlyAvg = db.ADMITTED_BY.Count(m => m.AdmissionsDate.Value.Year == year) / DateTime.Today.DayOfYear;
+
+            return View(NewAdmit);
         }
 
         //Maintenance Report Page

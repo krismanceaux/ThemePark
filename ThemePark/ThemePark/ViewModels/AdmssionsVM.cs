@@ -31,7 +31,9 @@ namespace ThemePark.ViewModels
         [Display(Name = "Average Daily Adimssions for the Year")]
         public int YearlyAvg { get; set; }
 
-        /* 
+        [Display(Name = "Choose Month")]
+        public int SelectedMonth { get; set; }
+
         public IEnumerable<SelectListItem> Months
         {
             get
@@ -46,6 +48,5 @@ namespace ThemePark.ViewModels
                 });
             }
         }
-        */
     }
 }
