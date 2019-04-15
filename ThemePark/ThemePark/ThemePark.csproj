@@ -126,14 +126,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\ADMITTED_BYController.cs" />
-
     <Compile Include="Controllers\PlanVisitController.cs" />
     <Compile Include="Controllers\ShopController.cs" />
     <Compile Include="Controllers\ThingsToDoController.cs" />
-
     <Compile Include="Controllers\PERMITsController.cs" />
     <Compile Include="Controllers\SOLD_BYController.cs" />
-
     <Compile Include="Migrations\201904101511567_init.cs" />
     <Compile Include="Migrations\201904101511567_init.Designer.cs">
       <DependentUpon>201904101511567_init.cs</DependentUpon>
@@ -280,6 +277,7 @@
     <Compile Include="ViewModels\EmployeeLoginVM.cs" />
     <Compile Include="ViewModels\EmployeeVM.cs" />
     <Compile Include="ViewModels\MaintenanceVM.cs" />
+    <Compile Include="ViewModels\RideReportVM.cs" />
     <Compile Include="ViewModels\SPH-VM.cs" />
     <Compile Include="ViewModels\SPHLoginVM.cs" />
   </ItemGroup>
@@ -294,6 +292,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Media\admissionsReport.jpg" />
     <Content Include="Media\AngryBubble.jpg" />
     <Content Include="Media\BottleWater.jpg" />
     <Content Include="Media\CarmelApple.jpg" />
@@ -302,17 +301,20 @@
     <Content Include="Media\CrustyTwizzler.jpg" />
     <Content Include="Media\datacenter.jpg" />
     <Content Include="Media\Employee.jpg" />
+    <Content Include="Media\employees.jpg" />
     <Content Include="Media\FerrisWheel.jpg" />
     <Content Include="Media\ferriswheelday3.jpg" />
     <Content Include="Media\files.jpg" />
     <Content Include="Media\FunnelCakes.jpg" />
     <Content Include="Media\LaggyConnection.jpg" />
     <Content Include="Media\maintenance.jpg" />
+    <Content Include="Media\maintReport.jpg" />
     <Content Include="Media\Map.JPG" />
     <Content Include="Media\Nachos.jpg" />
     <Content Include="Media\Parknight3.jpg" />
     <Content Include="Media\Pizza.jpg" />
     <Content Include="Media\Popcorn.jpg" />
+    <Content Include="Media\rideReport.jpg" />
     <Content Include="Media\rideswing1.jpg" />
     <Content Include="Media\rollercoaster3.jpg" />
     <Content Include="Media\silhouette.jpg" />
@@ -463,8 +465,6 @@
     <Content Include="Views\ADMITTED_BY\Edit.cshtml" />
     <Content Include="Views\ADMITTED_BY\Index.cshtml" />
     <Content Include="Views\Data\AdmissionsReport.cshtml" />
-
-
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Shared\Employee_Layout.cshtml" />
     <Content Include="Views\Shared\Manager_Layout.cshtml" />
@@ -498,7 +498,6 @@
     <Content Include="Views\Tickets\IndexS.cshtml" />
     <Content Include="Views\Tickets\EditS.cshtml" />
     <Content Include="Views\Tickets\CreateS.cshtml" />
-
     <Content Include="Views\PERMITs\Create.cshtml" />
     <Content Include="Views\PERMITs\Delete.cshtml" />
     <Content Include="Views\PERMITs\Details.cshtml" />
@@ -509,15 +508,23 @@
     <Content Include="Views\SOLD_BY\Details.cshtml" />
     <Content Include="Views\SOLD_BY\Edit.cshtml" />
     <Content Include="Views\SOLD_BY\Index.cshtml" />
+    <Content Include="Views\RideReport\Create.cshtml" />
+    <Content Include="Views\RideReport\Delete.cshtml" />
+    <Content Include="Views\RideReport\Details.cshtml" />
+    <Content Include="Views\RideReport\Edit.cshtml" />
+    <Content Include="Views\RideReport\Index.cshtml" />
+    <Content Include="Views\Data\RideReport.cshtml" />
+
     <Content Include="Views\Data\MaintenanceGraphic.cshtml" />
     <Content Include="Views\Data\MaintenanceGraphic2.cshtml" />
-
-
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Default\" />
+    <Folder Include="Views\IndividualRideReportVM\" />
+
     <Folder Include="Views\ParkInformation\" />
+
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
