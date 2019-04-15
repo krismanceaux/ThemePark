@@ -220,6 +220,10 @@
     <Compile Include="Migrations\201904140722441_popsoldby.Designer.cs">
       <DependentUpon>201904140722441_popsoldby.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201904150819151_AlterSPHLoginTableKey.cs" />
+    <Compile Include="Migrations\201904150819151_AlterSPHLoginTableKey.Designer.cs">
+      <DependentUpon>201904150819151_AlterSPHLoginTableKey.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ADMITTED_BY.cs" />
     <Compile Include="Models\Concession.cs" />
@@ -527,6 +531,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201904140722441_popsoldby.resx">
       <DependentUpon>201904140722441_popsoldby.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904150819151_AlterSPHLoginTableKey.resx">
+      <DependentUpon>201904150819151_AlterSPHLoginTableKey.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
