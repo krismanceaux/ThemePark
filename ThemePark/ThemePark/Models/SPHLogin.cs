@@ -10,6 +10,8 @@ namespace ThemePark
     public partial class SPHLogin
     {
         [Key]
+        public int Id { get; set; }
+
         [StringLength(40)]
         public string LoginEmail { get; set; }
 

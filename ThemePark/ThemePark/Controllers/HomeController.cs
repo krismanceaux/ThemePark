@@ -27,7 +27,20 @@ namespace ThemePark.Controllers
             return View();
         }
 
-        
+        public ActionResult IndexS(int? id)
+        {
+            if (id == 1)
+            {
+                if (ApplicationSession.Username != "")
+                {
+                    ApplicationSession.Username = "";
+                }
+            }
+            return View();
+        }
+
+
+
 
         [AuthAttribute]
         public ActionResult EmployeeHub()
@@ -37,6 +50,17 @@ namespace ThemePark.Controllers
             else
                 return Redirect(ApplicationSession.RedirectToHomeURL);
         }
+
+
+        [AuthAttribute]
+        public ActionResult EmployeeHubM()
+        {
+            if (ApplicationSession.AccessLevel == "Employee" || ApplicationSession.AccessLevel == "Manager")
+                return View();
+            else
+                return Redirect(ApplicationSession.RedirectToHomeURL);
+        }
+
 
         [AuthAttribute]
         public ActionResult SPH_Profile()
@@ -116,6 +140,49 @@ namespace ThemePark.Controllers
             return View(parkEmployee);
         }
 
+
+        [AuthAttribute]
+        public ActionResult EmployeeProfileM()
+        {
+
+            if (ApplicationSession.AccessLevel == "Employee" || ApplicationSession.AccessLevel == "Manager")
+            {
+                if (ApplicationSession.Username == null)
+                {
+                    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                }
+                EmployeeLogin login = db.EmployeeLogins.Single(x => x.LoginEmail == ApplicationSession.Username);
+                ParkEmployee parkEmployee = db.ParkEmployees.Find(login.EmployeeID);
+
+                if (parkEmployee == null)
+                {
+                    return HttpNotFound();
+                }
+
+                ViewBag.DepartmentID = new SelectList(db.Departments, "DepartmentID", "DName", parkEmployee.DepartmentID);
+                return View(parkEmployee);
+            }
+            else
+                return Redirect(ApplicationSession.RedirectToHomeURL);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [AuthAttribute]
+        public ActionResult EmployeeProfileM([Bind(Include = "EmployeeID,FirstName,MiddleName,LastName,StreetAddress,State,City,ZipCode,PhoneNumber,DateOfBirth,Sex,JobTitle,DepartmentID")] ParkEmployee parkEmployee)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(parkEmployee).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("EmployeeProfile");
+            }
+            //ViewBag.DepartmentID = new SelectList(db.Departments, "DepartmentID", "DName", parkEmployee.DepartmentID);
+            return View(parkEmployee);
+        }
+
+
+
         [AuthAttribute]
         public ActionResult ManagerHub()
         {
@@ -124,5 +191,10 @@ namespace ThemePark.Controllers
             else
                 return Redirect(ApplicationSession.RedirectToHomeURL);
         }
+
+
+
     }
 }
+
+

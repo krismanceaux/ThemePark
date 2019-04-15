@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
     <link href="https://fonts.googleapis.com/css?family=Rokkitt:400,500,700" rel="stylesheet">
@@ -11,55 +11,60 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a href="@Url.Action("Index", "Home")" class="navbar-brand"><i class="fas fa-home"></i></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Employees
+                    <a class="nav-link dropdown-toggle" href="#" style="color:#C71585" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        THINGS TO DO
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        @Html.ActionLink("Employee Home", "EmployeeHub", "Home", null, new { @class = "nav-link" })
-                        @Html.ActionLink("Profile", "EmployeeProfile", "Home", null, new { @class = "nav-link" })
-                        @Html.ActionLink("Maintenance", "Index", "Maintenance", null, new { @class = "nav-link" })
+                        @Html.ActionLink("TEXAS Coaster", "TEXAS_Coaster", "ThingsToDo", null, new { @class = "nav-link" })
+                        @Html.ActionLink("UH Ride", "UH_ride", "ThingsToDo", null, new { @class = "nav-link" })
+                        @Html.ActionLink("CS Train ", "CS_Train", "ThingsToDo", null, new { @class = "nav-link" })
+                        @Html.ActionLink("DBMS Drive ", "DBMS_Drive", "ThingsToDo", null, new { @class = "nav-link" })
+
                     </div>
                 </li>
-
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Management
+                    <a class="nav-link dropdown-toggle" href="#" style="color:#008080" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        PLAN VISIT
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        @Html.ActionLink("Management Home", "ManagerHub", "Home", null, new { @class = "nav-link" })
-                        @Html.ActionLink("Data Center", "Index", "Data", null, new { @class = "nav-link" })
-                       
+                        @Html.ActionLink("Park Map", "Park_Map", "PlanVisit", null, new { @class = "nav-link" })
+                        @Html.ActionLink("Event Calendar", "Calendar", "PlanVisit", null, new { @class = "nav-link" })
+
                     </div>
                 </li>
-
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Season Pass Holders
+                    <a class="nav-link dropdown-toggle" href="#" style="color:#FFA500" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        SHOP
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        @Html.ActionLink("Profile", "SPH_Profile", "Home", null, new { @class = "nav-link" })
-                       
+                        @Html.ActionLink("Food", "Food", "Shop", null, new { @class = "nav-link" })
+                        @Html.ActionLink("Drink", "Drink", "Shop", null, new { @class = "nav-link" })
                     </div>
                 </li>
-
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" style="color:#00CED1" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        PARK INFORMATION
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        @Html.ActionLink("News", "EmployeeHub", "Home", null, new { @class = "nav-link" })
+                        @Html.ActionLink("Notice", "EmployeeProfile", "Home", null, new { @class = "nav-link" })
+                        @Html.ActionLink("Useful Information", "Index", "Maintenance", null, new { @class = "nav-link" })
+                    </div>
+                </li>
             </ul>
             <ul class="navbar-nav ml-auto">
                 <li>@Html.ActionLink("Pass Holder Login", "Login", "SPHAccount", null, new { @class = "nav-link" })</li>
-                <li>@Html.ActionLink("Employee Login", "Login", "EmployeeAccount", null, new { @class = "nav-link" })</li>
-                <li>@Html.ActionLink("Logout", "Index", "Home", new { id = 1 }, new { @class = "nav-link ml-auto" })</li>
             </ul>
         </div>
-        
+
     </nav>
     <div class="body-content">
         @RenderBody()
@@ -68,7 +73,6 @@
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
         </footer>
     </div>
-
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)

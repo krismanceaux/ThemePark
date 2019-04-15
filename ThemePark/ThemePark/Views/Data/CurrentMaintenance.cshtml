@@ -2,6 +2,7 @@
 
 @{
     ViewBag.Title = "CurrentMaintenance";
+    Layout = "~/Views/Shared/ManagerE_Layout.cshtml";
 }
 
 <h2>CurrentMaintenance</h2>
@@ -32,32 +33,32 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.MaintCode1.MaintType)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Ride.RideName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MaintDescription)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CorrectiveAction)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DateAdded)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DateFixed)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.MaintenanceID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.MaintenanceID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.MaintenanceID })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaintCode1.MaintType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ride.RideName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaintDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CorrectiveAction)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateAdded)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateFixed)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.MaintenanceID }) |
+                @Html.ActionLink("Details", "Details", new { id=item.MaintenanceID }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.MaintenanceID })
+            </td>
+        </tr>
+    }
 
 </table>
