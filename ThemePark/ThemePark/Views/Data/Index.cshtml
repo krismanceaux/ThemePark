@@ -5,17 +5,49 @@
 }
 
 <h2>Index</h2>
-<div>
-    @Html.ActionLink("Unfinished Maintenance", "CurrentMaintenance")
-</div>
-<div>
-    @Html.ActionLink("Data Report", "MaintenanceReport")
-</div>
-<div>
-    @Html.ActionLink("Employee List", "Index", "ParkEmployees")
-</div>
 
-<div>
-    @Html.ActionLink("Admissions Report", "AdmissionsReport")
+
+
+@*content*@
+<div class="container">
+    <div class="row my-5 align-items-center">
+        <div class="col-sm-6 col-md-4">
+            <div class="card" style="width: 18rem;">
+                <img src=@Url.Content("~/Media/admissionsReport.jpg") class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Admissions Report</h5>
+                    <p class="card-text">Get an overall report of admissions and can select specific months.</p>
+                    @Html.ActionLink("Admissions Report", "AdmissionsReport", null, new { @class = "btn btn-primary" })
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-4">
+            <div class="card" style="width: 18rem;">
+                <img src=@Url.Content("~/Media/maintReport.jpg") class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Maintenance Report</h5>
+                    <p class="card-text">Get an overall report of maintenances with visual graphics. </p>
+                    @Html.ActionLink("Maintenance Report", "MaintenanceReport", null, new { @class = "btn btn-primary" })
+                   
+
+
+
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-4">
+            <div class="card" style="width: 18rem;">
+                <img src=@Url.Content("~/Media/rideReport.jpg") class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">RideReport</h5>
+                    <p class="card-text">Get an overall report on all rides and individual ride averages with visual graphics.</p>
+                    @Html.ActionLink("Ride Report", "RideReport", null, new { @class = "btn btn-primary" })
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
 </div>
 

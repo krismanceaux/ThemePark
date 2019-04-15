@@ -126,7 +126,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\ADMITTED_BYController.cs" />
+
     <Compile Include="Controllers\ParkInformationController.cs" />
+
     <Compile Include="Controllers\PlanVisitController.cs" />
     <Compile Include="Controllers\ShopController.cs" />
     <Compile Include="Controllers\ThingsToDoController.cs" />
@@ -278,6 +280,8 @@
     <Compile Include="ViewModels\EmployeeLoginVM.cs" />
     <Compile Include="ViewModels\EmployeeVM.cs" />
     <Compile Include="ViewModels\MaintenanceVM.cs" />
+    <Compile Include="ViewModels\RideGraphicsVM.cs" />
+    <Compile Include="ViewModels\RideReportVM.cs" />
     <Compile Include="ViewModels\SPH-VM.cs" />
     <Compile Include="ViewModels\SPHLoginVM.cs" />
   </ItemGroup>
@@ -292,6 +296,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Media\admissionsReport.jpg" />
     <Content Include="Media\AngryBubble.jpg" />
     <Content Include="Media\BottleWater.jpg" />
     <Content Include="Media\Brandon.jpg" />
@@ -301,6 +306,7 @@
     <Content Include="Media\CrustyTwizzler.jpg" />
     <Content Include="Media\datacenter.jpg" />
     <Content Include="Media\Employee.jpg" />
+    <Content Include="Media\employees.jpg" />
     <Content Include="Media\FerrisWheel.jpg" />
     <Content Include="Media\ferriswheelday3.jpg" />
     <Content Include="Media\files.jpg" />
@@ -311,11 +317,13 @@
     <Content Include="Media\Kris.jpg" />
     <Content Include="Media\LaggyConnection.jpg" />
     <Content Include="Media\maintenance.jpg" />
+    <Content Include="Media\maintReport.jpg" />
     <Content Include="Media\Map.JPG" />
     <Content Include="Media\Nachos.jpg" />
     <Content Include="Media\Parknight3.jpg" />
     <Content Include="Media\Pizza.jpg" />
     <Content Include="Media\Popcorn.jpg" />
+    <Content Include="Media\rideReport.jpg" />
     <Content Include="Media\rideswing1.jpg" />
     <Content Include="Media\rollercoaster3.jpg" />
     <Content Include="Media\silhouette.jpg" />
@@ -509,17 +517,32 @@
     <Content Include="Views\SOLD_BY\Details.cshtml" />
     <Content Include="Views\SOLD_BY\Edit.cshtml" />
     <Content Include="Views\SOLD_BY\Index.cshtml" />
+    <Content Include="Views\RideReport\Create.cshtml" />
+    <Content Include="Views\RideReport\Delete.cshtml" />
+    <Content Include="Views\RideReport\Details.cshtml" />
+    <Content Include="Views\RideReport\Edit.cshtml" />
+    <Content Include="Views\RideReport\Index.cshtml" />
+    <Content Include="Views\Data\RideReport.cshtml" />
     <Content Include="Views\Data\MaintenanceGraphic.cshtml" />
     <Content Include="Views\Data\MaintenanceGraphic2.cshtml" />
+
     <Content Include="Views\ParkInformation\AboutUs.cshtml" />
     <Content Include="Views\ParkInformation\AboutUsS.cshtml" />
     <Content Include="Views\ParkInformation\SocialMedia.cshtml" />
     <Content Include="Views\ParkInformation\SocialMediaS.cshtml" />
+
+    <Content Include="Views\Data\RideGraphic2.cshtml" />
+    <Content Include="Views\Data\RideGraphic.cshtml" />
+
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\AboutUs\" />
     <Folder Include="Views\Default\" />
+
+    <Folder Include="Views\ParkInformation\" />
+    <Folder Include="Views\RideGraphicsVM\" />
+
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

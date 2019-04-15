@@ -1,0 +1,403 @@
+﻿@model ThemePark.ViewModels.RideReportVM
+@{
+    ViewBag.Title = "RideReport";
+}
+
+<h2>Overall Ride Report</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DailyTotal)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.WeeklyTotal)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.ThisMonthlyTotal)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.YearlyTotal)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.WeeklyAvg)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.MonthlyAvg)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.YearlyAvg)
+        </th>
+        <th></th>
+    </tr>
+
+    <tr>
+        <td>
+            @Html.DisplayFor(model => model.DailyTotal)
+        </td>
+
+        <td>
+            @Html.DisplayFor(model => model.WeeklyTotal)
+        </td>
+
+        <td>
+            @Html.DisplayFor(model => model.ThisMonthlyTotal)
+        </td>
+
+        <td>
+            @Html.DisplayFor(model => model.YearlyTotal)
+        </td>
+
+        <td>
+            @Html.DisplayFor(model => model.WeeklyAvg)
+        </td>
+
+        <td>
+            @Html.DisplayFor(model => model.MonthlyAvg)
+        </td>
+
+        <td>
+            @Html.DisplayFor(model => model.YearlyAvg)
+        </td>
+    </tr>
+
+</table>
+
+<img src=@Url.Action("RideGraphic", "Data") />
+<img src=@Url.Action("RideGraphic2", "Data") />
+
+<h3>ANGRY BUBBLE</h3>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.AB_Permit)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AB_WeeklyAvg)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AB_MonthlyAvg)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AB_YearlyAvg)
+        </th>
+    </tr>
+    <tr>
+        <td>
+            @Html.DisplayFor(model => model.AB_Permit)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.AB_WeeklyAvg)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.AB_MonthlyAvg)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.AB_YearlyAvg)
+        </td>
+    </tr>
+</table>
+
+<h3>CRUSTY TWIZZLER</h3>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CT_Permit)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CT_WeeklyAvg)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CT_MonthlyAvg)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CT_YearlyAvg)
+        </th>
+    </tr>
+    <tr>
+        <td>
+            @Html.DisplayFor(model => model.CT_Permit)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.CT_WeeklyAvg)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.CT_MonthlyAvg)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.CT_YearlyAvg)
+        </td>
+    </tr>
+</table>
+
+<h3>FERRIS WHEEL</h3>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FW_Permit)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FW_WeeklyAvg)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FW_MonthlyAvg)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FW_YearlyAvg)
+        </th>
+    </tr>
+    <tr>
+        <td>
+            @Html.DisplayFor(model => model.FW_Permit)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.FW_WeeklyAvg)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.FW_MonthlyAvg)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.FW_YearlyAvg)
+        </td>
+    </tr>
+</table>
+
+<h3>LAGGY CONNECTION</h3>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.LC_Permit)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LC_WeeklyAvg)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LC_MonthlyAvg)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LC_YearlyAvg)
+        </th>
+    </tr>
+    <tr>
+        <td>
+            @Html.DisplayFor(model => model.LC_Permit)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.LC_WeeklyAvg)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.LC_MonthlyAvg)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.LC_YearlyAvg)
+        </td>
+    </tr>
+</table>
+
+<h3>TEXAS CYCLONE</h3>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TC_Permit)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TC_WeeklyAvg)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TC_MonthlyAvg)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TC_YearlyAvg)
+        </th>
+    </tr>
+    <tr>
+        <td>
+            @Html.DisplayFor(model => model.TC_Permit)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.TC_WeeklyAvg)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.TC_MonthlyAvg)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.TC_YearlyAvg)
+        </td>
+    </tr>
+</table>
+
+<h3>TEACUPS</h3>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Teacups_Permit)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Teacups_WeeklyAvg)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Teacups_MonthlyAvg)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Teacups_YearlyAvg)
+        </th>
+    </tr>
+    <tr>
+        <td>
+            @Html.DisplayFor(model => model.Teacups_Permit)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.Teacups_WeeklyAvg)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.Teacups_MonthlyAvg)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.Teacups_YearlyAvg)
+        </td>
+    </tr>
+</table>
+
+<h3>TEXAS TWISTER</h3>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TT_Permit)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TT_WeeklyAvg)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TT_MonthlyAvg)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TT_YearlyAvg)
+        </th>
+    </tr>
+    <tr>
+        <td>
+            @Html.DisplayFor(model => model.TT_Permit)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.TT_WeeklyAvg)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.TT_MonthlyAvg)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.TT_YearlyAvg)
+        </td>
+    </tr>
+</table>
+
+<h3>UNSECURE DATABASE</h3>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.UD_Permit)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UD_WeeklyAvg)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UD_MonthlyAvg)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UD_YearlyAvg)
+        </th>
+    </tr>
+    <tr>
+        <td>
+            @Html.DisplayFor(model => model.UD_Permit)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.UD_WeeklyAvg)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.UD_MonthlyAvg)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.UD_YearlyAvg)
+        </td>
+    </tr>
+</table>
+
+<h3>UHCS</h3>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.UHCS_Permit)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UHCS_WeeklyAvg)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UHCS_MonthlyAvg)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UHCS_YearlyAvg)
+        </th>
+    </tr>
+    <tr>
+        <td>
+            @Html.DisplayFor(model => model.UHCS_Permit)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.UHCS_WeeklyAvg)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.UHCS_MonthlyAvg)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.UHCS_YearlyAvg)
+        </td>
+    </tr>
+</table>
+
+<h3>UNPLUGGED TOASTER</h3>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.UT_Permit)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UT_WeeklyAvg)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UT_MonthlyAvg)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UT_YearlyAvg)
+        </th>
+    </tr>
+    <tr>
+        <td>
+            @Html.DisplayFor(model => model.UT_Permit)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.UT_WeeklyAvg)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.UT_MonthlyAvg)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.UT_YearlyAvg)
+        </td>
+    </tr>
+</table>

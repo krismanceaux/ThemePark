@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewBag.Title = "RideGraphic";
+}
+
+<h2>MaintenanceGraphic</h2>
+
+@{
+    var myChart = new Chart(width: 1000, height: 400)
+        .AddTitle("Ride Report")
+        //.SetXAxis(max: 5)
+
+        .AddSeries(
+
+            name: "Weekly Average",
+            chartType: "Column",
+            xValue: new[] { "Angry Bubble", "Crusty Twizzler", "Ferris Wheel", "Laggy Connection", "Texas Cyclone" },
+            yValues: new[] { ViewBag.AB_WeeklyAvg.ToString(), ViewBag.CT_WeeklyAvg.ToString(), ViewBag.FW_WeeklyAvg.ToString(),
+ViewBag.LC_WeeklyAvg.ToString(), ViewBag.TC_WeeklyAvg.ToString()  })
+        .AddSeries(
+            name: "Monthly Average",
+            chartType: "Column",
+            xValue: new[] { "Angry Bubble", "Crusty Twizzler", "Ferris Wheel", "Laggy Connection", "Texas Cyclone" },
+            yValues: new[] {ViewBag.AB_MonthlyAvg.ToString(), ViewBag.CT_MonthlyAvg.ToString(), ViewBag.FW_MonthlyAvg.ToString(),
+ViewBag.LC_MonthlyAvg.ToString(), ViewBag.TC_MonthlyAvg.ToString()  })
+         .AddSeries(
+            name: "Daily Average",
+            chartType: "Column",
+            xValue: new[] { "Angry Bubble", "Crusty Twizzler", "Ferris Wheel", "Laggy Connection", "Texas Cyclone" },
+            yValues: new[] { ViewBag.AB_YearlyAvg.ToString(), ViewBag.CT_YearlyAvg.ToString(), ViewBag.FW_YearlyAvg.ToString(),
+ViewBag.LC_YearlyAvg.ToString(), ViewBag.TC_YearlyAvg.ToString()  })
+        .AddLegend()
+        .Write();
+}
+
+
