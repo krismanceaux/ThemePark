@@ -440,6 +440,8 @@
     <Content Include="Views\SOLD_BY\Details.cshtml" />
     <Content Include="Views\SOLD_BY\Edit.cshtml" />
     <Content Include="Views\SOLD_BY\Index.cshtml" />
+    <Content Include="Views\Data\MaintenanceGraphic.cshtml" />
+    <Content Include="Views\Data\MaintenanceGraphic2.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

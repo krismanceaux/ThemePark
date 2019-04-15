@@ -4,12 +4,12 @@
     ViewBag.Title = "MaintenanceReport";
 }
 
-<h2>MaintenanceReport</h2>
+<h2 class="mb-3">Maintenance Requests Report</h2>
 
-<table class="table">
+<table class="table mb-5">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.AvgNumRidesInop)
+            @Html.DisplayNameFor(model => model.AvgMonthlyInop)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.CurrentNumEmergency)
@@ -27,10 +27,10 @@
         <th></th>
     </tr>
 
-   
+
     <tr>
         <td>
-            @Html.DisplayFor(model => model.AvgNumRidesInop)
+            @Html.DisplayFor(model => model.AvgMonthlyInop)
         </td>
         <td>
             @Html.DisplayFor(model => model.CurrentNumEmergency)
@@ -44,28 +44,47 @@
         <td>
             @Html.DisplayFor(model => model.CurrentNumUnscheduled)
         </td>
-        
+
     </tr>
-    
+
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.AvgWeeklyInop)
+        </th>
+    </tr>
+
+    <tr>
+        <td>
+            @Html.DisplayFor(model => model.AvgWeeklyInop)
+        </td>
+    </tr>
+
 
 </table>
 
-<table class="table">
+
+
+<img src=@Url.Action("MaintenanceGraphic", "Data")/>
+<img src=@Url.Action("MaintenanceGraphic2", "Data")/>
+
+<h3> ANGRY BUBBLE </h3>
+
+<table class="table mb-5">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.AvgNumRidesInop)
+            @Html.DisplayNameFor(model => model.AB_maint)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.CurrentNumEmergency)
+            @Html.DisplayNameFor(model => model.AB_Emergency)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.CurrentNumPeriodic)
+            @Html.DisplayNameFor(model => model.AB_Periodic)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.CurrentNumScheduled)
+            @Html.DisplayNameFor(model => model.AB_Scheduled)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.CurrentNumUnscheduled)
+            @Html.DisplayNameFor(model => model.AB_Unscheduled)
         </th>
 
         <th></th>
@@ -74,22 +93,442 @@
 
     <tr>
         <td>
-            @Html.DisplayFor(model => model.AvgNumRidesInop)
+            @Html.DisplayFor(model => model.AB_maint)
         </td>
         <td>
-            @Html.DisplayFor(model => model.CurrentNumEmergency)
+            @Html.DisplayFor(model => model.AB_Emergency)
         </td>
         <td>
-            @Html.DisplayFor(model => model.CurrentNumPeriodic)
+            @Html.DisplayFor(model => model.AB_Periodic)
         </td>
         <td>
-            @Html.DisplayFor(model => model.CurrentNumScheduled)
+            @Html.DisplayFor(model => model.AB_Scheduled)
         </td>
         <td>
-            @Html.DisplayFor(model => model.CurrentNumUnscheduled)
+            @Html.DisplayFor(model => model.AB_Unscheduled)
         </td>
 
     </tr>
 
 
-</table>s
+</table>
+
+<h3>CRUSTY TWIZZLER</h3>
+
+<table class="table mb-5">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CT_maint)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CT_Emergency)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CT_Periodic)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CT_Scheduled)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CT_Unscheduled)
+        </th>
+
+        <th></th>
+    </tr>
+
+
+    <tr>
+        <td>
+            @Html.DisplayFor(model => model.CT_maint)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.CT_Emergency)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.CT_Periodic)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.CT_Scheduled)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.CT_Unscheduled)
+        </td>
+
+    </tr>
+
+
+</table>
+
+
+<h3>FERRIS WHEEL</h3>
+
+<table class="table mb-5">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FW_maint)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FW_Emergency)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FW_Periodic)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FW_Scheduled)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FW_Unscheduled)
+        </th>
+
+        <th></th>
+    </tr>
+
+
+    <tr>
+        <td>
+            @Html.DisplayFor(model => model.FW_maint)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.FW_Emergency)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.FW_Periodic)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.FW_Scheduled)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.FW_Unscheduled)
+        </td>
+
+    </tr>
+
+
+</table>
+
+<h3>LAGGY CONNECTION</h3>
+
+<table class="table mb-5">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.LC_maint)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LC_Emergency)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LC_Periodic)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LC_Scheduled)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LC_Unscheduled)
+        </th>
+
+        <th></th>
+    </tr>
+
+
+    <tr>
+        <td>
+            @Html.DisplayFor(model => model.LC_maint)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.LC_Emergency)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.LC_Periodic)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.LC_Scheduled)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.LC_Unscheduled)
+        </td>
+
+    </tr>
+
+
+</table>
+
+
+<h3>TEXAS CYCLONE</h3>
+
+<table class="table mb-5">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TC_maint)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TC_Emergency)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TC_Periodic)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TC_Scheduled)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TC_Unscheduled)
+        </th>
+
+        <th></th>
+    </tr>
+
+
+    <tr>
+        <td>
+            @Html.DisplayFor(model => model.TC_maint)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.TC_Emergency)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.TC_Periodic)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.TC_Scheduled)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.TC_Unscheduled)
+        </td>
+
+    </tr>
+
+
+</table>
+
+<h3>TEACUPS</h3>
+
+<table class="table mb-5">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Teacups_maint)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Teacups_Emergency)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Teacups_Periodic)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Teacups_Scheduled)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Teacups_Unscheduled)
+        </th>
+
+        <th></th>
+    </tr>
+
+
+    <tr>
+        <td>
+            @Html.DisplayFor(model => model.Teacups_maint)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.Teacups_Emergency)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.Teacups_Periodic)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.Teacups_Scheduled)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.Teacups_Unscheduled)
+        </td>
+
+    </tr>
+
+
+</table>
+
+
+<h3>TEXAS TWISTER</h3>
+
+<table class="table mb-5">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TT_maint)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TT_Emergency)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TT_Periodic)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TT_Scheduled)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TT_Unscheduled)
+        </th>
+
+        <th></th>
+    </tr>
+
+
+    <tr>
+        <td>
+            @Html.DisplayFor(model => model.TT_maint)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.TT_Emergency)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.TT_Periodic)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.TT_Scheduled)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.TT_Unscheduled)
+        </td>
+
+    </tr>
+
+
+</table>
+
+
+<h3>UNSECURE DATABASE</h3>
+
+<table class="table mb-5">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.UD_maint)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UD_Emergency)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UD_Periodic)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UD_Scheduled)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UD_Unscheduled)
+        </th>
+
+        <th></th>
+    </tr>
+
+
+    <tr>
+        <td>
+            @Html.DisplayFor(model => model.UD_maint)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.UD_Emergency)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.UD_Periodic)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.UD_Scheduled)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.UD_Unscheduled)
+        </td>
+
+    </tr>
+
+
+</table>
+
+
+<h3>UHCS</h3>
+
+<table class="table mb-5">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.UHCS_maint)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UHCS_Emergency)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UHCS_Periodic)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UHCS_Scheduled)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UHCS_Unscheduled)
+        </th>
+
+        <th></th>
+    </tr>
+
+
+    <tr>
+        <td>
+            @Html.DisplayFor(model => model.UHCS_maint)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.UHCS_Emergency)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.UHCS_Periodic)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.UHCS_Scheduled)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.UHCS_Unscheduled)
+        </td>
+
+    </tr>
+
+
+</table>
+
+
+<h3>UNPLUGGED TOASTER</h3>
+
+<table class="table mb-5">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.UT_maint)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UT_Emergency)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UT_Periodic)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UT_Scheduled)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UT_Unscheduled)
+        </th>
+
+        <th></th>
+    </tr>
+
+
+    <tr>
+        <td>
+            @Html.DisplayFor(model => model.UT_maint)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.UT_Emergency)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.UT_Periodic)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.UT_Scheduled)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.UT_Unscheduled)
+        </td>
+
+    </tr>
+
+
+</table>
