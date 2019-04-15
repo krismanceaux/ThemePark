@@ -53,8 +53,15 @@ namespace ThemePark.Controllers
         {
             if (ModelState.IsValid)
             {
+                if (ticket.TicketCode == 1) ticket.Price = (decimal)12.00;
+                else if (ticket.TicketCode == 2) ticket.Price = (decimal)8.00;
+                else if (ticket.TicketCode == 3) ticket.Price = (decimal)10.00;
+                else if (ticket.TicketCode == 4) ticket.Price = (decimal)10.00;
+                else if (ticket.TicketCode == 5) ticket.Price = (decimal)40.00;
                 db.Tickets.Add(ticket);
                 db.SaveChanges();
+
+                
                 if (ticket.TicketCode == 5)
                 {
                     ApplicationSession.TicketNumber = ticket.TicketNumber;
@@ -67,6 +74,9 @@ namespace ThemePark.Controllers
             ViewBag.TicketCode = new SelectList(db.TicketCodes, "TicketCode1", "TicketType", ticket.TicketCode);
             return View(ticket);
         }
+
+        
+
 
         // GET: Tickets/Edit/5
         public ActionResult Edit(long? id)

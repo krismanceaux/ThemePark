@@ -1,0 +1,42 @@
+﻿@model ThemePark.PERMIT
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PERMIT</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Ride.RideName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ride.RideName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ticket.TicketNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ticket.TicketNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PTimeStamp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PTimeStamp)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
