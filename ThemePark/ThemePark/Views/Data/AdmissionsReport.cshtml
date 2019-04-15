@@ -101,6 +101,9 @@
         <th>
             @Html.DisplayNameFor(model => model.YearlyAvg)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.YearlyAvgPerMonth)
+        </th>
 
         <th></th>
     </tr>
@@ -111,8 +114,28 @@
         <th>
             @Html.DisplayFor(model => model.YearlyAvg)
         </th>
+        <th>
+            @Html.DisplayFor(model => model.YearlyAvgPerMonth)
+        </th>
 
         <th></th>
     </tr>
 </table>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SpikedMonths)
+        </th>
+    </tr>
+    <tr>
+        <td>
+            @foreach (var item in Model.SpikedMonths)
+            {
+                <ul>
+                    @Html.DisplayName(item)
+                </ul>
+            }
+        </td>
+    </tr>
 
+    </table>

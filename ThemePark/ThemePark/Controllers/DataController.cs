@@ -140,6 +140,18 @@ namespace ThemePark.Controllers
                 //Yearly
                 AdmitVM.YearlyTotal = db.ADMITTED_BY.Count(m => m.AdmissionsDate.Value.Year == year);
                 AdmitVM.YearlyAvg = db.ADMITTED_BY.Count(m => m.AdmissionsDate.Value.Year == year) / DateTime.Today.DayOfYear;
+                AdmitVM.YearlyAvgPerMonth = db.ADMITTED_BY.Count(m => m.AdmissionsDate.Value.Year == year) / DateTime.Today.Month;
+
+                //If (spiked month)
+                //AdmitVM.SpikedMonths.append(Month.tostring())
+                for (int i = 1; i <= month; i++)
+                {
+                    int MonthCount = db.ADMITTED_BY.Count(m => m.AdmissionsDate.Value.Year == year && m.AdmissionsDate.Value.Month == i);
+                    if (MonthCount > AdmitVM.YearlyAvgPerMonth)
+                    {
+                        AdmitVM.SpikedMonths.Add(CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(i));
+                    }
+                }
 
                 //Rainouts
                 int count = 0;
@@ -209,6 +221,16 @@ namespace ThemePark.Controllers
             //Yearly
             NewAdmit.YearlyTotal = db.ADMITTED_BY.Count(m => m.AdmissionsDate.Value.Year == year);
             NewAdmit.YearlyAvg = db.ADMITTED_BY.Count(m => m.AdmissionsDate.Value.Year == year) / DateTime.Today.DayOfYear;
+            NewAdmit.YearlyAvgPerMonth = db.ADMITTED_BY.Count(m => m.AdmissionsDate.Value.Year == year) / DateTime.Today.Month;
+
+            for (int i = 1; i <= DateTime.Now.Month; i++)
+            {
+                int MonthCount = db.ADMITTED_BY.Count(m => m.AdmissionsDate.Value.Year == year && m.AdmissionsDate.Value.Month == i);
+                if (MonthCount > NewAdmit.YearlyAvgPerMonth)
+                {
+                    NewAdmit.SpikedMonths.Add(CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(i));
+                }
+            }
 
             //Rainouts
             int count = 0;
