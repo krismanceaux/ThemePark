@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "MaintenanceGraphic2";
+}
+
+@{
+    var myChart2 = new Chart(width: 1000, height: 400)
+        .AddTitle("Maintenance Report")
+        //.SetXAxis(max: 5)
+
+        .AddSeries(
+
+            name: "Periodic",
+            chartType: "Column",
+            xValue: new[] { "Teacups", "Texas Twister", "Unsecure Database", "UHCS", "Unplugged Toaster" },
+            yValues: new[] { ViewBag.Teacups_Periodic.ToString(), ViewBag.TT_Periodic.ToString(), ViewBag.UD_Periodic.ToString(), ViewBag.UHCS_Periodic.ToString(), ViewBag.UT_Periodic.ToString() })
+        .AddSeries(
+            name: "Scheduled",
+            chartType: "Column",
+            xValue: new[] { "Teacups", "Texas Twister", "Unsecure Database", "UHCS", "Unplugged Toaster" },
+            yValues: new[] { ViewBag.Teacups_Scheduled.ToString(), ViewBag.TT_Scheduled.ToString(), ViewBag.UD_Scheduled.ToString(), ViewBag.UHCS_Scheduled.ToString(), ViewBag.UT_Scheduled.ToString() })
+         .AddSeries(
+            name: "Unscheduled",
+            chartType: "Column",
+            xValue: new[] { "Teacups", "Texas Twister", "Unsecure Database", "UHCS", "Unplugged Toaster" },
+            yValues: new[] { ViewBag.Teacups_Unscheduled.ToString(), ViewBag.TT_Unscheduled.ToString(), ViewBag.UD_Unscheduled.ToString(), ViewBag.UHCS_Unscheduled.ToString(), ViewBag.UT_Unscheduled.ToString() })
+             .AddSeries(
+            name: "Emergency",
+            chartType: "Column",
+            xValue: new[] { "Teacups", "Texas Twister", "Unsecure Database", "UHCS", "Unplugged Toaster" },
+            yValues: new[] { ViewBag.Teacups_Emergency.ToString(), ViewBag.TT_Emergency.ToString(), ViewBag.UD_Emergency.ToString(), ViewBag.UHCS_Emergency.ToString(), ViewBag.UT_Emergency.ToString() })
+         .AddLegend()
+            .Write();
+}
+

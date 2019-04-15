@@ -19,7 +19,9 @@ namespace ThemePark
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public long EmployeeID { get; set; }
 
-        [Column(TypeName = "date")]
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [Column(Order = 2, TypeName = "date")]
         public DateTime DateTended { get; set; }
 
         public virtual ParkEmployee ParkEmployee { get; set; }
