@@ -276,6 +276,7 @@
     <Compile Include="Models\Ticket.cs" />
     <Compile Include="Models\TicketCode.cs" />
     <Compile Include="DAL\TPContext.cs" />
+    <Compile Include="ViewModels\AdmssionsVM.cs" />
     <Compile Include="ViewModels\EmployeeLoginVM.cs" />
     <Compile Include="ViewModels\EmployeeVM.cs" />
     <Compile Include="ViewModels\MaintenanceVM.cs" />
@@ -461,6 +462,8 @@
     <Content Include="Views\ADMITTED_BY\Details.cshtml" />
     <Content Include="Views\ADMITTED_BY\Edit.cshtml" />
     <Content Include="Views\ADMITTED_BY\Index.cshtml" />
+    <Content Include="Views\Data\AdmissionsReport.cshtml" />
+
 
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Shared\Employee_Layout.cshtml" />
@@ -508,6 +511,7 @@
     <Content Include="Views\SOLD_BY\Index.cshtml" />
     <Content Include="Views\Data\MaintenanceGraphic.cshtml" />
     <Content Include="Views\Data\MaintenanceGraphic2.cshtml" />
+
 
   </ItemGroup>
   <ItemGroup>

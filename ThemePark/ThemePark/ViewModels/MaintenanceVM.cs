@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace ThemePark.ViewModels
 {
     public class MaintenanceVM
     {
+
         [Display(Name ="Monthly Average of Rides Inop.")]
         public int AvgMonthlyInop { get; set; }
 
@@ -15,6 +17,7 @@ namespace ThemePark.ViewModels
         public int AvgWeeklyInop { get; set; }
 
         [Display(Name = "Periodic")]
+
         public int CurrentNumPeriodic { get; set; }
         [Display(Name = "Emergency")]
         public int CurrentNumEmergency { get; set; }
@@ -23,6 +26,7 @@ namespace ThemePark.ViewModels
         [Display(Name = "Unscheduled")]
         public int CurrentNumUnscheduled { get; set; }
         // add all data we need from project description under
+
 
         [Display(Name = "Total")]
         public int TC_maint { get; set; }
@@ -133,5 +137,6 @@ namespace ThemePark.ViewModels
         public int AB_Periodic { get; set; }
         [Display(Name = "Emergency")]
         public int AB_Emergency { get; set; }
+
     }
 }

@@ -1,0 +1,102 @@
+﻿@model ThemePark.ViewModels.AdmissionsVM
+
+@{
+    ViewBag.Title = "AdmissionsReport";
+}
+
+<h2>Admissions Report</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DailyTotal)
+        </th>
+        
+        <th></th>
+    </tr>
+    <tr>
+        <td>
+            @Html.DisplayFor(model => model.DailyTotal)
+        </td>
+    </tr>
+</table>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.WeeklyTotal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WeeklyAvg)
+        </th>
+
+        <th></th>
+    </tr>
+    <tr>
+        <th>
+            @Html.DisplayFor(model => model.WeeklyTotal)
+        </th>
+        <th>
+            @Html.DisplayFor(model => model.WeeklyAvg)
+        </th>
+
+        <th></th>
+    </tr>
+</table>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MonthlyTotal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MonthlyAvg)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SelectedMonth)
+        </th>
+        <th></th>
+    </tr>
+    <tr>
+        <th>
+            @Html.DisplayFor(model => model.MonthlyTotal)
+        </th>
+        <th>
+            @Html.DisplayFor(model => model.MonthlyAvg)
+        </th>
+        <th>
+            @using (Html.BeginForm("AdmissionsReport", "Data", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            {
+                @Html.DropDownListFor(model => model.SelectedMonth, Model.Months)
+                <input type="submit" value="Submit" />
+            }
+
+        </th>
+
+        <th></th>
+    </tr>
+</table>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.YearlyTotal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.YearlyAvg)
+        </th>
+
+        <th></th>
+    </tr>
+    <tr>
+        <th>
+            @Html.DisplayFor(model => model.YearlyTotal)
+        </th>
+        <th>
+            @Html.DisplayFor(model => model.YearlyAvg)
+        </th>
+
+        <th></th>
+    </tr>
+</table>
+
