@@ -69,14 +69,6 @@ namespace ThemePark.Controllers
                 //Daily Permitted
                 rideVM.DailyTotal = db.PERMITS.Count(m => m.PTimeStamp.Value.Day == day);
 
-                //Weekly Permitted
-                int weekno = CultureInfo.InvariantCulture.Calendar.GetWeekOfYear(DateTime.Now, CalendarWeekRule.FirstDay, DayOfWeek.Monday);
-                rideVM.WeeklyTotal = db.PERMITS.ToList().Count
-                    (m => CultureInfo.InvariantCulture.Calendar.GetWeekOfYear
-                    (m.PTimeStamp.Value, CalendarWeekRule.FirstDay, DayOfWeek.Monday) == weekno);
-                int weekday = (((int)DateTime.Today.DayOfWeek + 6) % 7) + 1;
-                rideVM.WeeklyAvg = rideVM.WeeklyTotal / weekday;
-
                 //Monthly Permitted
                 rideVM.MonthlyTotal = db.PERMITS.Count(m => m.PTimeStamp.Value.Month == month && m.PTimeStamp.Value.Year == year);
                 rideVM.MonthlyAvg = rideVM.MonthlyTotal / day;
@@ -84,6 +76,14 @@ namespace ThemePark.Controllers
                 //Yearly Admitted
                 rideVM.YearlyTotal = db.PERMITS.Count(m => m.PTimeStamp.Value.Year == year);
                 rideVM.YearlyAvg = db.PERMITS.Count(m => m.PTimeStamp.Value.Year == year) / DateTime.Today.DayOfYear;
+
+                //Weekly Permitted
+                int weekno = CultureInfo.InvariantCulture.Calendar.GetWeekOfYear(DateTime.Now, CalendarWeekRule.FirstDay, DayOfWeek.Monday);
+                rideVM.WeeklyTotal = db.PERMITS.ToList().Count
+                    (m => CultureInfo.InvariantCulture.Calendar.GetWeekOfYear
+                    (m.PTimeStamp.Value, CalendarWeekRule.FirstDay, DayOfWeek.Monday) == weekno);
+                int weekday = (((int)DateTime.Today.DayOfWeek + 6) % 7) + 1;
+                rideVM.WeeklyAvg = rideVM.YearlyTotal / weekno;
 
                 var TC_Permit = db.PERMITS.Where(x => x.RideID == 100000);
                 var CT_Permit = db.PERMITS.Where(x => x.RideID == 100001);
