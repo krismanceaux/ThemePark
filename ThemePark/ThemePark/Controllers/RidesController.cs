@@ -38,6 +38,7 @@ namespace ThemePark.Controllers
         // GET: Rides/Create
         public ActionResult Create()
         {
+            ViewBag.RideID = new SelectList(db.Rides, "Ride ID", "RideName", "RideDiscription", "RideLocation", "RideCapacity");
             return View();
         }
 
@@ -54,7 +55,7 @@ namespace ThemePark.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
+            ViewBag.RideID = new SelectList(db.Rides, "Ride ID", "RideName", "RideDiscription", "RideLocation", "RideCapacity");
             return View(ride);
         }
 
