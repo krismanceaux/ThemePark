@@ -277,6 +277,7 @@
     <Compile Include="ViewModels\EmployeeLoginVM.cs" />
     <Compile Include="ViewModels\EmployeeVM.cs" />
     <Compile Include="ViewModels\MaintenanceVM.cs" />
+    <Compile Include="ViewModels\RideGraphicsVM.cs" />
     <Compile Include="ViewModels\RideReportVM.cs" />
     <Compile Include="ViewModels\SPH-VM.cs" />
     <Compile Include="ViewModels\SPHLoginVM.cs" />
@@ -514,17 +515,16 @@
     <Content Include="Views\RideReport\Edit.cshtml" />
     <Content Include="Views\RideReport\Index.cshtml" />
     <Content Include="Views\Data\RideReport.cshtml" />
-
     <Content Include="Views\Data\MaintenanceGraphic.cshtml" />
     <Content Include="Views\Data\MaintenanceGraphic2.cshtml" />
+    <Content Include="Views\Data\RideGraphic2.cshtml" />
+    <Content Include="Views\Data\RideGraphic.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Default\" />
-    <Folder Include="Views\IndividualRideReportVM\" />
-
     <Folder Include="Views\ParkInformation\" />
-
+    <Folder Include="Views\RideGraphicsVM\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
