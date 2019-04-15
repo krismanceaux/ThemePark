@@ -291,5 +291,104 @@ namespace ThemePark.Controllers
             return View(maintVM);
         }
 
+        //Update with info for selected month
+        [HttpPost]
+        public ActionResult MaintenanceReport(MaintenanceVM maintVM)
+        {
+            var newMaint = new MaintenanceVM();
+
+            var eMaint = db.Maintenances.Where(x => x.MaintCode == 4);
+
+            newMaint.AvgMonthlyInop = eMaint.Count() / 4;
+            newMaint.AvgWeeklyInop = eMaint.Count() / 15;
+
+            int month = maintVM.SelectedMonth;
+
+            var TC_Maint = db.Maintenances.Where(x => x.RideID == 100000 && x.DateAdded.Value.Month == month);
+            var CT_Maint = db.Maintenances.Where(x => x.RideID == 100001 && x.DateAdded.Value.Month == month);
+            var UD_Maint = db.Maintenances.Where(x => x.RideID == 100002 && x.DateAdded.Value.Month == month);
+            var UT_Maint = db.Maintenances.Where(x => x.RideID == 100003 && x.DateAdded.Value.Month == month);
+            var Teacups_Maint = db.Maintenances.Where(x => x.RideID == 100004 && x.DateAdded.Value.Month == month);
+            var TT_Maint = db.Maintenances.Where(x => x.RideID == 100005 && x.DateAdded.Value.Month == month);
+            var LC_Maint = db.Maintenances.Where(x => x.RideID == 100006 && x.DateAdded.Value.Month == month);
+            var FW_Maint = db.Maintenances.Where(x => x.RideID == 100008 && x.DateAdded.Value.Month == month);
+            var UHCS_Maint = db.Maintenances.Where(x => x.RideID == 100009 && x.DateAdded.Value.Month == month);
+            var AB_Maint = db.Maintenances.Where(x => x.RideID == 100010 && x.DateAdded.Value.Month == month);
+
+            newMaint.AB_maint = AB_Maint.Count();
+            newMaint.AB_Emergency = AB_Maint.Count(x => x.MaintCode.Value == 4);
+            newMaint.AB_Periodic = AB_Maint.Count(x => x.MaintCode.Value == 1);
+            newMaint.AB_Scheduled = AB_Maint.Count(x => x.MaintCode.Value == 2);
+            newMaint.AB_Unscheduled = AB_Maint.Count(x => x.MaintCode.Value == 3);
+
+
+            newMaint.CT_maint = CT_Maint.Count();
+            newMaint.CT_Emergency = CT_Maint.Count(x => x.MaintCode.Value == 4);
+            newMaint.CT_Periodic = CT_Maint.Count(x => x.MaintCode.Value == 1);
+            newMaint.CT_Scheduled = CT_Maint.Count(x => x.MaintCode.Value == 2);
+            newMaint.CT_Unscheduled = CT_Maint.Count(x => x.MaintCode.Value == 3);
+
+            newMaint.FW_maint = FW_Maint.Count();
+            newMaint.FW_Emergency = FW_Maint.Count(x => x.MaintCode.Value == 4);
+            newMaint.FW_Periodic = FW_Maint.Count(x => x.MaintCode.Value == 1);
+            newMaint.FW_Scheduled = FW_Maint.Count(x => x.MaintCode.Value == 2);
+            newMaint.FW_Unscheduled = FW_Maint.Count(x => x.MaintCode.Value == 3);
+
+
+            newMaint.LC_maint = LC_Maint.Count();
+            newMaint.LC_Emergency = LC_Maint.Count(x => x.MaintCode.Value == 4);
+            newMaint.LC_Periodic = LC_Maint.Count(x => x.MaintCode.Value == 1);
+            newMaint.LC_Scheduled = LC_Maint.Count(x => x.MaintCode.Value == 2);
+            newMaint.LC_Unscheduled = LC_Maint.Count(x => x.MaintCode.Value == 3);
+
+            newMaint.TC_maint = TC_Maint.Count();
+            newMaint.TC_Emergency = TC_Maint.Count(x => x.MaintCode.Value == 4);
+            newMaint.TC_Periodic = TC_Maint.Count(x => x.MaintCode.Value == 1);
+            newMaint.TC_Scheduled = TC_Maint.Count(x => x.MaintCode.Value == 2);
+            newMaint.TC_Unscheduled = TC_Maint.Count(x => x.MaintCode.Value == 3);
+
+
+            newMaint.Teacups_maint = Teacups_Maint.Count();
+            newMaint.Teacups_Emergency = Teacups_Maint.Count(x => x.MaintCode.Value == 4);
+            newMaint.Teacups_Periodic = Teacups_Maint.Count(x => x.MaintCode.Value == 1);
+            newMaint.Teacups_Scheduled = Teacups_Maint.Count(x => x.MaintCode.Value == 2);
+            newMaint.Teacups_Unscheduled = Teacups_Maint.Count(x => x.MaintCode.Value == 3);
+
+            newMaint.TT_maint = TT_Maint.Count();
+            newMaint.TT_Emergency = TT_Maint.Count(x => x.MaintCode.Value == 4);
+            newMaint.TT_Periodic = TT_Maint.Count(x => x.MaintCode.Value == 1);
+            newMaint.TT_Scheduled = TT_Maint.Count(x => x.MaintCode.Value == 2);
+            newMaint.TT_Unscheduled = TT_Maint.Count(x => x.MaintCode.Value == 3);
+
+
+            newMaint.UD_maint = UD_Maint.Count();
+            newMaint.UD_Emergency = UD_Maint.Count(x => x.MaintCode.Value == 4);
+            newMaint.UD_Periodic = UD_Maint.Count(x => x.MaintCode.Value == 1);
+            newMaint.UD_Scheduled = UD_Maint.Count(x => x.MaintCode.Value == 2);
+            newMaint.UD_Unscheduled = UD_Maint.Count(x => x.MaintCode.Value == 3);
+
+            newMaint.UHCS_maint = UHCS_Maint.Count();
+            newMaint.UHCS_Emergency = UHCS_Maint.Count(x => x.MaintCode.Value == 4);
+            newMaint.UHCS_Periodic = UHCS_Maint.Count(x => x.MaintCode.Value == 1);
+            newMaint.UHCS_Scheduled = UHCS_Maint.Count(x => x.MaintCode.Value == 2);
+            newMaint.UHCS_Unscheduled = UHCS_Maint.Count(x => x.MaintCode.Value == 3);
+
+
+            newMaint.UT_maint = UT_Maint.Count();
+            newMaint.UT_Emergency = UT_Maint.Count(x => x.MaintCode.Value == 4);
+            newMaint.UT_Periodic = UT_Maint.Count(x => x.MaintCode.Value == 1);
+            newMaint.UT_Scheduled = UT_Maint.Count(x => x.MaintCode.Value == 2);
+            newMaint.UT_Unscheduled = UT_Maint.Count(x => x.MaintCode.Value == 3);
+
+
+
+            newMaint.CurrentNumEmergency = db.Maintenances.Count(m => m.MaintCode == 4);
+            newMaint.CurrentNumScheduled = db.Maintenances.Count(m => m.MaintCode == 2);
+            newMaint.CurrentNumUnscheduled = db.Maintenances.Count(m => m.MaintCode == 3);
+            newMaint.CurrentNumPeriodic = db.Maintenances.Count(m => m.MaintCode == 1);
+
+            return View(newMaint);
+        }
+
     }
 }
