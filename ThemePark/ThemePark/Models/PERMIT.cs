@@ -19,6 +19,9 @@ namespace ThemePark
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public long TicketNumber { get; set; }
 
+        [Key]
+        [Column(Order = 2)]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public DateTime? PTimeStamp { get; set; }
 
         public virtual Ride Ride { get; set; }

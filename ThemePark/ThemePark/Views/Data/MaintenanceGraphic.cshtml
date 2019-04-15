@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewBag.Title = "MaintenanceGraphic";
+}
+
+<h2>MaintenanceGraphic</h2>
+
+@{
+    var myChart = new Chart(width: 1000, height: 400)
+        .AddTitle("Maintenance Report")
+        //.SetXAxis(max: 5)
+
+        .AddSeries(
+
+            name: "Periodic",
+            chartType: "Column",
+            xValue: new[] { "Angry Bubble", "Crusty Twizzler", "Ferris Wheel", "Laggy Connection", "Texas Cyclone" },
+            yValues: new[] { ViewBag.AB_Periodic.ToString(), ViewBag.CT_Periodic.ToString(), ViewBag.FW_Periodic.ToString(),
+        ViewBag.LC_Periodic.ToString(), ViewBag.TC_Periodic.ToString()  })
+        .AddSeries(
+            name: "Scheduled",
+            chartType: "Column",
+            xValue: new[] { "Angry Bubble", "Crusty Twizzler", "Ferris Wheel", "Laggy Connection", "Texas Cyclone" },
+            yValues: new[] {ViewBag.AB_Scheduled.ToString(), ViewBag.CT_Scheduled.ToString(), ViewBag.FW_Scheduled.ToString(),
+        ViewBag.LC_Scheduled.ToString(), ViewBag.TC_Scheduled.ToString()  })
+         .AddSeries(
+            name: "Unscheduled",
+            chartType: "Column",
+            xValue: new[] { "Angry Bubble", "Crusty Twizzler", "Ferris Wheel", "Laggy Connection", "Texas Cyclone" },
+            yValues: new[] { ViewBag.AB_Unscheduled.ToString(), ViewBag.CT_Unscheduled.ToString(), ViewBag.FW_Unscheduled.ToString(),
+        ViewBag.LC_Unscheduled.ToString(), ViewBag.TC_Unscheduled.ToString()  })
+         .AddSeries(
+            name: "Emergency",
+            chartType: "Column",
+            xValue: new[] { "Angry Bubble", "Crusty Twizzler", "Ferris Wheel", "Laggy Connection", "Texas Cyclone" },
+            yValues: new[] { ViewBag.AB_Emergency.ToString(), ViewBag.CT_Emergency.ToString(), ViewBag.FW_Emergency.ToString(),
+        ViewBag.LC_Emergency.ToString(), ViewBag.TC_Unscheduled.ToString()  })
+        .AddLegend()
+        .Write();
+}
+
+
