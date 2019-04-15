@@ -16,6 +16,8 @@ namespace ThemePark.ViewModels
         public int WeeklyTotal { get; set; }
 
         [Display(Name = "Total Permitted this Month")]
+        public int ThisMonthlyTotal { get; set; }
+
         public int MonthlyTotal { get; set; }
 
         [Display(Name = "Average every Week")]
@@ -27,7 +29,7 @@ namespace ThemePark.ViewModels
         [Display(Name = "Total Permitted this Year")]
         public int YearlyTotal { get; set; }
 
-        [Display(Name = "Average this Year")]
+        [Display(Name = "Daily Average")]
         public int YearlyAvg { get; set; }
 
 
@@ -40,7 +42,7 @@ namespace ThemePark.ViewModels
         [Display(Name = "Monthly Average")]
         public int TC_MonthlyAvg { get; set; }
 
-        [Display(Name = "Yearly Average")]
+        [Display(Name = "Daily Average")]
         public int TC_YearlyAvg { get; set; }
 
 
@@ -53,7 +55,7 @@ namespace ThemePark.ViewModels
         [Display(Name = "Monthly Average")]
         public int CT_MonthlyAvg { get; set; }
 
-        [Display(Name = "Yearly Average")]
+        [Display(Name = "Daily Average")]
         public int CT_YearlyAvg { get; set; }
 
 
@@ -66,7 +68,7 @@ namespace ThemePark.ViewModels
         [Display(Name = "Monthly Average")]
         public int UD_MonthlyAvg { get; set; }
 
-        [Display(Name = "Yearly Average")]
+        [Display(Name = "Daily Average")]
         public int UD_YearlyAvg { get; set; }
 
 
@@ -79,7 +81,7 @@ namespace ThemePark.ViewModels
         [Display(Name = "Monthly Average")]
         public int UT_MonthlyAvg { get; set; }
 
-        [Display(Name = "Yearly Average")]
+        [Display(Name = "Daily Average")]
         public int UT_YearlyAvg { get; set; }
 
 
@@ -92,7 +94,7 @@ namespace ThemePark.ViewModels
         [Display(Name = "Monthly Average")]
         public int Teacups_MonthlyAvg { get; set; }
 
-        [Display(Name = "Yearly Average")]
+        [Display(Name = "Daily Average")]
         public int Teacups_YearlyAvg { get; set; }
 
 
@@ -105,7 +107,7 @@ namespace ThemePark.ViewModels
         [Display(Name = "Monthly Average")]
         public int TT_MonthlyAvg { get; set; }
 
-        [Display(Name = "Yearly Average")]
+        [Display(Name = "Daily Average")]
         public int TT_YearlyAvg { get; set; }
 
 
@@ -118,7 +120,7 @@ namespace ThemePark.ViewModels
         [Display(Name = "Monthly Average")]
         public int LC_MonthlyAvg { get; set; }
 
-        [Display(Name = "Yearly Average")]
+        [Display(Name = "Daily Average")]
         public int LC_YearlyAvg { get; set; }
 
 
@@ -131,7 +133,7 @@ namespace ThemePark.ViewModels
         [Display(Name = "Monthly Average")]
         public int FW_MonthlyAvg { get; set; }
 
-        [Display(Name = "Yearly Average")]
+        [Display(Name = "Daily Average")]
         public int FW_YearlyAvg { get; set; }
 
 
@@ -144,7 +146,7 @@ namespace ThemePark.ViewModels
         [Display(Name = "Monthly Average")]
         public int UHCS_MonthlyAvg { get; set; }
 
-        [Display(Name = "Yearly Average")]
+        [Display(Name = "Daily Average")]
         public int UHCS_YearlyAvg { get; set; }
 
 
@@ -157,7 +159,7 @@ namespace ThemePark.ViewModels
         [Display(Name = "Monthly Average")]
         public int AB_MonthlyAvg { get; set; }
 
-        [Display(Name = "Yearly Average")]
+        [Display(Name = "Daily Average")]
         public int AB_YearlyAvg { get; set; }
     }
 }

@@ -67,10 +67,11 @@ namespace ThemePark.Controllers
                 //DayOfWeek myFDOW = myCI.DateTimeFormat.FirstDayOfWeek;
 
                 //Daily Permitted
-                rideVM.DailyTotal = db.PERMITS.Count(m => m.PTimeStamp.Value.Day == day);
+                rideVM.DailyTotal = db.PERMITS.Count(m => m.PTimeStamp.Value.Day == day && m.PTimeStamp.Value.Month == month && m.PTimeStamp.Value.Year == year);
 
                 //Monthly Permitted
-                rideVM.MonthlyTotal = db.PERMITS.Count(m => m.PTimeStamp.Value.Month == month && m.PTimeStamp.Value.Year == year);
+                rideVM.ThisMonthlyTotal = db.PERMITS.Count(m => m.PTimeStamp.Value.Month == month && m.PTimeStamp.Value.Year == year);
+                rideVM.MonthlyTotal = db.PERMITS.Count(m => m.PTimeStamp.Value.Month <= 3 && m.PTimeStamp.Value.Year == year);
                 rideVM.MonthlyAvg = rideVM.MonthlyTotal / day;
 
                 //Yearly Admitted
@@ -97,63 +98,53 @@ namespace ThemePark.Controllers
                 var AB_Permit = db.PERMITS.Where(x => x.RideID == 100009);
 
                 rideVM.AB_Permit = AB_Permit.Count();
-                rideVM.AB_WeeklyAvg = AB_Permit.ToList().Count(m => CultureInfo.InvariantCulture.Calendar.GetWeekOfYear
-                        (m.PTimeStamp.Value, CalendarWeekRule.FirstDay, DayOfWeek.Monday) == weekno) / weekday;
-                rideVM.AB_MonthlyAvg = AB_Permit.Count(m => m.PTimeStamp.Value.Month == month && m.PTimeStamp.Value.Year == year) / day;
+                rideVM.AB_WeeklyAvg = AB_Permit.ToList().Count(m => m.PTimeStamp.Value.Year == year) / weekno;
+                rideVM.AB_MonthlyAvg = AB_Permit.Count(m => m.PTimeStamp.Value.Month <= 3 && m.PTimeStamp.Value.Year == year) / 3;
                 rideVM.AB_YearlyAvg = AB_Permit.Count(m => m.PTimeStamp.Value.Year == year) / DateTime.Today.DayOfYear;
 
                 rideVM.CT_Permit = CT_Permit.Count();
-                rideVM.CT_WeeklyAvg = CT_Permit.ToList().Count(m => CultureInfo.InvariantCulture.Calendar.GetWeekOfYear
-                        (m.PTimeStamp.Value, CalendarWeekRule.FirstDay, DayOfWeek.Monday) == weekno) / weekday;
-                rideVM.CT_MonthlyAvg = CT_Permit.Count(m => m.PTimeStamp.Value.Month == month && m.PTimeStamp.Value.Year == year) / month;
+                rideVM.CT_WeeklyAvg = CT_Permit.ToList().Count(m => m.PTimeStamp.Value.Year == year) / weekno;
+                rideVM.CT_MonthlyAvg = CT_Permit.Count(m => m.PTimeStamp.Value.Month <= 3 && m.PTimeStamp.Value.Year == year) / 3;
                 rideVM.CT_YearlyAvg = CT_Permit.Count(m => m.PTimeStamp.Value.Year == year) / DateTime.Today.DayOfYear;
 
                 rideVM.FW_Permit = FW_Permit.Count();
-                rideVM.FW_WeeklyAvg = FW_Permit.ToList().Count(m => CultureInfo.InvariantCulture.Calendar.GetWeekOfYear
-                        (m.PTimeStamp.Value, CalendarWeekRule.FirstDay, DayOfWeek.Monday) == weekno) / weekday;
-                rideVM.FW_MonthlyAvg = FW_Permit.Count(m => m.PTimeStamp.Value.Month == month && m.PTimeStamp.Value.Year == year) / month;
+                rideVM.FW_WeeklyAvg = FW_Permit.ToList().Count(m => m.PTimeStamp.Value.Year == year) / weekno;
+                rideVM.FW_MonthlyAvg = FW_Permit.Count(m => m.PTimeStamp.Value.Month <= 3 && m.PTimeStamp.Value.Year == year) / 3;
                 rideVM.FW_YearlyAvg = FW_Permit.Count(m => m.PTimeStamp.Value.Year == year) / DateTime.Today.DayOfYear;
 
                 rideVM.LC_Permit = LC_Permit.Count();
-                rideVM.LC_WeeklyAvg = LC_Permit.ToList().Count(m => CultureInfo.InvariantCulture.Calendar.GetWeekOfYear
-                        (m.PTimeStamp.Value, CalendarWeekRule.FirstDay, DayOfWeek.Monday) == weekno) / weekday;
-                rideVM.LC_MonthlyAvg = LC_Permit.Count(m => m.PTimeStamp.Value.Month == month && m.PTimeStamp.Value.Year == year) / day;
+                rideVM.LC_WeeklyAvg = LC_Permit.ToList().Count(m => m.PTimeStamp.Value.Year == year) / weekno;
+                rideVM.LC_MonthlyAvg = LC_Permit.Count(m => m.PTimeStamp.Value.Month <= 3 && m.PTimeStamp.Value.Year == year) / 3;
                 rideVM.LC_YearlyAvg = LC_Permit.Count(m => m.PTimeStamp.Value.Year == year) / DateTime.Today.DayOfYear;
 
                 rideVM.TC_Permit = TC_Permit.Count();
-                rideVM.TC_WeeklyAvg = TC_Permit.ToList().Count(m => CultureInfo.InvariantCulture.Calendar.GetWeekOfYear
-                        (m.PTimeStamp.Value, CalendarWeekRule.FirstDay, DayOfWeek.Monday) == weekno) / weekday;
-                rideVM.TC_MonthlyAvg = TC_Permit.Count(m => m.PTimeStamp.Value.Month == month && m.PTimeStamp.Value.Year == year) / day;
+                rideVM.TC_WeeklyAvg = TC_Permit.ToList().Count(m => m.PTimeStamp.Value.Year == year) / weekno;
+                rideVM.TC_MonthlyAvg = TC_Permit.Count(m => m.PTimeStamp.Value.Month <= 3 && m.PTimeStamp.Value.Year == year) / 3;
                 rideVM.TC_YearlyAvg = TC_Permit.Count(m => m.PTimeStamp.Value.Year == year) / DateTime.Today.DayOfYear;
 
                 rideVM.Teacups_Permit = Teacups_Permit.Count();
-                rideVM.Teacups_WeeklyAvg = Teacups_Permit.ToList().Count(m => CultureInfo.InvariantCulture.Calendar.GetWeekOfYear
-                        (m.PTimeStamp.Value, CalendarWeekRule.FirstDay, DayOfWeek.Monday) == weekno) / weekday;
-                rideVM.Teacups_MonthlyAvg = Teacups_Permit.Count(m => m.PTimeStamp.Value.Month == month && m.PTimeStamp.Value.Year == year) / day;
+                rideVM.Teacups_WeeklyAvg = Teacups_Permit.ToList().Count(m => m.PTimeStamp.Value.Year == year) / weekno;
+                rideVM.Teacups_MonthlyAvg = Teacups_Permit.Count(m => m.PTimeStamp.Value.Month <= 3 && m.PTimeStamp.Value.Year == year) / 3;
                 rideVM.Teacups_YearlyAvg = Teacups_Permit.Count(m => m.PTimeStamp.Value.Year == year) / DateTime.Today.DayOfYear;
 
                 rideVM.TT_Permit = TT_Permit.Count();
-                rideVM.TT_WeeklyAvg = TT_Permit.ToList().Count(m => CultureInfo.InvariantCulture.Calendar.GetWeekOfYear
-                        (m.PTimeStamp.Value, CalendarWeekRule.FirstDay, DayOfWeek.Monday) == weekno) / weekday;
-                rideVM.TT_MonthlyAvg = TT_Permit.Count(m => m.PTimeStamp.Value.Month == month && m.PTimeStamp.Value.Year == year) / day;
+                rideVM.TT_WeeklyAvg = TT_Permit.ToList().Count(m => m.PTimeStamp.Value.Year == year) / weekno;
+                rideVM.TT_MonthlyAvg = TT_Permit.Count(m => m.PTimeStamp.Value.Month <= 3 && m.PTimeStamp.Value.Year == year) / 3;
                 rideVM.TT_YearlyAvg = TT_Permit.Count(m => m.PTimeStamp.Value.Year == year) / DateTime.Today.DayOfYear;
 
                 rideVM.UD_Permit = UD_Permit.Count();
-                rideVM.UD_WeeklyAvg = UD_Permit.ToList().Count(m => CultureInfo.InvariantCulture.Calendar.GetWeekOfYear
-                        (m.PTimeStamp.Value, CalendarWeekRule.FirstDay, DayOfWeek.Monday) == weekno) / weekday;
-                rideVM.UD_MonthlyAvg = UD_Permit.Count(m => m.PTimeStamp.Value.Month == month && m.PTimeStamp.Value.Year == year) / day;
+                rideVM.UD_WeeklyAvg = UD_Permit.ToList().Count(m => m.PTimeStamp.Value.Year == year) / weekno;
+                rideVM.UD_MonthlyAvg = UD_Permit.Count(m => m.PTimeStamp.Value.Month <= 3 && m.PTimeStamp.Value.Year == year) / 3;
                 rideVM.UD_YearlyAvg = UD_Permit.Count(m => m.PTimeStamp.Value.Year == year) / DateTime.Today.DayOfYear;
 
                 rideVM.UHCS_Permit = UHCS_Permit.Count();
-                rideVM.UHCS_WeeklyAvg = UHCS_Permit.ToList().Count(m => CultureInfo.InvariantCulture.Calendar.GetWeekOfYear
-                        (m.PTimeStamp.Value, CalendarWeekRule.FirstDay, DayOfWeek.Monday) == weekno) / weekday;
-                rideVM.UHCS_MonthlyAvg = UHCS_Permit.Count(m => m.PTimeStamp.Value.Month == month && m.PTimeStamp.Value.Year == year) / day;
+                rideVM.UHCS_WeeklyAvg = UHCS_Permit.ToList().Count(m => m.PTimeStamp.Value.Year == year) / weekno;
+                rideVM.UHCS_MonthlyAvg = UHCS_Permit.Count(m => m.PTimeStamp.Value.Month <= 3 && m.PTimeStamp.Value.Year == year) / 3;
                 rideVM.UHCS_YearlyAvg = UHCS_Permit.Count(m => m.PTimeStamp.Value.Year == year) / DateTime.Today.DayOfYear;
 
                 rideVM.UT_Permit = UT_Permit.Count();
-                rideVM.UT_WeeklyAvg = UT_Permit.ToList().Count(m => CultureInfo.InvariantCulture.Calendar.GetWeekOfYear
-                        (m.PTimeStamp.Value, CalendarWeekRule.FirstDay, DayOfWeek.Monday) == weekno) / weekday;
-                rideVM.UT_MonthlyAvg = UT_Permit.Count(m => m.PTimeStamp.Value.Month == month && m.PTimeStamp.Value.Year == year) / day;
+                rideVM.UT_WeeklyAvg = UT_Permit.ToList().Count(m => m.PTimeStamp.Value.Year == year) / weekno;
+                rideVM.UT_MonthlyAvg = UT_Permit.Count(m => m.PTimeStamp.Value.Month <= 3 && m.PTimeStamp.Value.Year == year) / 3;
                 rideVM.UT_YearlyAvg = UT_Permit.Count(m => m.PTimeStamp.Value.Year == year) / DateTime.Today.DayOfYear;
 
                 return View(rideVM);
