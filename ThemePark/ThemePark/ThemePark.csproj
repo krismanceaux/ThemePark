@@ -126,14 +126,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\ADMITTED_BYController.cs" />
-
+    <Compile Include="Controllers\ParkInformationController.cs" />
     <Compile Include="Controllers\PlanVisitController.cs" />
     <Compile Include="Controllers\ShopController.cs" />
     <Compile Include="Controllers\ThingsToDoController.cs" />
-
     <Compile Include="Controllers\PERMITsController.cs" />
     <Compile Include="Controllers\SOLD_BYController.cs" />
-
     <Compile Include="Migrations\201904101511567_init.cs" />
     <Compile Include="Migrations\201904101511567_init.Designer.cs">
       <DependentUpon>201904101511567_init.cs</DependentUpon>
@@ -296,6 +294,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Media\AngryBubble.jpg" />
     <Content Include="Media\BottleWater.jpg" />
+    <Content Include="Media\Brandon.jpg" />
     <Content Include="Media\CarmelApple.jpg" />
     <Content Include="Media\concession.jpg" />
     <Content Include="Media\CottonCandy.jpg" />
@@ -306,6 +305,10 @@
     <Content Include="Media\ferriswheelday3.jpg" />
     <Content Include="Media\files.jpg" />
     <Content Include="Media\FunnelCakes.jpg" />
+    <Content Include="Media\Icon.jpg" />
+    <Content Include="Media\Jacky.jpg" />
+    <Content Include="Media\James.jpg" />
+    <Content Include="Media\Kris.jpg" />
     <Content Include="Media\LaggyConnection.jpg" />
     <Content Include="Media\maintenance.jpg" />
     <Content Include="Media\Map.JPG" />
@@ -463,8 +466,6 @@
     <Content Include="Views\ADMITTED_BY\Edit.cshtml" />
     <Content Include="Views\ADMITTED_BY\Index.cshtml" />
     <Content Include="Views\Data\AdmissionsReport.cshtml" />
-
-
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Shared\Employee_Layout.cshtml" />
     <Content Include="Views\Shared\Manager_Layout.cshtml" />
@@ -498,7 +499,6 @@
     <Content Include="Views\Tickets\IndexS.cshtml" />
     <Content Include="Views\Tickets\EditS.cshtml" />
     <Content Include="Views\Tickets\CreateS.cshtml" />
-
     <Content Include="Views\PERMITs\Create.cshtml" />
     <Content Include="Views\PERMITs\Delete.cshtml" />
     <Content Include="Views\PERMITs\Details.cshtml" />
@@ -511,13 +511,15 @@
     <Content Include="Views\SOLD_BY\Index.cshtml" />
     <Content Include="Views\Data\MaintenanceGraphic.cshtml" />
     <Content Include="Views\Data\MaintenanceGraphic2.cshtml" />
-
-
+    <Content Include="Views\ParkInformation\AboutUs.cshtml" />
+    <Content Include="Views\ParkInformation\AboutUsS.cshtml" />
+    <Content Include="Views\ParkInformation\SocialMedia.cshtml" />
+    <Content Include="Views\ParkInformation\SocialMediaS.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\AboutUs\" />
     <Folder Include="Views\Default\" />
-    <Folder Include="Views\ParkInformation\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
