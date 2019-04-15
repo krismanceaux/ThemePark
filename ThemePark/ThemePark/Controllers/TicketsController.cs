@@ -137,6 +137,147 @@ namespace ThemePark.Controllers
             return RedirectToAction("Index");
         }
 
+
+
+
+
+        public ActionResult IndexS()
+        {
+            var tickets = db.Tickets.Include(t => t.TicketCode1);
+            return View(tickets.ToList());
+        }
+
+        // GET: Tickets/Details/5
+        public ActionResult DetailsS(long? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Ticket ticket = db.Tickets.Find(id);
+            if (ticket == null)
+            {
+                return HttpNotFound();
+            }
+            return View(ticket);
+        }
+
+        // GET: Tickets/Create
+        public ActionResult CreateS()
+        {
+            ViewBag.TicketCode = new SelectList(db.TicketCodes, "TicketCode1", "TicketType");
+            return View();
+        }
+
+        // POST: Tickets/Create
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult CreateS([Bind(Include = "TicketNumber,Price,DateOfPurchase,TicketCode")] Ticket ticket)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Tickets.Add(ticket);
+                db.SaveChanges();
+                if (ticket.TicketCode == 5)
+                {
+                    ApplicationSession.TicketNumber = ticket.TicketNumber;
+                    return RedirectToAction("Create", "SeasonPassholders");
+                }
+                else
+                    return RedirectToAction("Index", "Home");
+            }
+
+            ViewBag.TicketCode = new SelectList(db.TicketCodes, "TicketCode1", "TicketType", ticket.TicketCode);
+            return View(ticket);
+        }
+
+        // GET: Tickets/Edit/5
+        public ActionResult EditS(long? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Ticket ticket = db.Tickets.Find(id);
+            if (ticket == null)
+            {
+                return HttpNotFound();
+            }
+            ViewBag.TicketCode = new SelectList(db.TicketCodes, "TicketCode1", "TicketType", ticket.TicketCode);
+            return View(ticket);
+        }
+
+        // POST: Tickets/Edit/5
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult EditS([Bind(Include = "TicketNumber,Price,DateOfPurchase,TicketCode")] Ticket ticket)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(ticket).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            ViewBag.TicketCode = new SelectList(db.TicketCodes, "TicketCode1", "TicketType", ticket.TicketCode);
+            return View(ticket);
+        }
+
+        // GET: Tickets/Delete/5
+        public ActionResult DeleteS(long? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Ticket ticket = db.Tickets.Find(id);
+            if (ticket == null)
+            {
+                return HttpNotFound();
+            }
+            return View(ticket);
+        }
+
+        // POST: Tickets/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmedS(long id)
+        {
+            Ticket ticket = db.Tickets.Find(id);
+            db.Tickets.Remove(ticket);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)

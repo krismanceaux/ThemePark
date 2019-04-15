@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -126,8 +126,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\ADMITTED_BYController.cs" />
+
+    <Compile Include="Controllers\PlanVisitController.cs" />
+    <Compile Include="Controllers\ShopController.cs" />
+    <Compile Include="Controllers\ThingsToDoController.cs" />
+
     <Compile Include="Controllers\PERMITsController.cs" />
     <Compile Include="Controllers\SOLD_BYController.cs" />
+
     <Compile Include="Migrations\201904101511567_init.cs" />
     <Compile Include="Migrations\201904101511567_init.Designer.cs">
       <DependentUpon>201904101511567_init.cs</DependentUpon>
@@ -283,19 +289,41 @@
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\StyleSheet.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Media\AngryBubble.jpg" />
+    <Content Include="Media\BottleWater.jpg" />
+    <Content Include="Media\CarmelApple.jpg" />
     <Content Include="Media\concession.jpg" />
+    <Content Include="Media\CottonCandy.jpg" />
+    <Content Include="Media\CrustyTwizzler.jpg" />
     <Content Include="Media\datacenter.jpg" />
+    <Content Include="Media\Employee.jpg" />
+    <Content Include="Media\FerrisWheel.jpg" />
     <Content Include="Media\ferriswheelday3.jpg" />
     <Content Include="Media\files.jpg" />
+    <Content Include="Media\FunnelCakes.jpg" />
+    <Content Include="Media\LaggyConnection.jpg" />
     <Content Include="Media\maintenance.jpg" />
+    <Content Include="Media\Map.JPG" />
+    <Content Include="Media\Nachos.jpg" />
     <Content Include="Media\Parknight3.jpg" />
+    <Content Include="Media\Pizza.jpg" />
+    <Content Include="Media\Popcorn.jpg" />
     <Content Include="Media\rideswing1.jpg" />
     <Content Include="Media\rollercoaster3.jpg" />
     <Content Include="Media\silhouette.jpg" />
+    <Content Include="Media\Soda.jpg" />
+    <Content Include="Media\SonKone.jpg" />
     <Content Include="Media\tall1.jpg" />
+    <Content Include="Media\Teacups.jpg" />
+    <Content Include="Media\TexasCyclone.jpg" />
+    <Content Include="Media\TexasTwister.jpg" />
+    <Content Include="Media\UHCS.jpg" />
+    <Content Include="Media\UnpluggedToaster.jpg" />
+    <Content Include="Media\UnsecureDatabase.jpg" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -348,7 +376,6 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\umd\popper.min.js.map" />
     <Content Include="Scripts\umd\popper.js.map" />
@@ -393,7 +420,7 @@
     <Content Include="Views\Rides\Index.cshtml" />
     <Content Include="Views\Tickets\Create.cshtml" />
     <Content Include="Views\Tickets\Delete.cshtml" />
-    <Content Include="Views\Tickets\Details.cshtml" />
+    <Content Include="Views\Tickets\DetailS.cshtml" />
     <Content Include="Views\Tickets\Edit.cshtml" />
     <Content Include="Views\Tickets\Index.cshtml" />
     <Content Include="Views\SeasonPassHolders\Create.cshtml" />
@@ -434,6 +461,41 @@
     <Content Include="Views\ADMITTED_BY\Details.cshtml" />
     <Content Include="Views\ADMITTED_BY\Edit.cshtml" />
     <Content Include="Views\ADMITTED_BY\Index.cshtml" />
+
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\Employee_Layout.cshtml" />
+    <Content Include="Views\Shared\Manager_Layout.cshtml" />
+    <Content Include="Views\Shared\SeasonPassHolder_Layout.cshtml" />
+    <Content Include="Views\ThingsToDo\UH_Ride.cshtml" />
+    <Content Include="Views\ThingsToDo\TEXAS_Coaster.cshtml" />
+    <Content Include="Views\ThingsToDo\DBMS_Drive.cshtml" />
+    <Content Include="Views\ThingsToDo\CS_Train.cshtml" />
+    <Content Include="Views\PlanVisit\Park_Map.cshtml" />
+    <Content Include="Views\Shared\ManagerE_Layout.cshtml" />
+    <Content Include="Views\Home\EmployeeHubM.cshtml" />
+    <Content Include="Views\Home\EmployeeProfileM.cshtml" />
+    <Content Include="Views\Maintenance\IndexM.cshtml" />
+    <Content Include="Views\Maintenance\EditM.cshtml" />
+    <Content Include="Views\Maintenance\DetailsM.cshtml" />
+    <Content Include="Views\Maintenance\DeleteM.cshtml" />
+    <Content Include="Views\Maintenance\CreateM.cshtml" />
+    <Content Include="Views\Shared\_LayoutS.cshtml" />
+    <Content Include="Views\PlanVisit\Calendar.cshtml" />
+    <Content Include="Views\Shop\Food.cshtml" />
+    <Content Include="Views\Shop\Drink.cshtml" />
+    <Content Include="Views\Shop\DrinkS.cshtml" />
+    <Content Include="Views\Shop\FoodS.cshtml" />
+    <Content Include="Views\PlanVisit\CalendarS.cshtml" />
+    <Content Include="Views\PlanVisit\Park_MapS.cshtml" />
+    <Content Include="Views\ThingsToDo\CS_TrainS.cshtml" />
+    <Content Include="Views\ThingsToDo\DBMS_DriveS.cshtml" />
+    <Content Include="Views\ThingsToDo\TEXAS_CoasterS.cshtml" />
+    <Content Include="Views\ThingsToDo\UH_Rides.cshtml" />
+    <Content Include="Views\Home\IndexS.cshtml" />
+    <Content Include="Views\Tickets\IndexS.cshtml" />
+    <Content Include="Views\Tickets\EditS.cshtml" />
+    <Content Include="Views\Tickets\CreateS.cshtml" />
+
     <Content Include="Views\PERMITs\Create.cshtml" />
     <Content Include="Views\PERMITs\Delete.cshtml" />
     <Content Include="Views\PERMITs\Details.cshtml" />
@@ -446,10 +508,12 @@
     <Content Include="Views\SOLD_BY\Index.cshtml" />
     <Content Include="Views\Data\MaintenanceGraphic.cshtml" />
     <Content Include="Views\Data\MaintenanceGraphic2.cshtml" />
+
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Default\" />
+    <Folder Include="Views\ParkInformation\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
