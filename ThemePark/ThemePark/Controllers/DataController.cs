@@ -496,6 +496,7 @@ namespace ThemePark.Controllers
             ViewBag.UT_MonthlyAvg = UT_PERMIT.Count(m => m.PTimeStamp.Value.Month <= 3 && m.PTimeStamp.Value.Year == year) / 3;
             ViewBag.UT_YearlyAvg = UT_PERMIT.Count(m => m.PTimeStamp.Value.Year == year) / DateTime.Today.DayOfYear;
             return View();
+        }
         //Update with info for selected month
         [HttpPost]
         public ActionResult MaintenanceReport(MaintenanceVM maintVM)
