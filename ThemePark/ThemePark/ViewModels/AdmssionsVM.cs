@@ -38,7 +38,7 @@ namespace ThemePark.ViewModels
         {
             get
             {
-                return DateTimeFormatInfo
+                var DateList = DateTimeFormatInfo
                 .InvariantInfo
                 .MonthNames
                 .Select((monthName, Index) => new SelectListItem
@@ -46,6 +46,20 @@ namespace ThemePark.ViewModels
                     Value = (Index + 1).ToString(),
                     Text = monthName
                 });
+
+                return DefaultMonth.Concat(DateList);
+            }
+        }
+
+        public IEnumerable<SelectListItem> DefaultMonth
+        {
+            get
+            {
+                return Enumerable.Repeat(new SelectListItem
+                {
+                    Value = "-1",
+                    Text = "Select a Month"
+                }, count: 1);
             }
         }
     }

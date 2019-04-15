@@ -48,6 +48,7 @@ namespace ThemePark.Controllers
                 int day = DateTime.Now.Day;
 
                 //Daily
+                
                 AdmitVM.DailyTotal = db.ADMITTED_BY.Count(m => m.AdmissionsDate.Value.Day == day);
 
                 //Weekly
