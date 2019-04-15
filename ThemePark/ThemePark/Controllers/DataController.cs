@@ -72,7 +72,7 @@ namespace ThemePark.Controllers
                 //Monthly Permitted
                 rideVM.ThisMonthlyTotal = db.PERMITS.Count(m => m.PTimeStamp.Value.Month == month && m.PTimeStamp.Value.Year == year);
                 rideVM.MonthlyTotal = db.PERMITS.Count(m => m.PTimeStamp.Value.Month <= 3 && m.PTimeStamp.Value.Year == year);
-                rideVM.MonthlyAvg = rideVM.MonthlyTotal / day;
+                rideVM.MonthlyAvg = rideVM.MonthlyTotal / 3;
 
                 //Yearly Admitted
                 rideVM.YearlyTotal = db.PERMITS.Count(m => m.PTimeStamp.Value.Year == year);
