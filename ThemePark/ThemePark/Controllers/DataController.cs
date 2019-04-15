@@ -28,6 +28,8 @@ namespace ThemePark.Controllers
 
         }
 
+
+
         public ActionResult MaintenanceGraphic()
         {
 
@@ -289,6 +291,110 @@ namespace ThemePark.Controllers
             
             //retrieve info from DB and store in ViewModel to be displayed
             return View(maintVM);
+        }
+
+        public ActionResult RideGraphic()
+        {
+            var rGraphicVM = new RideGraphicsVM();
+
+            int year = DateTime.Now.Year;
+            int month = DateTime.Now.Month;
+            int day = DateTime.Now.Day;
+            //Monthly Permitted
+            rGraphicVM.ThisMonthlyTotal = db.PERMITS.Count(m => m.PTimeStamp.Value.Month == month && m.PTimeStamp.Value.Year == year);
+            rGraphicVM.MonthlyTotal = db.PERMITS.Count(m => m.PTimeStamp.Value.Month <= 3 && m.PTimeStamp.Value.Year == year);
+            rGraphicVM.MonthlyAvg = rGraphicVM.MonthlyTotal / 3;
+
+            //Yearly Admitted
+            rGraphicVM.YearlyTotal = db.PERMITS.Count(m => m.PTimeStamp.Value.Year == year);
+            rGraphicVM.YearlyAvg = db.PERMITS.Count(m => m.PTimeStamp.Value.Year == year) / DateTime.Today.DayOfYear;
+
+            //Weekly Permitted
+            int weekno = CultureInfo.InvariantCulture.Calendar.GetWeekOfYear(DateTime.Now, CalendarWeekRule.FirstDay, DayOfWeek.Monday);
+            rGraphicVM.WeeklyTotal = db.PERMITS.ToList().Count
+                (m => CultureInfo.InvariantCulture.Calendar.GetWeekOfYear
+                (m.PTimeStamp.Value, CalendarWeekRule.FirstDay, DayOfWeek.Monday) == weekno);
+            int weekday = (((int)DateTime.Today.DayOfWeek + 6) % 7) + 1;
+            rGraphicVM.WeeklyAvg = rGraphicVM.YearlyTotal / weekno;
+
+
+            var AB_PERMIT = db.PERMITS.Where(x => x.RideID == 100010);
+            ViewBag.AB_WeeklyAvg = AB_PERMIT.ToList().Count(m => m.PTimeStamp.Value.Year == year) / weekno;
+            ViewBag.AB_MonthlyAvg = AB_PERMIT.Count(m => m.PTimeStamp.Value.Month <= 3 && m.PTimeStamp.Value.Year == year) / 3;
+            ViewBag.AB_YearlyAvg = AB_PERMIT.Count(m => m.PTimeStamp.Value.Year == year) / DateTime.Today.DayOfYear;
+
+            var CT_PERMIT = db.PERMITS.Where(x => x.RideID == 100001);
+            ViewBag.CT_WeeklyAvg = CT_PERMIT.ToList().Count(m => m.PTimeStamp.Value.Year == year) / weekno;
+            ViewBag.CT_MonthlyAvg = CT_PERMIT.Count(m => m.PTimeStamp.Value.Month <= 3 && m.PTimeStamp.Value.Year == year) / 3;
+            ViewBag.CT_YearlyAvg = CT_PERMIT.Count(m => m.PTimeStamp.Value.Year == year) / DateTime.Today.DayOfYear;
+
+            var FW_PERMIT = db.PERMITS.Where(x => x.RideID == 100008);
+            ViewBag.FW_WeeklyAvg = FW_PERMIT.ToList().Count(m => m.PTimeStamp.Value.Year == year) / weekno;
+            ViewBag.FW_MonthlyAvg = FW_PERMIT.Count(m => m.PTimeStamp.Value.Month <= 3 && m.PTimeStamp.Value.Year == year) / 3;
+            ViewBag.FW_YearlyAvg = FW_PERMIT.Count(m => m.PTimeStamp.Value.Year == year) / DateTime.Today.DayOfYear;
+
+            var LC_PERMIT = db.PERMITS.Where(x => x.RideID == 100006);
+            ViewBag.LC_WeeklyAvg = LC_PERMIT.ToList().Count(m => m.PTimeStamp.Value.Year == year) / weekno;
+            ViewBag.LC_MonthlyAvg = LC_PERMIT.Count(m => m.PTimeStamp.Value.Month <= 3 && m.PTimeStamp.Value.Year == year) / 3;
+            ViewBag.LC_YearlyAvg = LC_PERMIT.Count(m => m.PTimeStamp.Value.Year == year) / DateTime.Today.DayOfYear;
+
+            var TC_PERMIT = db.PERMITS.Where(x => x.RideID == 100000);
+            ViewBag.TC_WeeklyAvg = TC_PERMIT.ToList().Count(m => m.PTimeStamp.Value.Year == year) / weekno;
+            ViewBag.TC_MonthlyAvg = TC_PERMIT.Count(m => m.PTimeStamp.Value.Month <= 3 && m.PTimeStamp.Value.Year == year) / 3;
+            ViewBag.TC_YearlyAvg = TC_PERMIT.Count(m => m.PTimeStamp.Value.Year == year) / DateTime.Today.DayOfYear;
+
+            return View();
+        }
+
+        public ActionResult RideGraphic2()
+        {
+            var rGraphicVM = new RideGraphicsVM();
+
+            int year = DateTime.Now.Year;
+            int month = DateTime.Now.Month;
+            int day = DateTime.Now.Day;
+            //Monthly Permitted
+            rGraphicVM.ThisMonthlyTotal = db.PERMITS.Count(m => m.PTimeStamp.Value.Month == month && m.PTimeStamp.Value.Year == year);
+            rGraphicVM.MonthlyTotal = db.PERMITS.Count(m => m.PTimeStamp.Value.Month <= 3 && m.PTimeStamp.Value.Year == year);
+            rGraphicVM.MonthlyAvg = rGraphicVM.MonthlyTotal / 3;
+
+            //Yearly Admitted
+            rGraphicVM.YearlyTotal = db.PERMITS.Count(m => m.PTimeStamp.Value.Year == year);
+            rGraphicVM.YearlyAvg = db.PERMITS.Count(m => m.PTimeStamp.Value.Year == year) / DateTime.Today.DayOfYear;
+
+            //Weekly Permitted
+            int weekno = CultureInfo.InvariantCulture.Calendar.GetWeekOfYear(DateTime.Now, CalendarWeekRule.FirstDay, DayOfWeek.Monday);
+            rGraphicVM.WeeklyTotal = db.PERMITS.ToList().Count
+                (m => CultureInfo.InvariantCulture.Calendar.GetWeekOfYear
+                (m.PTimeStamp.Value, CalendarWeekRule.FirstDay, DayOfWeek.Monday) == weekno);
+            int weekday = (((int)DateTime.Today.DayOfWeek + 6) % 7) + 1;
+            rGraphicVM.WeeklyAvg = rGraphicVM.YearlyTotal / weekno;
+
+            var Teacups_PERMIT = db.PERMITS.Where(x => x.RideID == 100004);
+            ViewBag.Teacups_WeeklyAvg = Teacups_PERMIT.ToList().Count(m => m.PTimeStamp.Value.Year == year) / weekno;
+            ViewBag.Teacups_MonthlyAvg = Teacups_PERMIT.Count(m => m.PTimeStamp.Value.Month <= 3 && m.PTimeStamp.Value.Year == year) / 3;
+            ViewBag.Teacups_YearlyAvg = Teacups_PERMIT.Count(m => m.PTimeStamp.Value.Year == year) / DateTime.Today.DayOfYear;
+
+            var TT_PERMIT = db.PERMITS.Where(x => x.RideID == 100005);
+            ViewBag.TT_WeeklyAvg = TT_PERMIT.ToList().Count(m => m.PTimeStamp.Value.Year == year) / weekno;
+            ViewBag.TT_MonthlyAvg = TT_PERMIT.Count(m => m.PTimeStamp.Value.Month <= 3 && m.PTimeStamp.Value.Year == year) / 3;
+            ViewBag.TT_YearlyAvg = TT_PERMIT.Count(m => m.PTimeStamp.Value.Year == year) / DateTime.Today.DayOfYear;
+
+            var UD_PERMIT = db.PERMITS.Where(x => x.RideID == 100002);
+            ViewBag.UD_WeeklyAvg = UD_PERMIT.ToList().Count(m => m.PTimeStamp.Value.Year == year) / weekno;
+            ViewBag.UD_MonthlyAvg = UD_PERMIT.Count(m => m.PTimeStamp.Value.Month <= 3 && m.PTimeStamp.Value.Year == year) / 3;
+            ViewBag.UD_YearlyAvg = UD_PERMIT.Count(m => m.PTimeStamp.Value.Year == year) / DateTime.Today.DayOfYear;
+
+            var UHCS_PERMIT = db.PERMITS.Where(x => x.RideID == 100009);
+            ViewBag.UHCS_WeeklyAvg = UHCS_PERMIT.ToList().Count(m => m.PTimeStamp.Value.Year == year) / weekno;
+            ViewBag.UHCS_MonthlyAvg = UHCS_PERMIT.Count(m => m.PTimeStamp.Value.Month <= 3 && m.PTimeStamp.Value.Year == year) / 3;
+            ViewBag.UHCS_YearlyAvg = UHCS_PERMIT.Count(m => m.PTimeStamp.Value.Year == year) / DateTime.Today.DayOfYear;
+
+            var UT_PERMIT = db.PERMITS.Where(x => x.RideID == 100003);
+            ViewBag.UT_WeeklyAvg = UT_PERMIT.ToList().Count(m => m.PTimeStamp.Value.Year == year) / weekno;
+            ViewBag.UT_MonthlyAvg = UT_PERMIT.Count(m => m.PTimeStamp.Value.Month <= 3 && m.PTimeStamp.Value.Year == year) / 3;
+            ViewBag.UT_YearlyAvg = UT_PERMIT.Count(m => m.PTimeStamp.Value.Year == year) / DateTime.Today.DayOfYear;
+            return View();
         }
 
         [HttpGet]

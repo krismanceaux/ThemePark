@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "RideGraphic2";
+}
+
+@{
+    var myChart2 = new Chart(width: 1000, height: 400)
+        .AddTitle("Ride Report")
+        //.SetXAxis(max: 5)
+
+        .AddSeries(
+
+            name: "Weekly Average",
+            chartType: "Column",
+            xValue: new[] { "Teacups", "Texas Twister", "Unsecure Database", "UHCS", "Unplugged Toaster" },
+            yValues: new[] { ViewBag.Teacups_WeeklyAvg.ToString(), ViewBag.TT_WeeklyAvg.ToString(), ViewBag.UD_WeeklyAvg.ToString(), ViewBag.UHCS_WeeklyAvg.ToString(), ViewBag.UT_WeeklyAvg.ToString() })
+        .AddSeries(
+            name: "Monthly Average",
+            chartType: "Column",
+            xValue: new[] { "Teacups", "Texas Twister", "Unsecure Database", "UHCS", "Unplugged Toaster" },
+            yValues: new[] { ViewBag.Teacups_MonthlyAvg.ToString(), ViewBag.TT_MonthlyAvg.ToString(), ViewBag.UD_MonthlyAvg.ToString(), ViewBag.UHCS_MonthlyAvg.ToString(), ViewBag.UT_MonthlyAvg.ToString() })
+         .AddSeries(
+            name: "Daily Average",
+            chartType: "Column",
+            xValue: new[] { "Teacups", "Texas Twister", "Unsecure Database", "UHCS", "Unplugged Toaster" },
+            yValues: new[] { ViewBag.Teacups_YearlyAvg.ToString(), ViewBag.TT_YearlyAvg.ToString(), ViewBag.UD_YearlyAvg.ToString(), ViewBag.UHCS_YearlyAvg.ToString(), ViewBag.UT_YearlyAvg.ToString() })
+           .AddLegend()
+            .Write();
+}
+
