@@ -16,7 +16,7 @@ namespace ThemePark.ViewModels
         [Display(Name = "Total Admissions for the Week")]
         public int WeeklyTotal { get; set; }
 
-        [Display(Name = "Average Daily Asmissions for the Week")]
+        [Display(Name = "Average Daily Admissions for the Week")]
         public int WeeklyAvg { get; set; }
 
         [Display(Name = "Total Admissions for the Month")]

@@ -45,11 +45,14 @@ namespace ThemePark.Controllers
                 int year = DateTime.Now.Year;
                 int month = DateTime.Now.Month;
                 //int month = AdmitVM.SelectedMonth;
-                int day = DateTime.Now.Day;
+                //int day = DateTime.Now.Day;
+                int day = 13;
 
                 //Daily
                 
-                AdmitVM.DailyTotal = db.ADMITTED_BY.Count(m => m.AdmissionsDate.Value.Day == day);
+                AdmitVM.DailyTotal = db.ADMITTED_BY.Count(m => m.AdmissionsDate.Value.Day == day && 
+                m.AdmissionsDate.Value.Month == month && 
+                m.AdmissionsDate.Value.Year == year);
 
                 //Weekly
                 int weekno = CultureInfo.InvariantCulture.Calendar.GetWeekOfYear(DateTime.Now, CalendarWeekRule.FirstDay, DayOfWeek.Monday);
@@ -83,15 +86,20 @@ namespace ThemePark.Controllers
             }
         }
 
+        //Update, chose selected month
         [HttpPost]
         public ActionResult AdmissionsReport(AdmissionsVM AdmitVM)
         {
             var NewAdmit = new AdmissionsVM();
             int year = DateTime.Now.Year;
             int month = AdmitVM.SelectedMonth;
-            int day = DateTime.Now.Day;
+            //int day = DateTime.Now.Day;
+            int day = 13;
+
             //Daily
-            NewAdmit.DailyTotal = db.ADMITTED_BY.Count(m => m.AdmissionsDate.Value.Day == day);
+            NewAdmit.DailyTotal = db.ADMITTED_BY.Count(m => m.AdmissionsDate.Value.Day == day && 
+            m.AdmissionsDate.Value.Month == DateTime.Now.Month && 
+            m.AdmissionsDate.Value.Year == year);
 
             //Weekly
             int weekno = CultureInfo.InvariantCulture.Calendar.GetWeekOfYear(DateTime.Now, CalendarWeekRule.FirstDay, DayOfWeek.Monday);
@@ -108,7 +116,7 @@ namespace ThemePark.Controllers
             //Yearly
             NewAdmit.YearlyTotal = db.ADMITTED_BY.Count(m => m.AdmissionsDate.Value.Year == year);
             NewAdmit.YearlyAvg = db.ADMITTED_BY.Count(m => m.AdmissionsDate.Value.Year == year) / DateTime.Today.DayOfYear;
-
+            
             return View(NewAdmit);
         }
 
