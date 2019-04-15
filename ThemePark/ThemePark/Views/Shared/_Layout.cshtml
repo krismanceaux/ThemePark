@@ -1,11 +1,12 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
     <link href="https://fonts.googleapis.com/css?family=Rokkitt:400,500,700" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
@@ -22,10 +23,10 @@
                         THINGS TO DO
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        @Html.ActionLink("Roller Coaster", "EmployeeHub", "Home", null, new { @class = "nav-link" })
-                        @Html.ActionLink("Water Ride", "EmployeeProfile", "Home", null, new { @class = "nav-link" })
-                        @Html.ActionLink("Ghost Train ", "Index", "Maintenance", null, new { @class = "nav-link" })
-                        @Html.ActionLink("Kid's Ride ", "Index", "Maintenance", null, new { @class = "nav-link" })
+                        @Html.ActionLink("TEXAS Coaster", "TEXAS_Coaster", "ThingsToDo", null, new { @class = "nav-link" })
+                        @Html.ActionLink("UH Ride", "UH_ride", "ThingsToDo", null, new { @class = "nav-link" })
+                        @Html.ActionLink("CS Train ", "CS_Train", "ThingsToDo", null, new { @class = "nav-link" })
+                        @Html.ActionLink("DBMS Drive ", "DBMS_Drive", "ThingsToDo", null, new { @class = "nav-link" })
 
                     </div>
                 </li>
@@ -34,8 +35,8 @@
                         PLAN VISIT
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        @Html.ActionLink("Park Map", "ManagerHub", "Home", null, new { @class = "nav-link" })
-                        @Html.ActionLink("Calendar", "Index", "Data", null, new { @class = "nav-link" })
+                        @Html.ActionLink("Park Map", "Park_Map", "PlanVisit", null, new { @class = "nav-link" })
+                        @Html.ActionLink("Event Calendar", "Calendar", "PlanVisit", null, new { @class = "nav-link" })
 
                     </div>
                 </li>
@@ -44,8 +45,8 @@
                         SHOP
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        @Html.ActionLink("New Arrival", "EmployeeHub", "Home", null, new { @class = "nav-link" })
-                        @Html.ActionLink("Hot Sales", "EmployeeProfile", "Home", null, new { @class = "nav-link" })
+                        @Html.ActionLink("Food", "Food", "Shop", null, new { @class = "nav-link" })
+                        @Html.ActionLink("Drink", "Drink", "Shop", null, new { @class = "nav-link" })
                     </div>
                 </li>
                 <li class="nav-item dropdown">

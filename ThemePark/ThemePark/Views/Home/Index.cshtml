@@ -1,6 +1,7 @@
 ﻿@{
     ViewBag.Title = "Home Page";
     Layout = "~/Views/Shared/_Layout.cshtml";
+
 }
 
 
@@ -12,12 +13,12 @@
             <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
             <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
             <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
-        </ol>
+        </ol>   
         <div class="carousel-inner">
             <div class="carousel-item active mx-0 px-0">
                 <img src=@Url.Content("~/Media/rollercoaster3.jpg") class="d-block w-100" alt="...">
                 @*<div class="carousel-caption d-none d-md-block">
-                        <h5>First slide labe            l</h5>
+                        <h5>Firs    t slide labe            l</h5>
                         <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
                     </div>*@
             </div>
@@ -63,20 +64,14 @@
         </div>
         <div class="col-sm-6 col-md-4">
             <div class="card" style="width: 18rem;">
-                <img src=@Url.Content("~/Media/tall1.jpg") class="card-img-top" alt="...">
+                <img src=@Url.Content("~/Media/Map.jpg") class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <h5 class="card-title">Park Map</h5>
+                    <p class="card-text">Explore our theme park map here</p>
+                    @Html.ActionLink("Map", "Park_Map", "PlanVisit", null, new { @class = "btn btn-primary" })
 
-                    <div id="social">
-                        <a class="facebookBtn smGlobalBtn" href="#"></a>
-                        <a class="twitterBtn smGlobalBtn" href="#"></a>
-                        <a class="googleplusBtn smGlobalBtn" href="#"></a>
-                        <a class="linkedinBtn smGlobalBtn" href="#"></a>
-                        <a class="pinterestBtn smGlobalBtn" href="#"></a>
-                        <a class="tumblrBtn smGlobalBtn" href="#"></a>
-                        <a class="rssBtn smGlobalBtn" href="#"></a>
-                    </div>
+
+                    
 
                 </div>
             </div>
@@ -99,9 +94,4 @@
 
 
 
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-</head>
 
