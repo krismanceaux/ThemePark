@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Globalization;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -137,6 +138,38 @@ namespace ThemePark.ViewModels
         public int AB_Periodic { get; set; }
         [Display(Name = "Emergency")]
         public int AB_Emergency { get; set; }
+
+        [Display(Name = "Choose Month")]
+        public int SelectedMonth { get; set; }
+
+        public IEnumerable<SelectListItem> Months
+        {
+            get
+            {
+                var DateList = DateTimeFormatInfo
+                .InvariantInfo
+                .MonthNames
+                .Select((monthName, Index) => new SelectListItem
+                {
+                    Value = (Index + 1).ToString(),
+                    Text = monthName
+                });
+
+                return DefaultMonth.Concat(DateList);
+            }
+        }
+
+        public IEnumerable<SelectListItem> DefaultMonth
+        {
+            get
+            {
+                return Enumerable.Repeat(new SelectListItem
+                {
+                    Value = "-1",
+                    Text = "Select a Month"
+                }, count: 1);
+            }
+        }
 
     }
 }
