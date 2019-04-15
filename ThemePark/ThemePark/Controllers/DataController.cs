@@ -58,9 +58,7 @@ namespace ThemePark.Controllers
             ViewBag.TC_Periodic = TC_Maint.Count(x => x.MaintCode.Value == 1);
             ViewBag.TC_Scheduled = TC_Maint.Count(x => x.MaintCode.Value == 2);
             ViewBag.TC_Unscheduled = TC_Maint.Count(x => x.MaintCode.Value == 3);
-
             
-
             return View();
         }
 
