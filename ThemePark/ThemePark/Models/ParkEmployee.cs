@@ -53,6 +53,7 @@ namespace ThemePark
         [StringLength(12)]
         public string PhoneNumber { get; set; }
 
+        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}", ApplyFormatInEditMode = true)]
         [Display(Name = "Date of Birth")]
         [Column(TypeName = "date")]
         public DateTime? DateOfBirth { get; set; }

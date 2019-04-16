@@ -15,17 +15,26 @@ namespace ThemePark
             PERFORMED_BY = new HashSet<PERFORMED_BY>();
         }
 
+        [Display(Name ="Maintenance ID")]
         public long MaintenanceID { get; set; }
 
+
+        [Display(Name = "Description")]
         [StringLength(200)]
         public string MaintDescription { get; set; }
 
+        [Display(Name = "Corrective Action")]
         [StringLength(100)]
         public string CorrectiveAction { get; set; }
 
+        [Display(Name = "Date Added")]
+        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}", ApplyFormatInEditMode = true)]
         [Column(TypeName = "date")]
         public DateTime? DateAdded { get; set; }
 
+
+        [Display(Name = "Date Fixed")]
+        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}", ApplyFormatInEditMode = true)]
         [Column(TypeName = "date")]
         public DateTime? DateFixed { get; set; }
 

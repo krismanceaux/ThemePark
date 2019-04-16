@@ -18,9 +18,11 @@ namespace ThemePark
 
         public long DepartmentID { get; set; }
 
+        [Display(Name ="Department Name")]
         [StringLength(50)]
         public string DName { get; set; }
 
+        [Display(Name = "Location")]
         [StringLength(50)]
         public string Location { get; set; }
 

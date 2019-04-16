@@ -1,17 +1,22 @@
 ﻿@model ThemePark.Ticket
 
 @{
-    ViewBag.Title = "DetailS";
-    Layout = "~/Views/Shared/_LayoutS.cshtml";
-
+    ViewBag.Title = "Receipt";
 }
 
-<h2>Details</h2>
+<h2>Receipt</h2>
 
 <div>
     <h4>Ticket</h4>
     <hr />
     <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TicketNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TicketNumber)
+        </dd>
         <dt>
             @Html.DisplayNameFor(model => model.TicketCode1.TicketType)
         </dt>
@@ -39,6 +44,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.TicketNumber }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Home", "Index","Home", null, new {@class="btn btn-primary btn-lg" })
+    @Html.ActionLink("New Purchase", "Create", "Tickets", null, new { @class = "btn btn-primary btn-lg" })
 </p>

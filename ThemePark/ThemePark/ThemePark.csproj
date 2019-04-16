@@ -125,13 +125,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\ADMITTED_BYController.cs" />
     <Compile Include="Controllers\ParkInformationController.cs" />
     <Compile Include="Controllers\PlanVisitController.cs" />
     <Compile Include="Controllers\ShopController.cs" />
     <Compile Include="Controllers\ThingsToDoController.cs" />
-    <Compile Include="Controllers\PERMITsController.cs" />
-    <Compile Include="Controllers\SOLD_BYController.cs" />
     <Compile Include="Migrations\201904101511567_init.cs" />
     <Compile Include="Migrations\201904101511567_init.Designer.cs">
       <DependentUpon>201904101511567_init.cs</DependentUpon>
@@ -228,10 +225,25 @@
     <Compile Include="Migrations\201904150819151_AlterSPHLoginTableKey.Designer.cs">
       <DependentUpon>201904150819151_AlterSPHLoginTableKey.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201904160947064_poptickets10.cs" />
+    <Compile Include="Migrations\201904160947064_poptickets10.Designer.cs">
+      <DependentUpon>201904160947064_poptickets10.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904161001097_poptickets11.cs" />
+    <Compile Include="Migrations\201904161001097_poptickets11.Designer.cs">
+      <DependentUpon>201904161001097_poptickets11.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904161010495_poptickets12.cs" />
+    <Compile Include="Migrations\201904161010495_poptickets12.Designer.cs">
+      <DependentUpon>201904161010495_poptickets12.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904161024390_poptickets13.cs" />
+    <Compile Include="Migrations\201904161024390_poptickets13.Designer.cs">
+      <DependentUpon>201904161024390_poptickets13.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ADMITTED_BY.cs" />
     <Compile Include="Models\Concession.cs" />
-    <Compile Include="Controllers\TENDED_BYController.cs" />
     <Compile Include="Models\Department.cs" />
     <Compile Include="Models\DependentPassHolder.cs" />
     <Compile Include="Models\EmployeeLogin.cs" />
@@ -432,7 +444,6 @@
     <Content Include="Views\Rides\Index.cshtml" />
     <Content Include="Views\Tickets\Create.cshtml" />
     <Content Include="Views\Tickets\Delete.cshtml" />
-    <Content Include="Views\Tickets\DetailS.cshtml" />
     <Content Include="Views\Tickets\Edit.cshtml" />
     <Content Include="Views\Tickets\Index.cshtml" />
     <Content Include="Views\SeasonPassHolders\Create.cshtml" />
@@ -452,71 +463,23 @@
     <Content Include="Views\DependentPassHolders\Index.cshtml" />
     <Content Include="Views\Data\CurrentMaintenance.cshtml" />
     <Content Include="Views\Data\MaintenanceReport.cshtml" />
-    <Content Include="Views\TicketCodes\Create.cshtml" />
-    <Content Include="Views\TicketCodes\Delete.cshtml" />
-    <Content Include="Views\TicketCodes\Details.cshtml" />
-    <Content Include="Views\TicketCodes\Edit.cshtml" />
-    <Content Include="Views\TicketCodes\Index.cshtml" />
     <Content Include="Views\DependentPassHolders\DepQuestion.cshtml" />
-    <Content Include="Views\TENDED_BY\Create.cshtml" />
-    <Content Include="Views\TENDED_BY\Delete.cshtml" />
-    <Content Include="Views\TENDED_BY\Details.cshtml" />
-    <Content Include="Views\TENDED_BY\Edit.cshtml" />
-    <Content Include="Views\TENDED_BY\Index.cshtml" />
     <Content Include="Views\SPHProfile\Create.cshtml" />
     <Content Include="Views\SPHProfile\Delete.cshtml" />
     <Content Include="Views\SPHProfile\Details.cshtml" />
     <Content Include="Views\SPHProfile\Edit.cshtml" />
     <Content Include="Views\SPHProfile\Index.cshtml" />
-    <Content Include="Views\ADMITTED_BY\Create.cshtml" />
-    <Content Include="Views\ADMITTED_BY\Delete.cshtml" />
-    <Content Include="Views\ADMITTED_BY\Details.cshtml" />
-    <Content Include="Views\ADMITTED_BY\Edit.cshtml" />
-    <Content Include="Views\ADMITTED_BY\Index.cshtml" />
     <Content Include="Views\Data\AdmissionsReport.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Shared\Employee_Layout.cshtml" />
-    <Content Include="Views\Shared\Manager_Layout.cshtml" />
-    <Content Include="Views\Shared\SeasonPassHolder_Layout.cshtml" />
     <Content Include="Views\ThingsToDo\UH_Ride.cshtml" />
     <Content Include="Views\ThingsToDo\TEXAS_Coaster.cshtml" />
     <Content Include="Views\ThingsToDo\DBMS_Drive.cshtml" />
     <Content Include="Views\ThingsToDo\CS_Train.cshtml" />
     <Content Include="Views\PlanVisit\Park_Map.cshtml" />
-    <Content Include="Views\Shared\ManagerE_Layout.cshtml" />
-    <Content Include="Views\Home\EmployeeHubM.cshtml" />
-    <Content Include="Views\Home\EmployeeProfileM.cshtml" />
-    <Content Include="Views\Maintenance\IndexM.cshtml" />
-    <Content Include="Views\Maintenance\EditM.cshtml" />
-    <Content Include="Views\Maintenance\DetailsM.cshtml" />
-    <Content Include="Views\Maintenance\DeleteM.cshtml" />
-    <Content Include="Views\Maintenance\CreateM.cshtml" />
-    <Content Include="Views\Shared\_LayoutS.cshtml" />
     <Content Include="Views\PlanVisit\Calendar.cshtml" />
     <Content Include="Views\Shop\Food.cshtml" />
     <Content Include="Views\Shop\Drink.cshtml" />
-    <Content Include="Views\Shop\DrinkS.cshtml" />
     <Content Include="Views\Shop\FoodS.cshtml" />
-    <Content Include="Views\PlanVisit\CalendarS.cshtml" />
-    <Content Include="Views\PlanVisit\Park_MapS.cshtml" />
-    <Content Include="Views\ThingsToDo\CS_TrainS.cshtml" />
-    <Content Include="Views\ThingsToDo\DBMS_DriveS.cshtml" />
-    <Content Include="Views\ThingsToDo\TEXAS_CoasterS.cshtml" />
-    <Content Include="Views\ThingsToDo\UH_Rides.cshtml" />
-    <Content Include="Views\Home\IndexS.cshtml" />
-    <Content Include="Views\Tickets\IndexS.cshtml" />
-    <Content Include="Views\Tickets\EditS.cshtml" />
-    <Content Include="Views\Tickets\CreateS.cshtml" />
-    <Content Include="Views\PERMITs\Create.cshtml" />
-    <Content Include="Views\PERMITs\Delete.cshtml" />
-    <Content Include="Views\PERMITs\Details.cshtml" />
-    <Content Include="Views\PERMITs\Edit.cshtml" />
-    <Content Include="Views\PERMITs\Index.cshtml" />
-    <Content Include="Views\SOLD_BY\Create.cshtml" />
-    <Content Include="Views\SOLD_BY\Delete.cshtml" />
-    <Content Include="Views\SOLD_BY\Details.cshtml" />
-    <Content Include="Views\SOLD_BY\Edit.cshtml" />
-    <Content Include="Views\SOLD_BY\Index.cshtml" />
     <Content Include="Views\RideReport\Create.cshtml" />
     <Content Include="Views\RideReport\Delete.cshtml" />
     <Content Include="Views\RideReport\Details.cshtml" />
@@ -526,18 +489,14 @@
     <Content Include="Views\Data\MaintenanceGraphic.cshtml" />
     <Content Include="Views\Data\MaintenanceGraphic2.cshtml" />
     <Content Include="Views\ParkInformation\AboutUs.cshtml" />
-    <Content Include="Views\ParkInformation\AboutUsS.cshtml" />
     <Content Include="Views\ParkInformation\SocialMedia.cshtml" />
-    <Content Include="Views\ParkInformation\SocialMediaS.cshtml" />
     <Content Include="Views\Data\RideGraphic2.cshtml" />
     <Content Include="Views\Data\RideGraphic.cshtml" />
     <Content Include="Views\Data\ConcessionsReport.cshtml" />
+    <Content Include="Views\Tickets\Receipt.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\AboutUs\" />
-    <Folder Include="Views\Default\" />
-    <Folder Include="Views\RideGraphicsVM\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -622,6 +581,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201904150819151_AlterSPHLoginTableKey.resx">
       <DependentUpon>201904150819151_AlterSPHLoginTableKey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904160947064_poptickets10.resx">
+      <DependentUpon>201904160947064_poptickets10.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904161001097_poptickets11.resx">
+      <DependentUpon>201904161001097_poptickets11.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904161010495_poptickets12.resx">
+      <DependentUpon>201904161010495_poptickets12.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904161024390_poptickets13.resx">
+      <DependentUpon>201904161024390_poptickets13.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

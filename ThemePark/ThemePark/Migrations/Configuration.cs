@@ -37,8 +37,9 @@ namespace ThemePark.Migrations
             //// start date
             //var date = new DateTime(2019, 1, 1);
             //int dateIncrement = 1;
-
-            //var numDays = (DateTime.Now.Date - date).TotalDays;
+            //var date2 = new DateTime(2019, 4, 13);
+            ////var numDays = (DateTime.Now.Date - date).TotalDays;
+            //var numDays = (date2 - date).TotalDays;
             //// for the next 10 days (replace 10 with numDays)
             //for (int i = 0; i < numDays; i++)
             //{
@@ -77,49 +78,51 @@ namespace ThemePark.Migrations
             /////////////////////////////
 
 
-            //var tickets = context.Tickets.ToList();
-            //var employees = context.ParkEmployees.Where(e => e.DepartmentID == 100001).ToList();
-            //var startDate = new DateTime(2019, 1, 1);
-            //var startDateIncrement = 1;
+            var tickets = context.Tickets.ToList();
+            var employees = context.ParkEmployees.Where(e => e.DepartmentID == 100001).ToList();
+            var startDate = new DateTime(2019, 1, 1);
+            var endDate = new DateTime(2019, 4, 13);
+            var startDateIncrement = 1;
             //var numberofdays = (DateTime.Now.Date - startDate).TotalDays;
-            //int currentTicketTracker = 0;
+            var numberofdays = (endDate - startDate).TotalDays;
+            int currentTicketTracker = 0;
 
-            //// for each day
-            //for (int k = 0; k < numberofdays; k++)
-            //{
+            // for each day
+            for (int k = 0; k < numberofdays; k++)
+            {
 
-            //    // generate a random number of tickets
-            //    var rnd3 = new Random();
-            //    int numTickets = rnd3.Next(75);
+                // generate a random number of tickets
+                var rnd3 = new Random();
+                int numTickets = rnd3.Next(75);
 
-            //    // if the number + currentTicket number exposes us to an index out of range -> break
-            //    if ((currentTicketTracker + numTickets) > (tickets.Count() - 1)) break;
+                // if the number + currentTicket number exposes us to an index out of range -> break
+                if ((currentTicketTracker + numTickets) > (tickets.Count() - 1)) break;
 
-            //    // for each ticket admitted this day starting from where we left off in the ticket list
-            //    for (int l = currentTicketTracker; l < (currentTicketTracker + numTickets); l++)
-            //    {
-            //        var newStartDate = startDate.AddDays(startDateIncrement);
+                // for each ticket admitted this day starting from where we left off in the ticket list
+                for (int l = currentTicketTracker; l < (currentTicketTracker + numTickets); l++)
+                {
+                    var newStartDate = startDate.AddDays(startDateIncrement);
 
-            //        // get a random employee
-            //        var rnd2 = new Random();
-            //        var empNum = rnd2.Next(employees.Count());
-            //        var currentEmployee = employees[empNum];
+                    // get a random employee
+                    var rnd2 = new Random();
+                    var empNum = rnd2.Next(employees.Count());
+                    var currentEmployee = employees[empNum];
 
-            //        // add new admitted_by record
-            //        context.ADMITTED_BY.AddOrUpdate(x => x.TicketID,
-            //            new ADMITTED_BY
-            //            {
-            //                EmployeeID = currentEmployee.EmployeeID,
-            //                TicketID = tickets[l].TicketNumber,
-            //                AdmissionsDate = newStartDate
-            //            });
+                    // add new admitted_by record
+                    context.ADMITTED_BY.AddOrUpdate(x => x.TicketID,
+                        new ADMITTED_BY
+                        {
+                            EmployeeID = currentEmployee.EmployeeID,
+                            TicketID = tickets[l].TicketNumber,
+                            AdmissionsDate = newStartDate
+                        });
 
-            //    }
-            //    // keep track of which tickets we just admitted
-            //    currentTicketTracker += numTickets;
-            //    // increment day
-            //    startDateIncrement++;
-            //}
+                }
+                // keep track of which tickets we just admitted
+                currentTicketTracker += numTickets;
+                // increment day
+                startDateIncrement++;
+            }
 
 
 
@@ -140,9 +143,9 @@ namespace ThemePark.Migrations
             //var timeStampDayIncrement = 1;
             //var secondIncrement = 1;
             //timestamp += d;
-            ////var stopDate = new DateTime(2019, 1, 6);
-            //var numDays = (DateTime.Now.Date - timestamp).TotalDays;
-            ////var numDays = (stopDate - timestamp).TotalDays;
+            //var stopDate = new DateTime(2019, 4, 13);
+            ////var numDays = (DateTime.Now.Date - timestamp).TotalDays;
+            //var numDays = (stopDate - timestamp).TotalDays;
 
             //// on each day
             //for (int i = 0; i < numDays; i++)

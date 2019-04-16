@@ -18,15 +18,20 @@ namespace ThemePark
             SeasonPassHolders = new HashSet<SeasonPassHolder>();
         }
 
+        [Display(Name ="Ticket Number")]
         [Key]
         public long TicketNumber { get; set; }
 
+        [Display(Name = "Price")]
         [Column(TypeName = "smallmoney")]
         public decimal? Price { get; set; }
 
+        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}", ApplyFormatInEditMode = true)]
+        [Display(Name = "Date")]
         [Column(TypeName = "date")]
         public DateTime? DateOfPurchase { get; set; }
 
+        [Display(Name = "Ticket Type")]
         public int? TicketCode { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
