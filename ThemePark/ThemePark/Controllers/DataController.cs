@@ -612,6 +612,243 @@ namespace ThemePark.Controllers
         }
 
         [HttpGet]
+        public ActionResult ConcessionsReport()
+        {
+            if (ApplicationSession.AccessLevel == "Manager")
+            {
+                var ConcVM = new ConcessionsVM();
+                DateTime time = new DateTime(2019, 4, 4);
+                ConcVM.solditems = 0;
+                var items = db.SOLD_BY.ToList();
+                var itemsToday = new List<SOLD_BY>();
+                foreach (var item in items)
+                {
+                    if (item.DateSold.Date == time)
+                    {
+                        ConcVM.solditems += 1;
+                        itemsToday.Add(item);
+                    }
+                }
+
+                decimal revenue = 0;
+                foreach (var item in itemsToday)
+                {
+                    var conc = db.Concessions.Single(m => m.ItemName == item.ItemName);
+                    revenue += (decimal)conc.ItemPrice;
+
+                }
+                ConcVM.Revenue = revenue;
+                //For Bottled Water
+                ConcVM.BWsolditems = 0;
+                var BWitems = db.SOLD_BY.Where(m => m.ItemName == "Bottled Water").ToList();
+                var BWitemsToday = new List<SOLD_BY>();
+                foreach (var item in BWitems)
+                {
+                    if (item.DateSold.Date == time)
+                    {
+                        ConcVM.BWsolditems += 1;
+                        BWitemsToday.Add(item);
+                    }
+                }
+
+                decimal BWrevenue = 0;
+                foreach (var BWitem in BWitemsToday)
+                {
+                    var conc = db.Concessions.Single(m => m.ItemName == BWitem.ItemName);
+                    BWrevenue += (decimal)conc.ItemPrice;
+
+                }
+                ConcVM.BWRevenue = BWrevenue;
+                //For Caramel Apples
+                ConcVM.CAsolditems = 0;
+                var CAitems = db.SOLD_BY.Where(m => m.ItemName == "Caramel Apples").ToList();
+                var CAitemsToday = new List<SOLD_BY>();
+                foreach (var item in CAitems)
+                {
+                    if (item.DateSold.Date == time)
+                    {
+                        ConcVM.CAsolditems += 1;
+                        CAitemsToday.Add(item);
+                    }
+                }
+
+                decimal CArevenue = 0;
+                foreach (var CAitem in CAitemsToday)
+                {
+                    var conc = db.Concessions.Single(m => m.ItemName == CAitem.ItemName);
+                    CArevenue += (decimal)conc.ItemPrice;
+
+                }
+                ConcVM.CARevenue = CArevenue;
+                //For Cotton Candy
+                ConcVM.CCsolditems = 0;
+                var CCitems = db.SOLD_BY.Where(m => m.ItemName == "Cotton Candy").ToList();
+                var CCitemsToday = new List<SOLD_BY>();
+                foreach (var item in CCitems)
+                {
+                    if (item.DateSold.Date == time)
+                    {
+                        ConcVM.CCsolditems += 1;
+                        CCitemsToday.Add(item);
+                    }
+                }
+
+                decimal CCrevenue = 0;
+                foreach (var CCitem in CCitemsToday)
+                {
+                    var conc = db.Concessions.Single(m => m.ItemName == CCitem.ItemName);
+                    CCrevenue += (decimal)conc.ItemPrice;
+
+                }
+                ConcVM.CCRevenue = CCrevenue;
+                //For Funnel Cakes
+                ConcVM.FCsolditems = 0;
+                var FCitems = db.SOLD_BY.Where(m => m.ItemName == "Funnel Cakes").ToList();
+                var FCitemsToday = new List<SOLD_BY>();
+                foreach (var item in FCitems)
+                {
+                    if (item.DateSold.Date == time)
+                    {
+                        ConcVM.FCsolditems += 1;
+                        FCitemsToday.Add(item);
+                    }
+                }
+
+                decimal FCrevenue = 0;
+                foreach (var BWitem in FCitemsToday)
+                {
+                    var conc = db.Concessions.Single(m => m.ItemName == BWitem.ItemName);
+                    FCrevenue += (decimal)conc.ItemPrice;
+
+                }
+                ConcVM.FCRevenue = FCrevenue;
+                //For Nachos
+                ConcVM.Nsolditems = 0;
+                var Nitems = db.SOLD_BY.Where(m => m.ItemName == "Nachos").ToList();
+                var NitemsToday = new List<SOLD_BY>();
+                foreach (var item in Nitems)
+                {
+                    if (item.DateSold.Date == time)
+                    {
+                        ConcVM.Nsolditems += 1;
+                        NitemsToday.Add(item);
+                    }
+                }
+
+                decimal Nrevenue = 0;
+                foreach (var Nitem in NitemsToday)
+                {
+                    var conc = db.Concessions.Single(m => m.ItemName == Nitem.ItemName);
+                    Nrevenue += (decimal)conc.ItemPrice;
+
+                }
+                ConcVM.NRevenue = Nrevenue;
+                //For Pizza
+                ConcVM.Psolditems = 0;
+                var Pitems = db.SOLD_BY.Where(m => m.ItemName == "Pizza").ToList();
+                var PitemsToday = new List<SOLD_BY>();
+                foreach (var item in Pitems)
+                {
+                    if (item.DateSold.Date == time)
+                    {
+                        ConcVM.Psolditems += 1;
+                        PitemsToday.Add(item);
+                    }
+                }
+
+                decimal Prevenue = 0;
+                foreach (var Pitem in PitemsToday)
+                {
+                    var conc = db.Concessions.Single(m => m.ItemName == Pitem.ItemName);
+                    Prevenue += (decimal)conc.ItemPrice;
+
+                }
+                ConcVM.PRevenue = Prevenue;
+                //For PopCorn
+                ConcVM.Popsolditems = 0;
+                var Popitems = db.SOLD_BY.Where(m => m.ItemName == "Popcorn").ToList();
+                var PopitemsToday = new List<SOLD_BY>();
+                foreach (var item in Popitems)
+                {
+                    if (item.DateSold.Date == time)
+                    {
+                        ConcVM.Popsolditems += 1;
+                        PopitemsToday.Add(item);
+                    }
+                }
+
+                decimal Poprevenue = 0;
+                foreach (var Popitem in PopitemsToday)
+                {
+                    var conc = db.Concessions.Single(m => m.ItemName == Popitem.ItemName);
+                    Poprevenue += (decimal)conc.ItemPrice;
+
+                }
+                ConcVM.PopRevenue = Poprevenue;
+                //For Sno-Kone
+                ConcVM.SKsolditems = 0;
+                var SKitems = db.SOLD_BY.Where(m => m.ItemName == "Sno-Kone").ToList();
+                var SKitemsToday = new List<SOLD_BY>();
+                foreach (var item in SKitems)
+                {
+                    if (item.DateSold.Date == time)
+                    {
+                        ConcVM.SKsolditems += 1;
+                        SKitemsToday.Add(item);
+                    }
+                }
+
+                decimal SKrevenue = 0;
+                foreach (var SKitem in SKitemsToday)
+                {
+                    var conc = db.Concessions.Single(m => m.ItemName == SKitem.ItemName);
+                    SKrevenue += (decimal)conc.ItemPrice;
+
+                }
+                ConcVM.SKRevenue = SKrevenue;
+                //For Soda
+                ConcVM.SDsolditems = 0;
+                var SDitems = db.SOLD_BY.Where(m => m.ItemName == "Soda").ToList();
+                var SDitemsToday = new List<SOLD_BY>();
+                foreach (var item in SDitems)
+                {
+                    if (item.DateSold.Date == time)
+                    {
+                        ConcVM.SDsolditems += 1;
+                        SDitemsToday.Add(item);
+                    }
+                }
+
+                decimal SDrevenue = 0;
+                foreach (var SDitem in SDitemsToday)
+                {
+                    var conc = db.Concessions.Single(m => m.ItemName == SDitem.ItemName);
+                    SDrevenue += (decimal)conc.ItemPrice;
+
+                }
+                ConcVM.SDRevenue = SDrevenue;
+
+                return View(ConcVM);
+            }
+            else
+            {
+                return Redirect(ApplicationSession.RedirectToHomeURL);
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+        [HttpGet]
         public ActionResult RideReport()
         {
             if (ApplicationSession.AccessLevel == "Manager")

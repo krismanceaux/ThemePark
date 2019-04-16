@@ -39,7 +39,7 @@
             <div class="card" style="width: 18rem;">
                 <img src=@Url.Content("~/Media/rideReport.jpg") class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">RideReport</h5>
+                    <h5 class="card-title">Ride Report</h5>
                     <p class="card-text">Get an overall report on all rides and individual ride averages with visual graphics.</p>
                     @Html.ActionLink("Ride Report", "RideReport", null, new { @class = "btn btn-primary" })
 
@@ -47,6 +47,25 @@
                 </div>
             </div>
         </div>
+       
+
+        <div class="col-sm-6 col-md-4">
+            <div class="card" style="width: 18rem;">
+                <img src=@Url.Content("~/Media/Pizza.jpg") class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Concessions Report</h5>
+                    <p class="card-text">Get an overall report on all concessions item</p>
+               
+                    @Html.ActionLink("Concessions Report", "ConcessionsReport", null, new { @class = "btn btn-primary" })
+
+
+
+                </div>
+            </div>
+        </div>
+        
+        
+        
 
     </div>
 </div>
