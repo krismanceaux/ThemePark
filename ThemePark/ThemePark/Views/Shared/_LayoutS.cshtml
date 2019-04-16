@@ -243,48 +243,26 @@
         <div class="row text-center text-xs-center text-sm-left text-md-left">
             <div class="col-xs-12 col-sm-4 col-md-4" style="color: #C71585">
 
-                <h5>Things to Do</h5>
+                <h5>Manager Hub</h5>
                 <ul class="list-unstyled quick-links" style="color: #C71585">
-                    <li>@Html.ActionLink("TEXAS Coaster", "TEXAS_CoasterS", "ThingsToDo", null, new { @class = "my-class" })</li>
-                    <li>@Html.ActionLink("UH Ride", "UH_rideS", "ThingsToDo", null, new { @class = "my-class" })</li>
-                    <li>@Html.ActionLink("CS Train ", "CS_TrainS", "ThingsToDo", null, new { @class = "my-class" })</li>
-                    <li>@Html.ActionLink("DBMS Drive ", "DBMS_DriveS", "ThingsToDo", null, new { @class = "my-class" })</li>
+                    <li>@Html.ActionLink("Data Center", "Index", "Data", null, new { @class = "my-class" })</li>
+                    <li>@Html.ActionLink("Current Maintenance", "CurrentMaintenance", "Data", null, new { @class = "my-class" })</li>
+                    <li>@Html.ActionLink("Employee List", "Index", "ParkEmployees", null, new { @class = "my-class" })</li>
                 </ul>
             </div>
             <div class="col-xs-12 col-sm-4 col-md-4" style="color: #008080">
-                <h5>Plan Visit</h5>
+                <h5>Employee Hub</h5>
                 <ul class="list-unstyled quick-links" style="color: #008080">
                     <li>
-                        @Html.ActionLink("Park Map", "Park_MapS", "PlanVisit", null, new { @class = "my-class2" })
+                        @Html.ActionLink("Manage Personal Information", "EmployeeProfile", "Home", null, new { @class = "my-class2" })
 
                     </li>
-                    <li>@Html.ActionLink("Event Calendar", "CalendarS", "PlanVisit", null, new { @class = "my-class2" })</li>
+                    <li> @Html.ActionLink("Access", "Index", "Maintenance", null, new { @class = "my-class2" })</li>
 
                 </ul>
             </div>
-            <div class="col-xs-12 col-sm-4 col-md-4" style="color: #FFA500">
-                <h5>Shop</h5>
-                <ul class="list-unstyled quick-links" style="color: #FFA500">
-                    <li>
-                        @Html.ActionLink("Food", "FoodS", "Shop", null, new { @class = "my-class3" })
 
-                    </li>
-                    <li> @Html.ActionLink("Drink", "DrinkS", "Shop", null, new { @class = "my-class3" })</li>
 
-                </ul>
-            </div>
-            </br>
-            <div class="col-xs-12 col-sm-4 col-md-4" style="color: #00CED1">
-                <h5>Park information</h5>
-                <ul class="list-unstyled quick-links" style="color: #00CED1">
-                    <li>
-                        @Html.ActionLink("About Us", "AboutUsS", "ParkInformation", null, new { @class = "my-class4" })
-
-                    </li>
-                    <li>@Html.ActionLink("Social Media", "SocialMediaS", "ParkInformation", null, new { @class = "my-class4" })</li>
-
-                </ul>
-            </div>
 
             <div class="col-xs-12 col-sm-4 col-md-4" style="color: #0000cd">
                 <h5>Login</h5>
@@ -298,10 +276,6 @@
 
         </div>
 
-        
-
-
-       
     </div>
 </section>
 
