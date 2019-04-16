@@ -7,10 +7,13 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using ThemePark;
+using ThemePark.AuthData;
+using ThemePark.DAL;
 using ThemePark.ViewModels;
 
 namespace ThemePark.Controllers
 {
+    [AuthAttribute]
     public class ParkEmployeesController : Controller
     {
         private TPContext db = new TPContext();
@@ -18,8 +21,15 @@ namespace ThemePark.Controllers
         // GET: ParkEmployees
         public ActionResult Index()
         {
-            var parkEmployees = db.ParkEmployees.Include(p => p.Department);
-            return View(parkEmployees.ToList());
+            if (ApplicationSession.AccessLevel == "Manager" || ApplicationSession.AccessLevel == "Employee")
+            {
+                var parkEmployees = db.ParkEmployees.Include(p => p.Department);
+                return View(parkEmployees.ToList());
+            }
+            else
+            {
+                return Redirect(ApplicationSession.RedirectToHomeURL);
+            }
         }
 
         // GET: ParkEmployees/Details/5

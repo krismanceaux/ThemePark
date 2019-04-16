@@ -7,9 +7,11 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using ThemePark;
+using ThemePark.AuthData;
 
 namespace ThemePark.Controllers
 {
+    [AuthAttribute]
     public class ConcessionsController : Controller
     {
         private TPContext db = new TPContext();
