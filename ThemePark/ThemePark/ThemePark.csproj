@@ -126,9 +126,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\ADMITTED_BYController.cs" />
-
     <Compile Include="Controllers\ParkInformationController.cs" />
-
     <Compile Include="Controllers\PlanVisitController.cs" />
     <Compile Include="Controllers\ShopController.cs" />
     <Compile Include="Controllers\ThingsToDoController.cs" />
@@ -276,6 +274,7 @@
     <Compile Include="Models\Ticket.cs" />
     <Compile Include="Models\TicketCode.cs" />
     <Compile Include="DAL\TPContext.cs" />
+    <Compile Include="ViewModels\ConncessionsVM.cs" />
     <Compile Include="ViewModels\AdmssionsVM.cs" />
     <Compile Include="ViewModels\EmployeeLoginVM.cs" />
     <Compile Include="ViewModels\EmployeeVM.cs" />
@@ -525,24 +524,19 @@
     <Content Include="Views\Data\RideReport.cshtml" />
     <Content Include="Views\Data\MaintenanceGraphic.cshtml" />
     <Content Include="Views\Data\MaintenanceGraphic2.cshtml" />
-
     <Content Include="Views\ParkInformation\AboutUs.cshtml" />
     <Content Include="Views\ParkInformation\AboutUsS.cshtml" />
     <Content Include="Views\ParkInformation\SocialMedia.cshtml" />
     <Content Include="Views\ParkInformation\SocialMediaS.cshtml" />
-
     <Content Include="Views\Data\RideGraphic2.cshtml" />
     <Content Include="Views\Data\RideGraphic.cshtml" />
-
+    <Content Include="Views\Data\ConcessionsReport.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\AboutUs\" />
     <Folder Include="Views\Default\" />
-
-    <Folder Include="Views\ParkInformation\" />
     <Folder Include="Views\RideGraphicsVM\" />
-
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
