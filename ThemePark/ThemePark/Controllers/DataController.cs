@@ -300,10 +300,25 @@ namespace ThemePark.Controllers
         public ActionResult MaintenanceReport()
         {
             var maintVM = new MaintenanceVM();
-
-           
+            //var april13 = new DateTime(2019, 4, 13);
+           // var jan3 = new DateTime(2019, 1, 1);
+            //var daysNum = (april13 - jan3).TotalDays;
+            //var monthNum = CultureInfo.InvariantCulture.Calendar.GetMonth(april13);
+            //var weekNum = CultureInfo.InvariantCulture.Calendar.GetWeekOfYear(april13, CalendarWeekRule.FirstDay, DayOfWeek.Monday);
+         
             var eMaint = db.Maintenances.Where(x => x.MaintCode == 4);
 
+            var rideList = new List<Ride>();
+            foreach(var row in eMaint)
+            {
+                if(row.CorrectiveAction == null && !rideList.Contains(row.Ride))
+                {
+                    rideList.Add(row.Ride);
+                }
+            }
+
+            int totalInop = rideList.Count();
+            maintVM.totalInop = totalInop;
             maintVM.AvgMonthlyInop = eMaint.Count() / 4;
             maintVM.AvgWeeklyInop = eMaint.Count() / 15;
 

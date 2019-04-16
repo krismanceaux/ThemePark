@@ -14,6 +14,9 @@ namespace ThemePark.ViewModels
         [Display(Name ="Monthly Average of Rides Inop.")]
         public int AvgMonthlyInop { get; set; }
 
+        [Display(Name = "Total Number of Inoperable Rides")]
+        public int totalInop { get; set; }
+
         [Display(Name = "Weekly Average of Rides Inop.")]
         public int AvgWeeklyInop { get; set; }
 
