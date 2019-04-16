@@ -132,7 +132,7 @@ namespace ThemePark.Controllers
                 m.AdmissionsDate.Value.Year == year);
 
                 //Weekly
-                int weekno = CultureInfo.InvariantCulture.Calendar.GetWeekOfYear(DateTime.Now, CalendarWeekRule.FirstDay, DayOfWeek.Monday);
+                int weekno = CultureInfo.InvariantCulture.Calendar.GetWeekOfYear(DateTime.Now, CalendarWeekRule.FirstDay, DayOfWeek.Monday) - 1;
                 AdmitVM.WeeklyTotal = db.ADMITTED_BY.ToList().Count
                     (m => CultureInfo.InvariantCulture.Calendar.GetWeekOfYear
                     (m.AdmissionsDate.Value, CalendarWeekRule.FirstDay, DayOfWeek.Monday) == weekno);
