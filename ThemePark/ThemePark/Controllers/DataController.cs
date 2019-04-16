@@ -319,7 +319,7 @@ namespace ThemePark.Controllers
 
             int totalInop = rideList.Count();
             maintVM.totalInop = totalInop;
-            maintVM.AvgMonthlyInop = eMaint.Count() / 4;
+            maintVM.AvgMonthlyInop = eMaint.Count() / 3;
             maintVM.AvgWeeklyInop = eMaint.Count() / 15;
 
             var TC_Maint = db.Maintenances.Where(x => x.RideID == 100000);

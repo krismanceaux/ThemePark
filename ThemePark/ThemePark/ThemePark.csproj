@@ -241,6 +241,14 @@
     <Compile Include="Migrations\201904161024390_poptickets13.Designer.cs">
       <DependentUpon>201904161024390_poptickets13.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201904161625294_poptickets14.cs" />
+    <Compile Include="Migrations\201904161625294_poptickets14.Designer.cs">
+      <DependentUpon>201904161625294_poptickets14.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904161637057_poptickets15.cs" />
+    <Compile Include="Migrations\201904161637057_poptickets15.Designer.cs">
+      <DependentUpon>201904161637057_poptickets15.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ADMITTED_BY.cs" />
     <Compile Include="Models\Concession.cs" />
@@ -593,6 +601,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201904161024390_poptickets13.resx">
       <DependentUpon>201904161024390_poptickets13.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904161625294_poptickets14.resx">
+      <DependentUpon>201904161625294_poptickets14.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904161637057_poptickets15.resx">
+      <DependentUpon>201904161637057_poptickets15.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

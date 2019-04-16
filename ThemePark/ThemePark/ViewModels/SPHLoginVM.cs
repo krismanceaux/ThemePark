@@ -8,6 +8,7 @@ namespace ThemePark.ViewModels
 {
     public class SPHLoginVM
     {
+
         [Required(ErrorMessage = "Username is required")]
         public string Username { get; set; }
 

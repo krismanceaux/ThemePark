@@ -11,7 +11,7 @@ namespace ThemePark.ViewModels
     public class MaintenanceVM
     {
 
-        [Display(Name ="Monthly Average of Rides Inop.")]
+        [Display(Name ="Monthly Average of Emergency Requests")]
         public int AvgMonthlyInop { get; set; }
 
         [Display(Name = "Total Number of Inoperable Rides")]
@@ -23,11 +23,11 @@ namespace ThemePark.ViewModels
         [Display(Name = "Periodic")]
 
         public int CurrentNumPeriodic { get; set; }
-        [Display(Name = "Emergency")]
+        [Display(Name = "Total Emergency")]
         public int CurrentNumEmergency { get; set; }
-        [Display(Name = "Scheduled")]
+        [Display(Name = "Total Scheduled")]
         public int CurrentNumScheduled { get; set; }
-        [Display(Name = "Unscheduled")]
+        [Display(Name = "Total Unscheduled")]
         public int CurrentNumUnscheduled { get; set; }
         // add all data we need from project description under
 
