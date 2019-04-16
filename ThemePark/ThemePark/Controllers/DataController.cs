@@ -105,7 +105,7 @@ namespace ThemePark.Controllers
         {
             var currentMaintenance = db.Maintenances.Include(m => m.MaintCode1).Include(m => m.Ride).Where(m => m.CorrectiveAction == null).ToList();
 
-            if (ApplicationSession.AccessLevel == "Manager" || ApplicationSession.AccessLevel == "Employee")
+            if (ApplicationSession.AccessLevel == "Manager")
                 return View(currentMaintenance);
             else
                 return Redirect(ApplicationSession.RedirectToHomeURL);
@@ -882,7 +882,8 @@ namespace ThemePark.Controllers
 
                 int year = DateTime.Now.Year;
                 int month = DateTime.Now.Month;
-                int day = DateTime.Now.Day;
+                //int day = DateTime.Now.Day;
+                int day = 13;
 
                 //CultureInfo myCI = new CultureInfo("en-US");
                 //Calendar myC = myCI.Calendar;
@@ -902,7 +903,7 @@ namespace ThemePark.Controllers
                 rideVM.YearlyAvg = db.PERMITS.Count(m => m.PTimeStamp.Value.Year == year) / DateTime.Today.DayOfYear;
 
                 //Weekly Permitted
-                int weekno = CultureInfo.InvariantCulture.Calendar.GetWeekOfYear(DateTime.Now, CalendarWeekRule.FirstDay, DayOfWeek.Monday);
+                int weekno = CultureInfo.InvariantCulture.Calendar.GetWeekOfYear(DateTime.Now, CalendarWeekRule.FirstDay, DayOfWeek.Monday)-1;
                 rideVM.WeeklyTotal = db.PERMITS.ToList().Count
                     (m => CultureInfo.InvariantCulture.Calendar.GetWeekOfYear
                     (m.PTimeStamp.Value, CalendarWeekRule.FirstDay, DayOfWeek.Monday) == weekno);

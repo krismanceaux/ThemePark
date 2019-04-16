@@ -21,7 +21,7 @@ namespace ThemePark.Controllers
         // GET: ParkEmployees
         public ActionResult Index()
         {
-            if (ApplicationSession.AccessLevel == "Manager" || ApplicationSession.AccessLevel == "Employee")
+            if (ApplicationSession.AccessLevel == "Manager")
             {
                 var parkEmployees = db.ParkEmployees.Include(p => p.Department);
                 return View(parkEmployees.ToList());
