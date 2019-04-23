@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>CurrentMaintenance</h2>
+<h2>Unfinished Maintenance</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create", "Maintenance")
@@ -53,11 +53,7 @@
             <td>
                 @Html.DisplayFor(modelItem => item.DateFixed)
             </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.MaintenanceID }) |
-                @Html.ActionLink("Details", "Details", new { id=item.MaintenanceID }) |
-                @Html.ActionLink("Delete", "Delete", new { id=item.MaintenanceID })
-            </td>
+            
         </tr>
     }
 

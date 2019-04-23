@@ -63,29 +63,39 @@ namespace ThemePark.Controllers
         {
             if (ModelState.IsValid)
             {
-                var parkEmployee = new ParkEmployee();
-                parkEmployee.FirstName = employee.FirstName;
-                parkEmployee.LastName = employee.LastName;
-                parkEmployee.MiddleName = employee.MiddleName;
-                parkEmployee.StreetAddress = employee.StreetAddress;
-                parkEmployee.City = employee.City;
-                parkEmployee.State = employee.State;
-                parkEmployee.ZipCode = employee.ZipCode;
-                parkEmployee.PhoneNumber = employee.PhoneNumber;
-                parkEmployee.DateOfBirth = employee.DateOfBirth;
-                parkEmployee.Sex = employee.Sex;
-                parkEmployee.JobTitle = employee.JobTitle;
-                parkEmployee.DepartmentID = employee.DepartmentID;
 
-                var login = new EmployeeLogin();
-                login.ParkEmployee = parkEmployee;
-                login.LoginEmail = employee.LoginEmail;
-                login.Pswd = employee.Pswd;
+                //check database for existing username
+                if (db.EmployeeLogins.Any(x => x.LoginEmail == employee.LoginEmail))
+                {
+                    ModelState.AddModelError(string.Empty, "Email already exists");
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    var parkEmployee = new ParkEmployee();
+                    parkEmployee.FirstName = employee.FirstName;
+                    parkEmployee.LastName = employee.LastName;
+                    parkEmployee.MiddleName = employee.MiddleName;
+                    parkEmployee.StreetAddress = employee.StreetAddress;
+                    parkEmployee.City = employee.City;
+                    parkEmployee.State = employee.State;
+                    parkEmployee.ZipCode = employee.ZipCode;
+                    parkEmployee.PhoneNumber = employee.PhoneNumber;
+                    parkEmployee.DateOfBirth = employee.DateOfBirth;
+                    parkEmployee.Sex = employee.Sex;
+                    parkEmployee.JobTitle = employee.JobTitle;
+                    parkEmployee.DepartmentID = employee.DepartmentID;
 
-                db.ParkEmployees.Add(parkEmployee);
-                db.EmployeeLogins.Add(login);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                    var login = new EmployeeLogin();
+                    login.ParkEmployee = parkEmployee;
+                    login.LoginEmail = employee.LoginEmail;
+                    login.Pswd = employee.Pswd;
+
+                    db.ParkEmployees.Add(parkEmployee);
+                    db.EmployeeLogins.Add(login);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
             }
 
             ViewBag.DepartmentID = new SelectList(db.Departments, "DepartmentID", "DName", employee.DepartmentID);

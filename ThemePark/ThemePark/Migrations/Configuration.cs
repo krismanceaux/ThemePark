@@ -135,59 +135,59 @@ namespace ThemePark.Migrations
             ///        PERMITS
             ////////////////////////////////////
 
-            // get all rides
-            var rides = context.Rides.ToList();
+            //// get all rides
+            //var rides = context.Rides.ToList();
 
-            var timestamp = new DateTime(2019, 1, 3);
-            TimeSpan d = DateTime.Now.TimeOfDay;
-            var timeStampDayIncrement = 1;
-            var secondIncrement = 1;
-            timestamp += d;
-            var stopDate = new DateTime(2019, 4, 13);
-            //var numDays = (DateTime.Now.Date - timestamp).TotalDays;
-            var numDays = (stopDate - timestamp).TotalDays;
+            //var timestamp = new DateTime(2019, 1, 3);
+            //TimeSpan d = DateTime.Now.TimeOfDay;
+            //var timeStampDayIncrement = 1;
+            //var secondIncrement = 1;
+            //timestamp += d;
+            //var stopDate = new DateTime(2019, 4, 13);
+            ////var numDays = (DateTime.Now.Date - timestamp).TotalDays;
+            //var numDays = (stopDate - timestamp).TotalDays;
 
-            // on each day
-            for (int i = 0; i < numDays; i++)
-            {
-                var newTimeStamp = timestamp.AddDays(timeStampDayIncrement).AddSeconds(secondIncrement);
+            //// on each day
+            //for (int i = 0; i < numDays; i++)
+            //{
+            //    var newTimeStamp = timestamp.AddDays(timeStampDayIncrement).AddSeconds(secondIncrement);
 
-                // get all tickets admimtted on this day
-                var admitsToday = context.ADMITTED_BY.Where(x => x.AdmissionsDate == newTimeStamp.Date).ToList();
-                var rnd = new Random();
+            //    // get all tickets admimtted on this day
+            //    var admitsToday = context.ADMITTED_BY.Where(x => x.AdmissionsDate == newTimeStamp.Date).ToList();
+            //    var rnd = new Random();
 
-                //random number for total times every ride was ridden that day
-                var totalRides = rnd.Next(25, 60);
-                if (admitsToday.Count() > 0)
-                {
+            //    //random number for total times every ride was ridden that day
+            //    var totalRides = rnd.Next(25, 60);
+            //    if (admitsToday.Count() > 0)
+            //    {
 
-                    //for each time ridden this day
-                    for (int j = 0; j < totalRides; j++)
-                    {
-                        // for each ride that day
-                        var randRideIndex = rnd.Next(0, 10);
+            //        //for each time ridden this day
+            //        for (int j = 0; j < totalRides; j++)
+            //        {
+            //            // for each ride that day
+            //            var randRideIndex = rnd.Next(0, 10);
 
-                        var rnd1 = new Random();
-                        var randomTicket = rnd1.Next(admitsToday.Count() - 1);
-                        var newNewTimeStamp = newTimeStamp.AddSeconds(secondIncrement);
-                        // generate new record with unique timestamp, random ticket, and current ride
-                        context.PERMITS.AddOrUpdate(
-                            new PERMIT
-                            {
-                                RideID = rides[randRideIndex].RideID,
-                                TicketNumber = admitsToday[randomTicket].TicketID,
-                                PTimeStamp = newNewTimeStamp
-                            });
-                        // change time
-                        secondIncrement += 1;
+            //            var rnd1 = new Random();
+            //            var randomTicket = rnd1.Next(admitsToday.Count() - 1);
+            //            var newNewTimeStamp = newTimeStamp.AddSeconds(secondIncrement);
+            //            // generate new record with unique timestamp, random ticket, and current ride
+            //            context.PERMITS.AddOrUpdate(
+            //                new PERMIT
+            //                {
+            //                    RideID = rides[randRideIndex].RideID,
+            //                    TicketNumber = admitsToday[randomTicket].TicketID,
+            //                    PTimeStamp = newNewTimeStamp
+            //                });
+            //            // change time
+            //            secondIncrement += 1;
 
 
-                    }
-                }
-                //change day
-                timeStampDayIncrement++;
+            //        }
+            //    }
+            //    //change day
+            //    timeStampDayIncrement++;
 
-            }
+            //}
 
 
 

@@ -148,7 +148,17 @@ namespace ThemePark.Controllers
             return View(receipt);
         }
 
-
+        public ActionResult SPHReceipt()
+        {
+            var sphLogin = db.SPHLogins.First(x => x.LoginEmail == ApplicationSession.Username);
+            var SPHId = sphLogin.SPH_ID;
+            var ticketCount = db.DependentPassHolders.Count(x => x.SPH_ID == SPHId) + 1;
+            ViewBag.ticketCount = ticketCount;
+            var receipt = db.Tickets.OrderByDescending(t => t.TicketNumber).Take(ticketCount).ToList();
+            ViewBag.TotalPrice = receipt[ticketCount - 1].Price + ((ticketCount - 1) * receipt[0].Price);
+            ViewBag.TotalPrice = Math.Round(ViewBag.TotalPrice, 2);
+            return View(receipt[ticketCount-1]);
+        }
 
 
 

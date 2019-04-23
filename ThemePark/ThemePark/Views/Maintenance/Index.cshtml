@@ -34,39 +34,74 @@
         <th>
             @Html.DisplayNameFor(model => model.DateFixed)
         </th>
-        
+
         <th></th>
     </tr>
 
-    @foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.MaintenanceID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MaintCode1.MaintType)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Ride.RideName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MaintDescription)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CorrectiveAction)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DateAdded)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DateFixed)
-            </td>
-        
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.MaintenanceID }) |
-                @Html.ActionLink("Delete", "Delete", new { id=item.MaintenanceID })
-            </td>
-        </tr>
+    @foreach (var item in Model)
+    {
+        if (item.MaintCode == 4)
+        {
+            <tr style="background-color:darkred">
+                <td>
+                    @Html.DisplayFor(modelItem => item.MaintenanceID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MaintCode1.MaintType)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ride.RideName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MaintDescription)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CorrectiveAction)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateAdded)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateFixed)
+                </td>
+
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.MaintenanceID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.MaintenanceID })
+                </td>
+            </tr>
+        }
+        else
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MaintenanceID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MaintCode1.MaintType)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ride.RideName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MaintDescription)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CorrectiveAction)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateAdded)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateFixed)
+                </td>
+
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.MaintenanceID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.MaintenanceID })
+                </td>
+            </tr>
+        }
     }
 
 </table>

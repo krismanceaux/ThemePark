@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "DBMSride";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -128,31 +127,45 @@
     <div class="row">
         <div class="[ col-sm-6 col-md-offset-2 col-md-4 ]">
             <div class="[ info-card ]">
-                <img style="width: 100%" src=@Url.Content("~/Media/FerrisWheel.jpg") alt="..." />
-                <div class="[ info-card-details ] animate">
-                    <div class="[ info-card-header ]">
-                        <h1> Ferris Wheel </h1>
+                @if (ViewBag.FW_Status == 2)
+                {
+                    <img style="width: 100%" src=@Url.Content("~/Media/Down-for-Maintenance.png") alt="..." />
+                }
+                else if (ViewBag.FW_Status == 1)
+                {
+                    <img style="width: 100%" src=@Url.Content("~/Media/FerrisWheel.jpg") alt="..." />
+                }
+                    <div class="[ info-card-details ] animate">
+                        <div class="[ info-card-header ]">
+                            <h1> Ferris Wheel </h1>
 
-                    </div>
-                    <div class="[ info-card-detail ]">
-                        <!-- Description -->
-                        <p>Ride Location: South District</p>
-                        <br />
-                        <p>Ride Capacity: 80</p>
-                        <br />
-                        <p>Classic Ferris wheel to enjoy the view</p>
+                        </div>
+                        <div class="[ info-card-detail ]">
+                            <!-- Description -->
+                            <p>Ride Location: South District</p>
+                            <br />
+                            <p>Ride Capacity: 80</p>
+                            <br />
+                            <p>Classic Ferris wheel to enjoy the view</p>
 
 
+                        </div>
                     </div>
                 </div>
-            </div>
         </div>
         <div class="[ col-sm-6 col-md-4 ]">
             <div class="[ info-card ]">
-                <img style="width: 100%" src=@Url.Content("~/Media/Teacups.jpg") alt="..." />
+                @if (ViewBag.teacups_Status == 2)
+                {
+                    <img style="width: 100%" src=@Url.Content("~/Media/Down-for-Maintenance.png") alt="..." />
+                }
+                else if(ViewBag.teacups_Status == 1)
+                {
+                    <img style="width: 100%" src=@Url.Content("~/Media/Teacups.jpg") alt="..." />
+                }
                 <div class="[ info-card-details ] animate">
                     <div class="[ info-card-header ]">
-                        <h1>Texas Twister </h1>
+                        <h1>Teacups </h1>
                     </div>
                     <div class="[ info-card-detail ]">
                         <!-- Description -->

@@ -22,7 +22,13 @@ namespace ThemePark.Controllers
             return View(dependentPassHolders.ToList());
         }
 
+        // Add dependents upon creation of SPH
         public ActionResult DepQuestion()
+        {
+
+            return View();
+        }
+        public ActionResult DepQuestion2()
         {
 
             return View();
@@ -50,6 +56,13 @@ namespace ThemePark.Controllers
             ViewBag.TicketNumber = new SelectList(db.Tickets, "TicketNumber", "TicketNumber");
             return View();
         }
+        // GET: DependentPassHolders/Create
+        public ActionResult Create2()
+        {
+            ViewBag.SPH_ID = new SelectList(db.SeasonPassHolders, "SPH_ID", "StreetAddress");
+            ViewBag.TicketNumber = new SelectList(db.Tickets, "TicketNumber", "TicketNumber");
+            return View();
+        }
 
         // POST: DependentPassHolders/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
@@ -60,11 +73,11 @@ namespace ThemePark.Controllers
         {
             if (ModelState.IsValid)
             {
-                var sphLogin = db.SPHLogins.Single(x => x.LoginEmail == ApplicationSession.Username);
+                var sphLogin = db.SPHLogins.First(x => x.LoginEmail == ApplicationSession.Username);
                 var SPHId = sphLogin.SPH_ID;
                 dependentPassHolder.SPH_ID = SPHId;
                 var ticket = new Ticket();
-                ticket.Price = (decimal)10.00;
+                ticket.Price = (decimal)30.00;
                 ticket.DateOfPurchase = DateTime.Now.Date;
                 ticket.TicketCode = 5;
                 dependentPassHolder.Ticket = ticket;
@@ -72,6 +85,31 @@ namespace ThemePark.Controllers
                 db.DependentPassHolders.Add(dependentPassHolder);
                 db.SaveChanges();
                 return RedirectToAction("DepQuestion");
+            }
+
+            ViewBag.SPH_ID = new SelectList(db.SeasonPassHolders, "SPH_ID", "StreetAddress", dependentPassHolder.SPH_ID);
+            ViewBag.TicketNumber = new SelectList(db.Tickets, "TicketNumber", "TicketNumber", dependentPassHolder.TicketNumber);
+            return View(dependentPassHolder);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create2([Bind(Include = "DepID,FirstName,LastName,MiddleName,TicketNumber,SPH_ID")] DependentPassHolder dependentPassHolder)
+        {
+            if (ModelState.IsValid)
+            {
+                var sphLogin = db.SPHLogins.First(x => x.LoginEmail == ApplicationSession.Username);
+                var SPHId = sphLogin.SPH_ID;
+                dependentPassHolder.SPH_ID = SPHId;
+                var ticket = new Ticket();
+                ticket.Price = (decimal)30.00;
+                ticket.DateOfPurchase = DateTime.Now.Date;
+                ticket.TicketCode = 5;
+                dependentPassHolder.Ticket = ticket;
+
+                db.DependentPassHolders.Add(dependentPassHolder);
+                db.SaveChanges();
+                return RedirectToAction("DepQuestion2");
             }
 
             ViewBag.SPH_ID = new SelectList(db.SeasonPassHolders, "SPH_ID", "StreetAddress", dependentPassHolder.SPH_ID);

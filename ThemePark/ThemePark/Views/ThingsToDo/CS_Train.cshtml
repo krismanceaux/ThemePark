@@ -116,40 +116,54 @@
     <div class="row">
         <div class="[ col-sm-6 col-md-offset-2 col-md-4 ]">
             <div class="[ info-card ]">
-                <img style="width: 100%" src=@Url.Content("~/Media/UHCS.jpg") alt="..." />
-                <div class="[ info-card-details ] animate">
-                    <div class="[ info-card-header ]">
-                        <h1> UH CS </h1>
+                @if (ViewBag.UHCS_Status == 2)
+                {
+                    <img style="width: 100%" src=@Url.Content("~/Media/Down-for-Maintenance.png") alt="..." />
+                }
+                else if (ViewBag.UHCS_Status == 1)
+                {
+                    <img style="width: 100%" src=@Url.Content("~/Media/UHCS.jpg") alt="..." />
+                }
+                    <div class="[ info-card-details ] animate">
+                        <div class="[ info-card-header ]">
+                            <h1> UH CS </h1>
 
-                    </div>
-                    <div class="[ info-card-detail ]">
-                        <!-- Description -->
-                        <p>Ride Location: West District</p>
-                        <br />
-                        <p>Ride Capacity: 96</p>
-                        <br />
-                        <p>You will question everything</p>
+                        </div>
+                        <div class="[ info-card-detail ]">
+                            <!-- Description -->
+                            <p>Ride Location: West District</p>
+                            <br />
+                            <p>Ride Capacity: 96</p>
+                            <br />
+                            <p>You will question everything</p>
+                        </div>
                     </div>
                 </div>
-            </div>
         </div>
         <div class="[ col-sm-6 col-md-4 ]">
             <div class="[ info-card ]">
-                <img style="width: 100%" src=@Url.Content("~/Media/TexasCyclone.jpg") alt="..." />
-                <div class="[ info-card-details ] animate">
-                    <div class="[ info-card-header ]">
-                        <h1>Texas Cyclone </h1>
-                    </div>
-                    <div class="[ info-card-detail ]">
-                        <!-- Description -->
-                        <p>Ride Location: West District</p>
-                        <br />
-                        <p>Ride Capacity: 35</p>
-                        <br />
-                        <p>Wooden Rollercoaster</p>
+                @if (ViewBag.tc_Status == 2)
+                {
+                    <img style="width: 100%" src=@Url.Content("~/Media/Down-for-Maintenance.png") alt="..." />
+                }
+                else
+                {
+                    <img style="width: 100%" src=@Url.Content("~/Media/TexasCyclone.jpg") alt="..." />
+                }
+                    <div class="[ info-card-details ] animate">
+                        <div class="[ info-card-header ]">
+                            <h1>Texas Cyclone </h1>
+                        </div>
+                        <div class="[ info-card-detail ]">
+                            <!-- Description -->
+                            <p>Ride Location: West District</p>
+                            <br />
+                            <p>Ride Capacity: 35</p>
+                            <br />
+                            <p>Wooden Rollercoaster</p>
+                        </div>
                     </div>
                 </div>
-            </div>
         </div>
         
         

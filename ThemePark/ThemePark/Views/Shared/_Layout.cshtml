@@ -227,6 +227,8 @@
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         @Html.ActionLink("Management Home", "ManagerHub", "Home", null, new { @class = "nav-link" })
                         @Html.ActionLink("Data Center", "Index", "Data", null, new { @class = "nav-link" })
+                        @Html.ActionLink("Manager Login", "Login", "EmployeeAccount", null, new { @class = "nav-link" })
+
 
                     </div>
                 </li>
@@ -238,9 +240,20 @@
                         @Html.ActionLink("Employee Home", "EmployeeHub", "Home", null, new { @class = "nav-link" })
                         @Html.ActionLink("Profile", "EmployeeProfile", "Home", null, new { @class = "nav-link" })
                         @Html.ActionLink("Maintenance", "Index", "Maintenance", null, new { @class = "nav-link" })
+                        @Html.ActionLink("Employee Login", "Login", "EmployeeAccount", null, new { @class = "nav-link" })
                     </div>
                 </li>
-                <li>@Html.ActionLink("Pass Holder Login", "Login", "SPHAccount", null, new { @class = "nav-link" })</li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Season Pass Holders
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        @Html.ActionLink("Pass Holder Login", "Login", "SPHAccount", null, new { @class = "nav-link" })
+                        @Html.ActionLink("Pass Holder Profile", "SPH_Profile", "Home", null, new { @class = "nav-link" })
+
+                    </div>
+                </li>
+                @*<li>@Html.ActionLink("Pass Holder Login", "Login", "SPHAccount", null, new { @class = "nav-link" })</li>*@
                 <li>@Html.ActionLink("Logout", "Index", "Home", new { id = 1 }, new { @class = "nav-link ml-auto" })</li>
             </ul>
         </div>

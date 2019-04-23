@@ -24,6 +24,7 @@ namespace ThemePark
         public virtual DbSet<PERFORMED_BY> PERFORMED_BY { get; set; }
         public virtual DbSet<PERMIT> PERMITS { get; set; }
         public virtual DbSet<Ride> Rides { get; set; }
+        public virtual DbSet<RideStatus> RideStatuses { get; set; }
         public virtual DbSet<SeasonPassHolder> SeasonPassHolders { get; set; }
         public virtual DbSet<SOLD_BY> SOLD_BY { get; set; }
         public virtual DbSet<SPHLogin> SPHLogins { get; set; }
@@ -86,6 +87,11 @@ namespace ThemePark
                 .HasMany(e => e.Tickets)
                 .WithOptional(e => e.TicketCode1)
                 .HasForeignKey(e => e.TicketCode);
+
+            modelBuilder.Entity<RideStatus>()
+               .HasMany(e => e.Rides)
+               .WithOptional(e => e.RideStatus1)
+               .HasForeignKey(e => e.RideStatus);
         }
     }
 }

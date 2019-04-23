@@ -128,60 +128,81 @@
     <div class="row">
         <div class="[ col-sm-6 col-md-offset-2 col-md-4 ]">
             <div class="[ info-card ]">
-                <img style="width: 100%" src=@Url.Content("~/Media/UnpluggedToaster.jpg") alt="..." />
-                <div class="[ info-card-details ] animate">
-                    <div class="[ info-card-header ]">
-                        <h1> Unplugged Toaster </h1>
+                @if (ViewBag.ut_Status == 2)
+                {
+                    <img style="width: 100%" src=@Url.Content("~/Media/Down-for-Maintenance.png") alt="..." />
+                }
+                else
+                {
+                    <img style="width: 100%" src=@Url.Content("~/Media/UnpluggedToaster.jpg") alt="..." />
+                }
+                    <div class="[ info-card-details ] animate">
+                        <div class="[ info-card-header ]">
+                            <h1> Unplugged Toaster </h1>
 
-                    </div>
-                    <div class="[ info-card-detail ]">
-                        <!-- Description -->
-                        <p>Ride Location: North District</p>
-                        <br />
-                        <p>Ride Capacity: 40</p>
-                        <br />
-                        <p>You may waste a lot of time thinking that this ride has started</p>
+                        </div>
+                        <div class="[ info-card-detail ]">
+                            <!-- Description -->
+                            <p>Ride Location: North District</p>
+                            <br />
+                            <p>Ride Capacity: 40</p>
+                            <br />
+                            <p>You may waste a lot of time thinking that this ride has started</p>
 
 
+                        </div>
                     </div>
                 </div>
-            </div>
         </div>
         <div class="[ col-sm-6 col-md-4 ]">
             <div class="[ info-card ]">
-                <img style="width: 100%" src=@Url.Content("~/Media/TexasTwister.jpg") alt="..." />
-                <div class="[ info-card-details ] animate">
-                    <div class="[ info-card-header ]">
-                        <h1>Texas Twister </h1>
-                    </div>
-                    <div class="[ info-card-detail ]">
-                        <!-- Description -->
-                        <p>Ride Location: North District</p>
-                        <br />
-                        <p>Ride Capacity: 45</p>
-                        <br />
-                        <p>Rollercoaster</p>
+                @if (ViewBag.tt_Status == 2)
+                {
+                    <img style="width: 100%" src=@Url.Content("~/Media/Down-for-Maintenance.png") alt="..." />
+                }
+                else
+                {
+                    <img style="width: 100%" src=@Url.Content("~/Media/TexasTwister.jpg") alt="..." />
+                }
+                    <div class="[ info-card-details ] animate">
+                        <div class="[ info-card-header ]">
+                            <h1>Texas Twister </h1>
+                        </div>
+                        <div class="[ info-card-detail ]">
+                            <!-- Description -->
+                            <p>Ride Location: North District</p>
+                            <br />
+                            <p>Ride Capacity: 45</p>
+                            <br />
+                            <p>Rollercoaster</p>
+                        </div>
                     </div>
                 </div>
-            </div>
         </div>
         <div class="[ col-sm-6 col-md-offset-2 col-md-4 ]">
             <div class="[ info-card ]">
-                <img style="width: 100%" src=@Url.Content("~/Media/AngryBubble.jpg") alt="..." />
-                <div class="[ info-card-details ] animate">
-                    <div class="[ info-card-header ]">
-                        <h1> Angry Bubble </h1>
-                    </div>
-                    <div class="[ info-card-detail ]">
-                        <!-- Description -->
-                        <p>Ride Location: North District</p>
-                        <br />
-                        <p>Ride Capacity: 64</p>
-                        <br />
-                        <p>Try saying "bubbles" in an angry voice.</p>
+                @if (ViewBag.ab_Status == 2)
+                {
+                    <img style="width: 100%" src=@Url.Content("~/Media/Down-for-Maintenance.png") alt="..." />
+                }
+                else
+                {
+                    <img style="width: 100%" src=@Url.Content("~/Media/AngryBubble.jpg") alt="..." />
+                }
+                    <div class="[ info-card-details ] animate">
+                        <div class="[ info-card-header ]">
+                            <h1> Angry Bubble </h1>
+                        </div>
+                        <div class="[ info-card-detail ]">
+                            <!-- Description -->
+                            <p>Ride Location: North District</p>
+                            <br />
+                            <p>Ride Capacity: 64</p>
+                            <br />
+                            <p>Try saying "bubbles" in an angry voice.</p>
+                        </div>
                     </div>
                 </div>
-            </div>
         </div>
 
     </div>

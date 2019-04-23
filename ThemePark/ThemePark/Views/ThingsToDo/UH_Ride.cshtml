@@ -129,59 +129,80 @@
         
         <div class="[ col-sm-6 col-md-4 ]">
             <div class="[ info-card ]">
-                <img style="width: 100%" src=@Url.Content("~/Media/LaggyConnection.jpg") alt="..." />
-                <div class="[ info-card-details ] animate">
-                    <div class="[ info-card-header ]">
-                        <h1>Laggy Connecction </h1>
-                    </div>
-                    <div class="[ info-card-detail ]">
-                        <!-- Description -->
-                        <p>Ride Location: Central District</p>
-                        <br />
-                        <p>Ride Capacity: 45</p>
-                        <br />
-                        <p>Rollercoaster</p>
+                @if (ViewBag.lc_Status == 2)
+                {
+                    <img style="width: 100%" src=@Url.Content("~/Media/Down-for-Maintenance.png") alt="..." />
+                }
+                else if(ViewBag.lc_Status == 1)
+                {
+                    <img style="width: 100%" src=@Url.Content("~/Media/LaggyConnection.jpg") alt="..." />
+                }
+                    <div class="[ info-card-details ] animate">
+                        <div class="[ info-card-header ]">
+                            <h1>Laggy Connecction </h1>
+                        </div>
+                        <div class="[ info-card-detail ]">
+                            <!-- Description -->
+                            <p>Ride Location: Central District</p>
+                            <br />
+                            <p>Ride Capacity: 45</p>
+                            <br />
+                            <p>Rollercoaster</p>
+                        </div>
                     </div>
                 </div>
-            </div>
         </div>
         <div class="[ col-sm-6 col-md-offset-2 col-md-4 ]">
             <div class="[ info-card ]">
-                <img style="width: 100%" src=@Url.Content("~/Media/UnsecureDatabase.jpg") alt="..." />
-                <div class="[ info-card-details ] animate">
-                    <div class="[ info-card-header ]">
-                        <h1> Unsecure Database </h1>
-                    </div>
-                    <div class="[ info-card-detail ]">
-                        <!-- Description -->
-                        <p>Ride Location: Central District</p>
-                        <br />
-                        <p>Ride Capacity: 100</p>
-                        <br />
-                        <p>Prepare your checkbook for how much this ride is going to cost you</p>
+                @if (ViewBag.ud_Status == 2)
+                {
+                    <img style="width: 100%" src=@Url.Content("~/Media/Down-for-Maintenance.png") alt="..." />
+                }
+                else
+                {
+                    <img style="width: 100%" src=@Url.Content("~/Media/UnsecureDatabase.jpg") alt="..." />
+                }
+                    <div class="[ info-card-details ] animate">
+                        <div class="[ info-card-header ]">
+                            <h1> Unsecure Database </h1>
+                        </div>
+                        <div class="[ info-card-detail ]">
+                            <!-- Description -->
+                            <p>Ride Location: Central District</p>
+                            <br />
+                            <p>Ride Capacity: 100</p>
+                            <br />
+                            <p>Prepare your checkbook for how much this ride is going to cost you</p>
+                        </div>
                     </div>
                 </div>
-            </div>
         </div>
 
         <div class="[ col-sm-6 col-md-offset-2 col-md-4 ]">
             <div class="[ info-card ]">
-                <img style="width: 100%" src=@Url.Content("~/Media/CrustyTwizzler.jpg") alt="..." />
-                <div class="[ info-card-details ] animate">
-                    <div class="[ info-card-header ]">
-                        <h1>Crusty Twizzler </h1>
+                @if (ViewBag.ct_Status == 2)
+                {
+                    <img style="width: 100%" src=@Url.Content("~/Media/Down-for-Maintenance.png") alt="..." />
+                }
+                else
+                {
+                    <img style="width: 100%" src=@Url.Content("~/Media/CrustyTwizzler.jpg") alt="..." />
+                }
+                    <div class="[ info-card-details ] animate">
+                        <div class="[ info-card-header ]">
+                            <h1>Crusty Twizzler </h1>
 
-                    </div>
-                    <div class="[ info-card-detail ]">
-                        <!-- Description -->
-                        <p>Ride Location: East District</p>
-                        <br />
-                        <p>Ride Capacity: 30</p>
-                        <br />
-                        <p>The Crusty Twizzler leaves you twisted</p>
+                        </div>
+                        <div class="[ info-card-detail ]">
+                            <!-- Description -->
+                            <p>Ride Location: East District</p>
+                            <br />
+                            <p>Ride Capacity: 30</p>
+                            <br />
+                            <p>The Crusty Twizzler leaves you twisted</p>
+                        </div>
                     </div>
                 </div>
-            </div>
         </div>
 
     </div>

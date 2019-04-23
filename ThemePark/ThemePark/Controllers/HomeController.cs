@@ -25,6 +25,8 @@ namespace ThemePark.Controllers
                     ApplicationSession.AccessLevel = "";
                 } 
             }
+
+            ViewBag.AccessLevel = ApplicationSession.AccessLevel;
             return View();
         }
 

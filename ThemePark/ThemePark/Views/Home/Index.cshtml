@@ -13,7 +13,7 @@
             <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
             <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
             <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
-        </ol>   
+        </ol>
         <div class="carousel-inner">
             <div class="carousel-item active mx-0 px-0">
                 <img src=@Url.Content("~/Media/rollercoaster3.jpg") class="d-block w-100" alt="...">
@@ -47,7 +47,24 @@
         </a>
     </div>
 </div>
+<div class="m-5">
+    @if (ViewBag.AccessLevel == "")
+    {
 
+    }
+    else if (ViewBag.AccessLevel == "Manager")
+    {
+        <h4>Currently logged into a Manager account</h4>
+    }
+    else if (ViewBag.AccessLevel == "Employee")
+    {
+        <h4>Currently logged into an Employee account</h4>
+    }
+    else if (ViewBag.AccessLevel == "SPH")
+    {
+        <h4>Currently logged into a Season Pass Holder account</h4>
+    }
+</div>
 
 @*content*@
 <div class="container">
@@ -80,7 +97,7 @@
                     <h5 class="card-title">Career</h5>
                     <p class="card-text">Know more about us through here</p>
                     <p> @Html.ActionLink("About Us", "AboutUs", "ParkInformation", null, new { @class = "btn btn-primary" })<p>
-                        
+
                     <p> @Html.ActionLink("Employee Login", "Login", "EmployeeAccount", null, new { @class = "btn btn-primary" })<p>
                 </div>
             </div>

@@ -56,28 +56,37 @@ namespace ThemePark.Controllers
         {
             if (ModelState.IsValid)
             {
-                SeasonPassHolder seasonPassHolder = new SeasonPassHolder();
-                seasonPassHolder.FirstName = sph.FirstName;
-                seasonPassHolder.MiddleName = sph.MiddleName;
-                seasonPassHolder.LastName = sph.LastName;
-                seasonPassHolder.StreetAddress = sph.StreetAddress;
-                seasonPassHolder.CityOfAddress = sph.CityOfAddress;
-                seasonPassHolder.StateOfAddress = sph.StateOfAddress;
-                seasonPassHolder.ZipCode = sph.ZipCode;
-                seasonPassHolder.TicketNumber = ApplicationSession.TicketNumber;
+                //check database for existing username
+                if (db.SPHLogins.Any(x => x.LoginEmail == sph.LoginEmail))
+                {
+                    ModelState.AddModelError(string.Empty, "Email already exists");
+                    return View(sph);
+                }
+                else
+                {
+                    SeasonPassHolder seasonPassHolder = new SeasonPassHolder();
+                    seasonPassHolder.FirstName = sph.FirstName;
+                    seasonPassHolder.MiddleName = sph.MiddleName;
+                    seasonPassHolder.LastName = sph.LastName;
+                    seasonPassHolder.StreetAddress = sph.StreetAddress;
+                    seasonPassHolder.CityOfAddress = sph.CityOfAddress;
+                    seasonPassHolder.StateOfAddress = sph.StateOfAddress;
+                    seasonPassHolder.ZipCode = sph.ZipCode;
+                    seasonPassHolder.TicketNumber = ApplicationSession.TicketNumber;
 
-                SPHLogin login = new SPHLogin();
-                login.LoginEmail = sph.LoginEmail;
-                login.Pswd = sph.Pswd;
-                login.SeasonPassHolder = seasonPassHolder;
+                    SPHLogin login = new SPHLogin();
+                    login.LoginEmail = sph.LoginEmail;
+                    login.Pswd = sph.Pswd;
+                    login.SeasonPassHolder = seasonPassHolder;
 
-                ApplicationSession.Username = sph.LoginEmail;
-                ApplicationSession.AccessLevel = "SPH";
+                    ApplicationSession.Username = sph.LoginEmail;
+                    ApplicationSession.AccessLevel = "SPH";
 
-                db.SeasonPassHolders.Add(seasonPassHolder);
-                db.SPHLogins.Add(login);
-                db.SaveChanges();
-                return RedirectToAction("DepQuestion", "DependentPassHolders");
+                    db.SeasonPassHolders.Add(seasonPassHolder);
+                    db.SPHLogins.Add(login);
+                    db.SaveChanges();
+                    return RedirectToAction("DepQuestion", "DependentPassHolders");
+                }
             }
 
             ViewBag.TicketNumber = new SelectList(db.Tickets, "TicketNumber", "TicketNumber", sph.TicketNumber);
