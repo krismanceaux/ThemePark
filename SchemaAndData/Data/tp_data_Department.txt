@@ -1,0 +1,7 @@
+DepartmentID,DName,Location
+100000,Maintenance,Everywhere
+100001,Admissions,North District
+100002,Retail,South District
+100003,Operations,Central District
+100004,Public Relations,East District
+100005,IT,West District

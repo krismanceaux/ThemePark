@@ -1,0 +1,10 @@
+ItemName,ItemPrice,ItemDescription
+Bottled Water,2.0000000000,H2O
+Caramel Apples,4.0000000000,Caramel-dipped apples
+Cotton Candy,3.0000000000,Sugary fluff on a stick
+Funnel Cakes,6.0000000000,Deep-fried mass of flour topped with sugar
+Nachos,5.0000000000,Tortilla chips, cheesy or not
+Pizza,5.5000000000,Cheesy bread with choice toppings
+Popcorn,4.0000000000,Buttery corn goodness
+Sno-Kone,2.5000000000,Flavored shaved-ice
+Soda,2.0000000000,Choice between major soda brands

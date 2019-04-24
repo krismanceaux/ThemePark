@@ -1,0 +1,62 @@
+MaintenanceID,MaintDescription,CorrectiveAction,DateAdded,DateFixed,MaintCode,RideID
+100002,30 Day Periodic Inspection,Performed 30 day inspection.,2019-01-01,2019-01-02,1,100000
+100003,30 Day Periodic Inspection,,2019-02-01,,1,100000
+100004,30 Day Periodic Inspection,,2019-03-01,,1,100000
+100005,30 Day Periodic Inspection,,2019-04-01,,1,100000
+100006,30 Day Periodic Inspection,,2019-01-01,,1,100001
+100007,30 Day Periodic Inspection,,2019-02-01,,1,100001
+100008,30 Day Periodic Inspection,,2019-03-01,,1,100001
+100010,30 Day Periodic Inspection,,2019-04-01,,1,100001
+100011,30 Day Periodic Inspection,,2019-01-01,,1,100002
+100012,30 Day Periodic Inspection,,2019-02-01,,1,100002
+100013,30 Day Periodic Inspection,,2019-03-01,,1,100002
+100014,30 Day Periodic Inspection,,2019-04-01,,1,100002
+100015,30 Day Periodic Inspection,,2019-01-01,,1,100003
+100016,30 Day Periodic Inspection,,2019-02-01,,1,100003
+100017,30 Day Periodic Inspection,,2019-03-01,,1,100003
+100018,30 Day Periodic Inspection,,2019-04-01,,1,100003
+100019,30 Day Periodic Inspection,,2019-01-01,,1,100004
+100020,30 Day Periodic Inspection,,2019-02-01,,1,100004
+100021,30 Day Periodic Inspection,,2019-03-01,,1,100004
+100022,30 Day Periodic Inspection,,2019-04-01,,1,100004
+100023,30 Day Periodic Inspection,,2019-01-01,,1,100005
+100024,30 Day Periodic Inspection,,2019-02-01,,1,100005
+100025,30 Day Periodic Inspection,,2019-03-01,,1,100005
+100026,30 Day Periodic Inspection,,2019-04-01,,1,100005
+100027,30 Day Periodic Inspection,,2019-01-01,,1,100006
+100028,30 Day Periodic Inspection,,2019-02-01,,1,100006
+100029,30 Day Periodic Inspection,,2019-03-01,,1,100006
+100030,30 Day Periodic Inspection,,2019-04-01,,1,100006
+100031,30 Day Periodic Inspection,,2019-01-01,,1,100008
+100032,30 Day Periodic Inspection,,2019-02-01,,1,100008
+100033,30 Day Periodic Inspection,,2019-03-01,,1,100008
+100034,30 Day Periodic Inspection,,2019-04-01,,1,100008
+100035,30 Day Periodic Inspection,,2019-01-01,,1,100009
+100037,30 Day Periodic Inspection,,2019-02-01,,1,100009
+100038,30 Day Periodic Inspection,,2019-03-01,,1,100009
+100039,30 Day Periodic Inspection,,2019-04-01,,1,100009
+100040,30 Day Periodic Inspection,,2019-01-01,,1,100010
+100041,30 Day Periodic Inspection,,2019-02-01,,1,100010
+100042,30 Day Periodic Inspection,,2019-03-01,,1,100010
+100043,30 Day Periodic Inspection,,2019-04-01,,1,100010
+100044,Ride Refurnish,,2019-02-21,,2,100000
+100045,Ride Refurnish,,2019-03-21,,2,100009
+100046,Landscape Maintenance,,2019-01-13,,2,100010
+100047,Broken Handrail,,2019-04-02,,3,100006
+100048,Air conditioning not blowing cold in cart 12,,2019-03-20,,3,100008
+100049,Corrosion Control,,2019-02-04,,3,100004
+100050,Gearbox repair,,2019-01-25,,4,100005
+100052,Operator Panel Repair,,2019-03-25,,4,100003
+100054,Catwalk Damage,,2019-03-19,,3,100010
+100055,Inflate Booster Tire,eververvs,2019-04-08,2019-04-23,4,100006
+100056,Adjust Air Gate Alignment,,2019-03-20,,3,100001
+100057,Track needs welding,sfvsfvsf,2019-04-12,2019-04-23,4,100010
+100058,Ride Refurnish on 5/1/2019,,2019-04-15,,2,100006
+100061,broke everything,getgtrgetrg,2019-03-11,2019-04-23,4,100004
+100069,Wheel not circular,dbdgbdgbdgf,2019-04-23,2019-04-23,4,100008
+100070,broke everything,frgwergrweg,2019-04-23,,4,100001
+100071,Ride Refurnish,,2019-04-23,,2,100010
+100072,broke everything,gertgegtr,2019-04-23,2019-04-23,4,100004
+100073,broke everything,ijnionj,2019-04-23,2019-04-23,4,100004
+100074,broke everything,fxgbgxfb,2019-04-23,2019-04-23,4,100009
+100077,broke everything,,2019-04-23,,4,100001

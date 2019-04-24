@@ -1,0 +1,6 @@
+TicketCode,TicketType
+1,Adult
+2,Child
+3,Student
+4,Veteran
+5,Season

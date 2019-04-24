@@ -1,0 +1,3 @@
+RideStatus,StatusDescription
+1,Operable
+2,Inoperable

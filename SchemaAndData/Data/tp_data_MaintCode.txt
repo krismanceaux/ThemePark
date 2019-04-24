@@ -1,0 +1,5 @@
+MaintCode,MaintType
+1,Periodic
+2,Scheduled
+3,Unscheduled
+4,Emergency

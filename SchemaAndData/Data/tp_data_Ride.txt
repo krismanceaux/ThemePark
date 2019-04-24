@@ -1,0 +1,11 @@
+RideID,RideName,RideDiscription,RideLocation,RideCapacity,RideStatus
+100000,Texas Cyclone,Wooden Rollercoaster,West District,35,1
+100001,Crusty Twizzler,The Crusty Twizzler leaves you twisted.,East District,30,2
+100002,Unsecure Database,Prepare your checkbook for how much this ride is going to cost you,Central District,100,1
+100003,Unplugged Toaster,You may waste a lot of time thinking that this ride has started,North District,40,2
+100004,Teacups,Your Generic teacup ride for the kiddos.,South District,25,1
+100005,Texas Twister,Rollercoaster,North District,45,2
+100006,Laggy Connecction,This ride may help you understand how much you rely on the internet.,Central District,33,1
+100008,Ferris Wheel,Classic Ferris wheel to enjoy the view,South District,80,1
+100009,UH CS,You will question everything.,West District,96,1
+100010,Angry Bubble,Try saying "bubbles" in an angry voice.,North District,64,1

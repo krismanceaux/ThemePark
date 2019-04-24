@@ -1,0 +1,44 @@
+EmployeeID,FirstName,MiddleName,LastName,StreetAddress,State,City,ZipCode,PhoneNumber,DateOfBirth,Sex,JobTitle,DepartmentID
+100000,Kristopher,,Manceaux,4800 Bay Area Blvd.,Tx,Houston,77058,8888888888,,M,Maintenance Manager,100000
+100001,James,Minh,Le,1234 Texas St.,Tx,Houston,77412,888-888-8888,1998-01-28,M,Operations Manager,100003
+100002,Yonathan,Kibru,Fondja,1234 Cougar St.,Tx,Houston,77412,888-888-8888,1998-12-31,M,Retail Manager,100002
+100003,Brandon,Tyler,Jimenez,1234 Battleship St.,Tx,Houston,77412,888-888-8888,1998-07-31,M,PR Manager,100004
+100004,Jacky,,Chan,1234 Dell St.,Tx,Houston,77412,888-888-8888,1997-04-09,M,IT Manager,100005
+100005,Uma,,Ramamurthy,1234 UH Dr.,Tx,Houston,77058,8889998525,1980-01-01,F,Ride Technician,100000
+100006,Norman,Japheth P,Aberin,1234 Some random street,Tx,Houston,77004,888-888-8888,1980-01-01,M,Ride Technician,100000
+100007,Edgar,,Zarazua,1234 Some random street,Tx,Houston,77004,8888888888,1980-01-01,M,Ride Technician,100000
+100008,Joe,,Bellaish,1234 Some random street,Tx,Houston,77004,8888888888,1980-01-01,M,Ride Technician,100000
+100009,Rayvan,Alexander,Watson,1234 Some random street,Tx,Houston,77004,8888888888,1980-01-01,M,Ride Technician,100000
+100010,Omar,,Achkar,1234 Some random street,Tx,Houston,77004,8888888888,1980-01-01,M,Ride Technician,100000
+100011,Shahzaib,,Ali,1234 Some random street,Tx,Houston,77004,8888888888,1980-01-01,M,Admissions Clerk,100001
+100012,Zachary,A,Zerr,1234 Some random street,Tx,Houston,77004,8888888888,1980-01-01,M,Admissions Clerk,100001
+100013,Jose,,Ferreira,1234 Some random street,Tx,Houston,77004,8888888888,1980-01-01,M,Admissions Clerk,100001
+100014,Christopher,,Dang,1234 Some random street,Tx,Houston,77004,8888888888,1980-01-01,M,Admissions Clerk,100001
+100015,Victor,Alonso,Zapata,1234 Some random street,Tx,Houston,77004,8888888888,1980-01-01,M,Admissions Clerk,100001
+100016,John,Thomas,Blankenburg,1234 Some random street,Tx,Houston,77004,8888888888,1980-01-01,M,Concessions Worker,100002
+100017,Abdon,,Ferreira,1234 Some random street,Tx,Houston,77004,8888888888,1980-01-01,M,Concessions Worker,100002
+100018,Kazem,,Golabpars,1234 Some random street,Tx,Houston,77004,8888888888,1980-01-01,M,Concessions Worker,100002
+100019,Loi,,Ha,1234 Some random street,Tx,Houston,77004,8888888888,1980-01-01,F,Concessions Worker,100002
+100020,Prachee,,Engineer,1234 Some random street,Tx,Houston,77004,8888888888,1980-01-01,F,Concessions Worker,100002
+100021,Zachary,,Brewer,1234 Some random street,Tx,Houston,77004,8888888888,1980-01-01,M,Ride Operator,100003
+100022,Madeline,,Wilson,1234 Some random street,Tx,Houston,77004,8888888888,1980-01-01,F,Ride Operator,100003
+100023,Sanaz,,Farhadi,1234 Some random street,Tx,Houston,77004,8888888888,1980-01-01,F,Ride Operator,100003
+100024,Steven,Jiawei,Xu,1234 Some random street,Tx,Houston,77004,8888888888,1980-01-01,M,Ride Operator,100003
+100025,Cheuk-Wang,,Chau,1234 Some random street,Tx,Houston,77004,8888888888,1980-01-01,M,Ride Operator,100003
+100026,Phu,Tran,Le,1234 Some random street,Tx,Houston,77004,8888888888,1980-01-01,F,Marketing Rep,100004
+100027,Patricio,J,Garcia,1234 Some random street,Tx,Houston,77004,8888888888,1980-01-01,M,Marketing Rep,100004
+100028,Chris,J,Hill,1234 Some random street,Tx,Houston,77004,8888888888,1980-01-01,M,Marketing Rep,100004
+100029,Katherine,Susan,Kin,1234 Some random street,Tx,Houston,77004,8888888888,1980-01-01,F,Marketing Rep,100004
+100030,Kim,Hoang,Nguyen,1234 Some random street,Tx,Houston,77004,8888888888,1980-01-01,F,Marketing Rep,100004
+100031,Tommy,,Le,1234 Some random street,Tx,Houston,77004,8888888888,1980-01-01,M,Network Admin,100005
+100032,Colby,Alexander,Kuhnel,1234 Some random street,Tx,Houston,77004,8888888888,1980-01-01,M,IT Technician,100005
+100033,Joel,,Jijo,1234 Some random street,Tx,Houston,77004,8888888888,1980-01-01,M,IT Technician,100005
+100034,Zachary,,Grimes,1234 Some random street,Tx,Houston,77004,8888888888,1980-01-01,M,IT Technician,100005
+100035,Kevin,,Vo,1234 Some random street,Tx,Houston,77004,8888888888,1980-01-01,M,IT Technician,100005
+100036,Osvaldo,,Mafuana,1234 Some random street,Tx,Houston,77004,8888888888,1980-01-01,M,Ride Operator,100003
+100037,Jennifer,Josephine,Pernia,1234 Some random street,Tx,Houston,77004,8888888888,1980-01-01,F,Ride Operator,100003
+100038,Gina,Trinh Thi,Tran,1234 Some random street,Tx,Houston,77004,8888888888,1980-01-01,F,Ride Operator,100003
+100039,Tolu,,Okeowo,1234 Some random street,Tx,Houston,77004,8888888888,1980-01-01,M,Ride Operator,100003
+100040,Conrad,L,Parker,1234 Some random street,Tx,Houston,77004,8888888888,1980-01-01,M,Ride Operator,100003
+100041,Some,J,Employee,1234 Some random street,Tx,Houston,77004,8888888888,,M,IT Technician,100001
+100042,Jack,,Black,1234 Some random street,Tx,Houston,77004,8888888888,1980-01-01,M,Marketing Rep,100004
